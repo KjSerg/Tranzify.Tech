@@ -1,0 +1,16 @@
+/node_modules
+/public/mix-manifest.json
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.log
+*.sql
+*.sqlite
+/storage/*.key
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

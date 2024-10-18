@@ -1,0 +1,120 @@
+.authorization {
+  &-after-form {
+    text-align: center;
+
+    a {
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-button {
+    &:not(:last-child) {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &-form {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    &-container {
+      width: 100%;
+      max-width: 44.2rem;
+      margin: 0 auto;
+      padding: 2rem;
+      @media (max-width: 560px) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    &__text {
+      margin-bottom: 3rem;
+    }
+    &__title {
+      margin-bottom: 2rem;
+    }
+    &__logo{
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 22rem;
+      height: 2.6rem;
+      @media (max-width: 560px) {
+        display: flex;
+        margin-bottom: 8rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  &-image {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    border-radius: 0rem 4rem 4rem 0rem;
+
+
+    @media (max-width: 560px) {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-radius: 0;
+      height: 100vh;
+      animation: none !important;
+      transition: 0.4s ease;
+      transition-delay: 0.5s;
+      pointer-events: none;
+    }
+
+    &.loaded {
+      @media (max-width: 560px) {
+        opacity: 0;
+      }
+    }
+
+    &-load {
+
+      @media (min-width: 561px) {
+        display: none;
+      }
+      position: absolute;
+      width: 18rem;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 5rem;
+      height: 0.6rem;
+      flex-shrink: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 32px;
+      overflow: hidden;
+
+      &__progress {
+        height: 100%;
+        width: 90%;
+        border-radius: 32px;
+        background-color: #fff;
+        animation: 0.5s linear 0.1ms loading;
+
+        &.loaded {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

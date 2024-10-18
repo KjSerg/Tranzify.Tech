@@ -1,0 +1,37 @@
+.header{
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 6rem;
+  position: absolute;
+  @media (max-width: 810px) {
+    padding: 2rem;
+  }
+  &__logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 24.5rem;
+    height: 2.9rem;
+    flex-shrink: 0;
+
+    @media (max-width: 720px) {
+      max-width: 12rem;
+      height: 1.6rem;
+    }
+
+    @media (max-width: 560px) {
+      position: absolute;
+      width: 24.5rem;
+      height: 2.9rem;
+      left: 50%;
+      pointer-events: none;
+      transform: translateX(-50%) translateY(20rem);
+    }
+    &.hidden{
+      display: none;
+    }
+  }
+}

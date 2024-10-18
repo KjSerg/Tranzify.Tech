@@ -1,0 +1,50 @@
+.tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-head {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 4rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid rgba(237, 240, 246, 0.10);
+    background: rgba(255, 255, 255, 0.05);
+    &__item{
+      display: inline-flex;
+      padding: 1.2rem 2rem;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4rem;
+      gap: 1rem;
+      background: rgba(#2FC385, 0);
+      color: #C9D9DF;
+      text-align: center;
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      transition: 0.5s ease;
+      overflow: hidden;
+      &:not(:last-child){
+        margin-right: 1rem;
+      }
+      @media (max-width: 360px){
+        padding: 2rem;
+      }
+      &:hover{
+        background: rgba(#2FC385, 0.4);
+      }
+      &.active {
+        background: rgba(#2FC385, 1);
+        color: #FFF;
+      }
+    }
+  }
+  &-content{
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
