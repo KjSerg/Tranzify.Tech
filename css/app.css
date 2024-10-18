@@ -768,7 +768,7 @@ input.error, textarea.error {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-bottom: 8rem;
+    margin-bottom: 12rem;
     margin-left: auto;
     margin-right: auto;
   }
@@ -827,6 +827,13 @@ input.error, textarea.error {
 }
 .authorization-image-load__progress.loaded {
   width: 100%;
+}
+
+.password-recovery-form:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.password-recovery-form button {
+  margin-top: 0;
 }
 
 .header {
