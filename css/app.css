@@ -391,6 +391,17 @@ strong {
   flex-direction: column;
 }
 
+@media (max-width: 560px) {
+  .show-after-load-sm {
+    opacity: 0;
+  }
+}
+@media (max-width: 560px) {
+  .show-after-load-sm.loaded {
+    opacity: 1;
+  }
+}
+
 .wpcf7-not-valid-tip, .wpcf7-response-output {
   display: none !important;
 }
@@ -535,6 +546,7 @@ input.error, textarea.error {
 @media (max-width: 560px) {
   .form {
     font-size: 1.2rem;
+    gap: 1.6rem;
   }
 }
 .form a {
@@ -652,6 +664,35 @@ input.error, textarea.error {
 }
 .form button:hover {
   background: #000000;
+}
+
+select {
+  padding: 1.2rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(30, 30, 30, 0.1);
+  width: 100%;
+  color: #1E1E1E;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.8rem;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDE0IDE0IiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNNy40NjgyNCA5LjgwOTk0TDEyLjgwODMgNC41MDc1OEMxMi45MzE5IDQuMzg0OTUgMTMgNC4yMjEyNCAxMyA0LjA0NjY4QzEzIDMuODcyMTIgMTIuOTMxOSAzLjcwODQxIDEyLjgwODMgMy41ODU3N0wxMi40MTUxIDMuMTk1MjlDMTIuMTU4OSAyLjk0MTIgMTEuNzQyNSAyLjk0MTIgMTEuNDg2NyAzLjE5NTI5TDcuMDAyNDkgNy42NDc4MUwyLjUxMzI2IDMuMTkwMzVDMi4zODk2NSAzLjA2NzcxIDIuMjI0ODcgMyAwMi4wNDkxNiAzQzEuODczMjYgMyAxLjcwODQ4IDMuMDY3NzEgMS41ODQ3NyAzLjE5MDM1TDEuMTkxNzEgMy41ODA4M0MxLjA2ODEgMy43MDM1NiAxIDMuODY3MTggMSA0LjA0MTc0QzEgNC4yMTYzIDEuMDY4MSA0LjM4MDAxIDEuMTkxNzEgNC41MDI2NEw2LjUzNjY0IDkuODA5OTRDNi42NjA2NCA5LjkzMjg3IDYuODI2MiAxMCA3LjAwMjE5IDEwQzcuMTc4ODggMTAuMDAwNCA3LjM0NDM0IDkuOTMyODcgNy40NjgyNCA5LjgwOTk0WiIgZmlsbD0iIzFFMUUxRSIvPjwvc3ZnPg==) no-repeat 95% 50%;
+}
+
+.checkbox-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.checkbox-wrapper a {
+  display: inline-block;
 }
 
 @keyframes marquee {
@@ -806,7 +847,7 @@ input.error, textarea.error {
   width: 18rem;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 5rem;
+  bottom: 10rem;
   height: 0.6rem;
   flex-shrink: 0;
   background-color: rgba(0, 0, 0, 0.3);
@@ -827,6 +868,46 @@ input.error, textarea.error {
 }
 .authorization-image-load__progress.loaded {
   width: 100%;
+}
+
+.registration-steps {
+  width: 100%;
+  margin-bottom: 3rem;
+  color: #1E1E1E;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.registration-steps-visual {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+}
+.registration-steps-visual span {
+  height: 4px;
+  border-radius: 1px;
+  background: #E2E2E2;
+}
+.registration-steps-visual span.active {
+  background: #0CAE35;
+}
+.registration-steps-visual > * {
+  width: 100%;
+}
+.registration-steps__title {
+  margin-bottom: 3px;
+}
+.registration-section__title {
+  margin-bottom: 2rem;
+}
+.registration-section__logo {
+  margin-bottom: 4rem;
+}
+.registration-form:not(:last-child) {
+  margin-bottom: 1.6rem;
 }
 
 .password-recovery-form:not(:last-child) {

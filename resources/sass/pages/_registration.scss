@@ -1,0 +1,51 @@
+.registration {
+  &-steps {
+    width: 100%;
+    margin-bottom: 3rem;
+    color: #1E1E1E;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    &-visual {
+      width: 100%;
+      display: flex;
+      gap: 0.5rem;
+
+      span {
+        height: 4px;
+        border-radius: 1px;
+        background: #E2E2E2;
+        &.active {
+          background: #0CAE35;
+        }
+      }
+
+      & > * {
+        width: 100%;
+      }
+    }
+
+    &__title {
+      margin-bottom: 3px;
+
+    }
+  }
+
+  &-section {
+    &__title {
+      margin-bottom: 2rem;
+    }
+
+    &__logo {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &-form{
+    &:not(:last-child){
+      margin-bottom: 1.6rem;
+    }
+  }
+}

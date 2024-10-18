@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="UA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="msapplication-TileColor" content="#1E1E1E">
+    <meta name="theme-color" content="#1E1E1E">
+    <title>Tranzify.Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header class="header">
+    <a href="#" class="header__logo ">
+        <img src="img/logo.svg" alt="">
+    </a>
+</header>
+<main class="content flex-column">
+    <section class="section authorization-section registration-section">
+        <div class="authorization-image slide-left-to-right">
+            <picture>
+                <source media="(min-width: 560px)" srcset="img/authorization-image.png">
+                <img src="img/access1.jpg" class="cover " alt="">
+            </picture>
+
+            <div class="authorization-image-load">
+                <div class="authorization-image-load__progress"></div>
+            </div>
+        </div>
+        <div class="show-after-load-sm authorization-form-container registration-form-container">
+            <div class="logo authorization-section__logo registration-section__logo">
+                <img src="img/logo-color.svg" alt="">
+            </div>
+            <div class="title registration-section__title">
+                <h2>
+                    Реєстрація
+                </h2>
+            </div>
+            <div class="registration-steps">
+                <div class="registration-steps__title">
+                    Крок: <span>1</span>/2
+                </div>
+                <div class="registration-steps-visual">
+                    <span class="active"></span>
+                    <span></span>
+                </div>
+            </div>
+            <form id="registration-form" class="registration-form form">
+                <label class="form-group">
+                    <span class="form-group__title">Тип облікового запису </span>
+                    <select name="profile_type" class="custom-select">
+                        <option>Компанія</option>
+                        <option>Користувач</option>
+                    </select>
+                </label>
+                <label class="form-group">
+                    <span class="form-group__title">Ім`я </span>
+                    <input type="text" name="first_name" placeholder="Ім`я" required>
+                </label>
+                <label class="form-group">
+                    <span class="form-group__title">Прізвище</span>
+                    <input type="text" name="last_name" placeholder="Прізвище" required>
+                </label>
+                <label class="form-group">
+                    <span class="form-group__title">Email </span>
+                    <input type="email" name="email" placeholder="Введіть email" required>
+                </label>
+                <label class="form-group">
+                    <span class="form-group__title">Номер телефону </span>
+                    <input type="tel" name="tel" placeholder="+380 (00) 000 00 00" required>
+                </label>
+                <button type="submit">
+                    Наступний крок
+                </button>
+            </form>
+
+            <div class="authorization-after-form">
+                <p>
+                    Маєте акаунт? <a href="/index.html">Увійти</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    var passwordHideIcon = 'img/mdi_hide-outline.svg';
+    var passwordShowIcon = 'img/show.svg';
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>

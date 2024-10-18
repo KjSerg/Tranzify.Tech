@@ -15,13 +15,16 @@ function toggleInputPassword() {
     });
 }
 
-function hideLoader(){
+function hideLoader() {
     document.getElementsByClassName('authorization-image-load__progress')[0].classList.add('loaded');
-    setTimeout(function (){
+    setTimeout(function () {
         document.getElementsByClassName('authorization-image')[0].classList.add('hidden-sm');
         document.getElementsByClassName('header__logo')[0].classList.add('hidden-sm');
+        document.querySelectorAll('.show-after-load-sm').forEach(function (element) {
+            element.classList.add('loaded');
+        });
     }, 800)
-  
+
 }
 
 addEventListener("DOMContentLoaded", (event) => {

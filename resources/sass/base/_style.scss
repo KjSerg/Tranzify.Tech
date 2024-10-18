@@ -205,3 +205,15 @@ strong {
   display: flex;
   flex-direction: column;
 }
+
+.show-after-load-sm {
+  @media (max-width: 560px) {
+    opacity: 0;
+  }
+  &.loaded {
+    @media (max-width: 560px) {
+      opacity: 1;
+    }
+  }
+}
+

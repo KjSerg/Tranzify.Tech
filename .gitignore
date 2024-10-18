@@ -1,5 +1,5 @@
 /node_modules
-/mix-manifest.json
+mix-manifest.json
 .DS_Store
 Thumbs.db
 .vscode/
