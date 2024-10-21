@@ -1,5 +1,120 @@
 html {
   font-size: 10px;
+
+  &[data-zoom-level="0.25"] {
+    font-size: 40px;
+    .header__logo {
+      transform: scale(4);
+    }
+
+  }
+
+  &[data-zoom-level="0.33"] {
+    font-size: 33px;
+    .header__logo {
+      transform: scale(3.3);
+    }
+  }
+
+  &[data-zoom-level="0.5"] {
+    font-size: 20px;
+    .header__logo {
+      transform: scale(2);
+    }
+  }
+
+  &[data-zoom-level="0.67"] {
+    font-size: 16px;
+    .header__logo {
+      transform: scale(1.6);
+    }
+  }
+
+  &[data-zoom-level="0.75"] {
+    font-size: 13px;
+    .header__logo {
+      transform: scale(1.25);
+    }
+  }
+
+  &[data-zoom-level="0.8"] {
+    font-size: 12px;
+    .header__logo {
+      transform: scale(1.2);
+    }
+  }
+
+  &[data-zoom-level="0.9"] {
+    font-size: 11px;
+    .header__logo {
+      transform: scale(1.1);
+    }
+  }
+
+  &[data-zoom-level="1"] {
+  }
+
+  &[data-zoom-level="1.1"] {
+    font-size: 9px;
+    .header__logo {
+      transform: scale(0.9);
+    }
+  }
+
+  &[data-zoom-level="1.25"] {
+    font-size: 8px;
+    .header__logo {
+      transform: scale(0.75);
+    }
+  }
+
+  &[data-zoom-level="1.5"] {
+    font-size: 7px;
+    .header__logo {
+      transform: scale(0.7);
+    }
+  }
+
+  &[data-zoom-level="1.75"] {
+    font-size: 6px;
+    .header__logo {
+      transform: scale(0.7);
+    }
+    select {
+      background-size: 5px;
+    }
+  }
+  &[data-zoom-level="2"] {
+    font-size: 5px;
+    select {
+      background-size: 5px;
+    }
+    .header__logo {
+      transform: scale(0.7);
+    }
+  }
+  &[data-zoom-level="2.5"] {
+    font-size: 4px;
+    select {
+      background-size: 5px;
+    }
+    .header__logo {
+      transform: scale(0.7);
+    }
+  }
+
+  &[data-zoom-level="3"] {
+    font-size: 3px;
+    select {
+      background-size: 4px;
+    }
+    .header__logo {
+      transform: scale(1.2);
+    }
+  }
+
+  &[data-zoom-level="5"] {
+  }
 }
 
 body {
@@ -129,9 +244,10 @@ strong {
 
 .hidden {
   display: none;
-  &-sm{
+
+  &-sm {
     @media (max-width: 560px) {
-      display: none!important;
+      display: none !important;
     }
   }
 }
@@ -189,6 +305,7 @@ strong {
     background: #1E1E1E;
     color: #fff;
   }
+
   .icon {
     width: 1.6rem;
     height: 1.6rem;
@@ -201,7 +318,7 @@ strong {
   animation: 0.5s linear 0.1ms left-to-right;
 }
 
-.flex-column{
+.flex-column {
   display: flex;
   flex-direction: column;
 }
@@ -210,6 +327,7 @@ strong {
   @media (max-width: 560px) {
     opacity: 0;
   }
+
   &.loaded {
     @media (max-width: 560px) {
       opacity: 1;

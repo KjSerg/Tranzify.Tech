@@ -3,10 +3,10 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 6rem;
+  padding: 6rem 6rem 1rem;
   position: absolute;
   @media (max-width: 810px) {
-    padding: 2rem;
+    padding: 2rem 2rem 1rem;
   }
   &__logo{
     display: flex;

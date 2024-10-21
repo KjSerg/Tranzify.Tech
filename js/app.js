@@ -1,3 +1,5 @@
+let previousZoom = window.devicePixelRatio;
+
 function toggleInputPassword() {
     document.querySelectorAll('.form-password__button').forEach(function (element, key, parent) {
         element.addEventListener('click', function (e) {
@@ -27,7 +29,41 @@ function hideLoader() {
 
 }
 
+function detectPreviousZoom() {
+    let currentZoom = window.devicePixelRatio;
+    if (currentZoom !== previousZoom) {
+        console.log('Zoom level changed!');
+        previousZoom = Number(currentZoom.toFixed(2));
+        console.log(previousZoom);
+        var fontSize = 10;
+        fontSize = fontSize * previousZoom;
+        fontSize = Number(fontSize.toFixed(0));
+        console.log(fontSize);
+        document.querySelectorAll('html')[0].setAttribute('data-zoom-level', previousZoom);
+    }
+}
+function detectFirstLoadZoom() {
+    let currentZoom = window.devicePixelRatio;
+    console.log(currentZoom);
+    if (currentZoom !== 1) {
+        console.log('Zoom level changed!');
+        previousZoom = Number(currentZoom.toFixed(2));
+        console.log(previousZoom);
+        var fontSize = 10;
+        fontSize = fontSize * previousZoom;
+        fontSize = Number(fontSize.toFixed(0));
+        console.log(fontSize);
+        document.querySelectorAll('html')[0].setAttribute('data-zoom-level', previousZoom);
+    }
+}
+
 addEventListener("DOMContentLoaded", (event) => {
     hideLoader();
     toggleInputPassword();
+    detectFirstLoadZoom();
 });
+
+window.addEventListener('resize', () => {
+    detectPreviousZoom();
+});
+
