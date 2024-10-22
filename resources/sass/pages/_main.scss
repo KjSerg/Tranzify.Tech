@@ -1,6 +1,314 @@
-.main{
+.main {
   &-section {
     display: flex;
     background-color: #1E1E1E;
+    min-height: 100vh;
+
+    .hidden-element + .main-content {
+      border-radius: 0;
+    }
+  }
+
+  &-content {
+    width: 100%;
+    border-radius: 4rem 0rem 0rem 4rem;
+    background: #F6F6F6;
+    transition: border-radius 1s ease;
+    overflow: hidden;
+    @media (max-width: 560px) {
+      border-radius: 0;
+    }
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem 3rem;
+    border-bottom: 1px solid rgba(30, 30, 30, 0.10);
+    background: #FFF;
+    color: #1E1E1E;
+    font-size: 2.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 3.2rem;
+    @media (max-width: 560px) {
+      gap: 1.5rem;
+    }
+
+    &-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        flex-grow: 0;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  &-row {
+    display: flex;
+    gap: 2.5rem;
+    padding: 3rem;
+  }
+
+  &-wrapper {
+    width: 113.7rem;
+  }
+
+  &-banner {
+    &:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
+
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    justify-content: space-between;
+    padding: 2.5rem;
+    background-position: bottom right;
+    background-color: #1E1E1E;
+    min-height: 20rem;
+    background-repeat: no-repeat;
+    border-radius: 1.2rem;
+
+    &__button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1.2rem 2rem;
+      border-radius: 0.6rem;
+      background: #FFF;
+      color: #1E1E1E;
+      font-size: 1.4rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.8rem;
+      transition: 0.5s ease;
+
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 1.4rem;
+        height: 1.4rem;
+      }
+
+      &:hover {
+
+        color: #FFF;
+        background: #1E1E1E;
+      }
+    }
+
+    &__title {
+      margin-bottom: 1.2rem;
+      font-size: 4.5rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+
+    &__subtitle {
+      margin-bottom: 1.2rem;
+    }
+
+    &-content {
+      color: #FFF;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 2.4rem;
+    }
+
+    &__controls {
+      display: inline-flex;
+      align-items: center;
+      color: #FFF;
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 2.2rem;
+
+      .custom-select {
+        display: inline-block;
+        margin-left: 1rem;
+        color: #FFF;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 2.2rem;
+
+        &-list {
+          background-color: #1E1E1E;
+        }
+      }
+    }
+  }
+
+  &-data {
+    display: flex;
+    gap: 2.4rem;
+    padding: 2.5rem 2.2rem;
+    border-radius: 1.2rem;
+    border: 1px solid rgba(30, 30, 30, 0.08);
+    background: #FFF;
+    &-chart{
+      width: 100%;
+      height: 41rem;
+    }
+    &-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      background: rgba(#1E1E1E, 0);
+      color: #1E1E1E;
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 2.2rem;
+      transition: 0.5s ease;
+
+      &:hover {
+        background: rgba(#1E1E1E, 0.2);
+      }
+
+      &.active {
+        color: #fff;
+        background: rgba(#1E1E1E, 1);
+      }
+    }
+
+    &__title {
+      color: #1E1E1E;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 2.4rem; /* 120% */
+    }
+
+    &-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    &-column {
+      width: 83.2rem;
+    }
+
+    &-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    &-card {
+      width: 23.3rem;
+      flex-shrink: 0;
+      flex-grow: 0;
+      padding: 2rem;
+      border-radius: 1.2rem;
+      border: 1px solid rgba(30, 30, 30, 0.10);
+      background: #FFF;
+      color: #1E1E1E;
+      font-size: 1.4rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+
+      &.dark {
+        background-color: #1E1E1E;
+        color: #fff;
+      }
+
+      &__chart {
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 8rem;
+        height: 4rem;
+
+        img {
+          transition: 0.5s ease;
+        }
+
+        &:hover {
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      &__footer {
+        display: flex;
+        gap: 0.6rem;
+        color: #8A8E94;
+        text-align: center;
+        leading-trim: both;
+        text-edge: cap;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        strong {
+          font-style: normal;
+          font-weight: 400;
+          color: #0CAE35;
+        }
+
+      }
+
+      &__title {
+        margin-bottom: 1.3rem;
+      }
+
+      &-content {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: flex-end;
+        gap: 2rem;
+        justify-content: space-between;
+      }
+
+      &__number {
+        font-size: 3rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      &-head {
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+        margin-bottom: 1.3rem;
+      }
+
+      &__button {
+        width: 1rem;
+        display: flex;
+        height: 2px;
+      }
+    }
   }
 }
