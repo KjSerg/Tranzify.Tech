@@ -203,6 +203,9 @@
         </div>
         <div class="main-content">
             <div class="main-header">
+                <a href="#sidebar" class="sidebar-show show-element">
+                    <img src="img/arrow-left.svg" alt="">
+                </a>
                 <a href="#sidebar" class="burger">
                     <span></span>
                     <span></span>
@@ -244,148 +247,46 @@
                 </div>
             </div>
             <div class="main-row">
-                <div class="main-column">
-                    <div class="main-wrapper">
-                        <div class="main-banner" style="background-image: url(img/main-banner-img.png);">
-                            <div class="main-banner-content">
-                                <div class="main-banner__subtitle">
-                                    Мій баланс
-                                </div>
-                                <div class="main-banner__title">
-                                    $1000 000.00
-                                </div>
-                                <div class="main-banner__controls">
-                                    Показати баланс акаунта у
-                                    <div class="custom-select">
-                                        <div class="custom-select-value">
+                <div class="main-wrapper">
+                    <div class="main-banner" style="background-image: url(img/main-banner-img.png);">
+                        <div class="main-banner-content">
+                            <div class="main-banner__subtitle">
+                                Мій баланс
+                            </div>
+                            <div class="main-banner__title">
+                                $1000 000.00
+                            </div>
+                            <div class="main-banner__controls">
+                                Показати баланс акаунта у
+                                <div class="custom-select">
+                                    <div class="custom-select-value">
+                                        <div class="custom-select-value__text">USD</div>
+                                        <div class="custom-select-value__icon">
+                                            <img src="img/arrow-down.svg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="custom-select-list">
+                                        <a href="#" class="custom-select-list__item current">
+
                                             <div class="custom-select-value__text">USD</div>
-                                            <div class="custom-select-value__icon">
-                                                <img src="img/arrow-down.svg" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="custom-select-list">
-                                            <a href="#" class="custom-select-list__item current">
+                                        </a>
+                                        <a href="#" class="custom-select-list__item">
 
-                                                <div class="custom-select-value__text">USD</div>
-                                            </a>
-                                            <a href="#" class="custom-select-list__item">
-
-                                                <div class="custom-select-value__text">USDT</div>
-                                            </a>
-                                        </div>
+                                            <div class="custom-select-value__text">USDT</div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" class="main-banner__button">
-                                Всі рахунки <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="14"
-                                                                    height="14" viewBox="0 0 14 14" fill="none">
+                        </div>
+                        <a href="#" class="main-banner__button">
+                            Всі рахунки <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="14"
+                                                                height="14" viewBox="0 0 14 14" fill="none">
   <path d="M9.80994 6.53176L4.50758 1.19171C4.38495 1.0681 4.22124 1 4.04668 1C3.87212 1 3.70841 1.0681 3.58577 1.19171L3.19529 1.58487C2.9412 1.84107 2.9412 2.25745 3.19529 2.51326L7.64781 6.99751L3.19035 11.4867C3.06771 11.6104 3 11.7751 3 11.9508C3 12.1267 3.06771 12.2915 3.19035 12.4152L3.58083 12.8083C3.70356 12.9319 3.86718 13 4.04174 13C4.2163 13 4.38001 12.9319 4.50264 12.8083L9.80994 7.46336C9.93287 7.33936 10.0004 7.1738 10 6.99781C10.0004 6.82112 9.93287 6.65566 9.80994 6.53176Z"
         fill="#1E1E1E"/>
 </svg></span>
-                            </a>
-                        </div>
-                        <div class="main-data">
-                            <div class="main-data-column">
-                                <div class="main-data-head">
-                                    <div class="main-data__title">
-                                        Поповнення рахунку
-                                    </div>
-                                    <div class="main-data-controls">
-                                        <a href="#" class="main-data__button active">
-                                            1м
-                                        </a>
-                                        <a href="#" class="main-data__button">
-                                            3м
-                                        </a>
-                                        <a href="#" class="main-data__button">
-                                            6м
-                                        </a>
-                                        <a href="#" class="main-data__button">
-                                            Всі
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="main-data-chart" id="main-data-chart"></div>
-                            </div>
-                            <div class="main-data-sidebar">
-                                <div class="main-data-card dark">
-                                    <div class="main-data-card__title">
-                                        Поповнення рахунку
-                                    </div>
-                                    <div class="main-data-card-content">
-                                        <div class="main-data-card__number">
-                                            $1900
-                                        </div>
-                                        <div class="main-data-card__chart">
-                                            <img src="img/chart1.svg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="main-data-card__footer">
-                                        <div class="arrow">
-                                            <img src="img/arrow-to-up.svg" alt="">
-                                        </div>
-                                        <strong>
-                                            12%
-                                        </strong>
-                                        <p>
-                                            за минулий місяць
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="main-data-card ">
-                                    <div class="main-data-card__title">
-                                        Виведення коштів
-                                    </div>
-                                    <div class="main-data-card-content">
-                                        <div class="main-data-card__number">
-                                            $3000
-                                        </div>
-                                        <div class="main-data-card__chart">
-                                            <img src="img/chart2.svg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="main-data-card__footer">
-                                        <div class="arrow">
-                                            <img src="img/arrow-to-up.svg" alt="">
-                                        </div>
-                                        <strong>
-                                            4%
-                                        </strong>
-                                        <p>
-                                            за минулий місяць
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="main-data-card ">
-                                    <div class="main-data-card__title">
-                                        Динаміка операцій
-                                    </div>
-                                    <div class="main-data-card-content">
-                                        <div class="main-data-card__number">
-                                            $8000
-                                        </div>
-                                        <div class="main-data-card__chart">
-                                            <img src="img/chart3.svg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="main-data-card__footer">
-                                        <div class="arrow">
-                                            <img src="img/arrow-to-down.svg" alt="">
-                                        </div>
-                                        <strong>
-                                            -6%
-                                        </strong>
-                                        <p>
-                                            за минулий місяць
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-                </div>
-                <div class="main-column">
-                    <div class="transactions">
+                    <div class="transactions show-on-tablet">
                         <div class="transactions-head">
                             <div class="transactions__title">
                                 Транзакції
@@ -529,7 +430,281 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="main-data">
+                        <div class="main-data-column">
+                            <div class="main-data-head">
+                                <div class="main-data__title">
+                                    Поповнення рахунку
+                                </div>
+                                <div class="main-data-controls">
+                                    <a href="test-data/main-data1.json"
+                                       data-element-id="main-data-chart"
+                                       class="main-data__button change-chart-data">
+                                        1м
+                                    </a>
+                                    <a href="test-data/main-data.json"
+                                       data-element-id="main-data-chart"
+                                       class="main-data__button active change-chart-data">
+                                        3м
+                                    </a>
+                                    <a href="test-data/main-data2.json"
+                                       data-element-id="main-data-chart"
+                                       class="main-data__button change-chart-data">
+                                        6м
+                                    </a>
+                                    <a href="test-data/main-data2.json"
+                                       data-element-id="main-data-chart"
+                                       class="main-data__button change-chart-data">
+                                        Всі
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="main-data-chart chart-js"
+                                 id="main-data-chart"
+                                 data-theme="default"
+                                 data-json-url="test-data/main-data.json"
+                            ></div>
+                        </div>
+                        <div class="main-data-sidebar">
+                            <div class="main-data-card dark">
+                                <div class="main-data-card__title">
+                                    Поповнення рахунку
+                                </div>
+                                <div class="main-data-card-content">
+                                    <div class="main-data-card__number">
+                                        $1900
+                                    </div>
+                                    <div class="main-data-card__chart-wrapper">
+                                        <div class="main-data-card__chart small-chart chart-js"
+                                             id="main-data-card-0"
+                                             data-theme="transparent"
+                                             data-json-url="test-data/card1.json">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main-data-card__footer">
+                                    <div class="arrow">
+                                        <img src="img/arrow-to-up.svg" alt="">
+                                    </div>
+                                    <strong>
+                                        12%
+                                    </strong>
+                                    <p>
+                                        за минулий місяць
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="main-data-card ">
+                                <div class="main-data-card__title">
+                                    Виведення коштів
+                                </div>
+                                <div class="main-data-card-content">
+                                    <div class="main-data-card__number">
+                                        $3000
+                                    </div>
+                                    <div class="main-data-card__chart-wrapper">
+                                        <div class="main-data-card__chart small-chart chart-js"
+                                             id="main-data-card-1"
+                                             data-theme="transparent"
+                                             data-json-url="test-data/main-data.json">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main-data-card__footer">
+                                    <div class="arrow">
+                                        <img src="img/arrow-to-up.svg" alt="">
+                                    </div>
+                                    <strong>
+                                        4%
+                                    </strong>
+                                    <p>
+                                        за минулий місяць
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="main-data-card ">
+                                <div class="main-data-card__title">
+                                    Динаміка операцій
+                                </div>
+                                <div class="main-data-card-content">
+                                    <div class="main-data-card__number">
+                                        $8000
+                                    </div>
+                                    <div class="main-data-card__chart-wrapper">
+                                        <div class="main-data-card__chart small-chart chart-js"
+                                             id="main-data-card-2"
+                                             data-theme="transparent"
+                                             data-json-url="test-data/main-data.json">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main-data-card__footer">
+                                    <div class="arrow">
+                                        <img src="img/arrow-to-down.svg" alt="">
+                                    </div>
+                                    <strong>
+                                        -6%
+                                    </strong>
+                                    <p>
+                                        за минулий місяць
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="transactions hidden-on-tablet">
+                    <div class="transactions-head">
+                        <div class="transactions__title">
+                            Транзакції
+                        </div>
+                        <form class="transactions-form">
+                            <select class="black">
+                                <option selected disabled>Місяць</option>
+                                <option>Жовтень</option>
+                                <option>Вересень</option>
+                            </select>
+                        </form>
+                    </div>
+                    <ul class="transactions-list">
+                        <li class="transactions-item transaction-income">
+                            <div class="transactions-item__icon">
+                                <img src="img/income.svg" alt="">
+                            </div>
+                            <div class="transactions-item-data">
+                                <div class="transactions-item__name">
+                                    Іваненко Олексій
+                                </div>
+                                <div class="transactions-item__date">
+                                    08.08.2024
+                                </div>
+                            </div>
+                            <div class="transactions-item__value">
+                                +345.00
+                            </div>
+                        </li>
+                        <li class="transactions-item transaction-expenses">
+                            <div class="transactions-item__icon">
+                                <img src="img/expenses.svg" alt="">
+                            </div>
+                            <div class="transactions-item-data">
+                                <div class="transactions-item__name">
+                                    Павленко Марина
+                                </div>
+                                <div class="transactions-item__date">
+                                    01.08.2024
+                                </div>
+                            </div>
+                            <div class="transactions-item__value">
+                                -1000.00
+                            </div>
+                        </li>
+                        <li class="transactions-item transaction-income">
+                            <div class="transactions-item__icon">
+                                <img src="img/income.svg" alt="">
+                            </div>
+                            <div class="transactions-item-data">
+                                <div class="transactions-item__name">
+                                    Іваненко Олексій
+                                </div>
+                                <div class="transactions-item__date">
+                                    08.08.2024
+                                </div>
+                            </div>
+                            <div class="transactions-item__value long-value">
+                                +3400005.00
+                            </div>
+                        </li>
+                        <li class="transactions-item transaction-income">
+                            <div class="transactions-item__icon">
+                                <img src="img/income.svg" alt="">
+                            </div>
+                            <div class="transactions-item-data">
+                                <div class="transactions-item__name">
+                                    Іваненко Олексій
+                                </div>
+                                <div class="transactions-item__date">
+                                    08.08.2024
+                                </div>
+                            </div>
+                            <div class="transactions-item__value">
+                                +345.00
+                            </div>
+                        </li>
+                        <li class="transactions-item transaction-income">
+                            <div class="transactions-item__icon">
+                                <img src="img/income.svg" alt="">
+                            </div>
+                            <div class="transactions-item-data">
+                                <div class="transactions-item__name">
+                                    Іваненко Олексій
+                                </div>
+                                <div class="transactions-item__date">
+                                    08.08.2024
+                                </div>
+                            </div>
+                            <div class="transactions-item__value">
+                                +345.00
+                            </div>
+                        </li>
+                        <li class="transactions-item transaction-income">
+                            <div class="transactions-item__icon">
+                                <img src="img/income.svg" alt="">
+                            </div>
+                            <div class="transactions-item-data">
+                                <div class="transactions-item__name">
+                                    Іваненко Олексій
+                                </div>
+                                <div class="transactions-item__date">
+                                    08.08.2024
+                                </div>
+                            </div>
+                            <div class="transactions-item__value">
+                                +345.00
+                            </div>
+                        </li>
+                        <li class="transactions-item transaction-income">
+                            <div class="transactions-item__icon">
+                                <img src="img/income.svg" alt="">
+                            </div>
+                            <div class="transactions-item-data">
+                                <div class="transactions-item__name">
+                                    Іваненко Олексій
+                                </div>
+                                <div class="transactions-item__date">
+                                    08.08.2024
+                                </div>
+                            </div>
+                            <div class="transactions-item__value">
+                                +345.00
+                            </div>
+                        </li>
+                        <li class="transactions-item transaction-expenses">
+                            <div class="transactions-item__icon">
+                                <img src="img/expenses.svg" alt="">
+                            </div>
+                            <div class="transactions-item-data">
+                                <div class="transactions-item__name">
+                                    Павленко Марина
+                                </div>
+                                <div class="transactions-item__date">
+                                    01.08.2024
+                                </div>
+                            </div>
+                            <div class="transactions-item__value">
+                                -1000.00
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-footer">
+                <div class="copyright">
+                    © 2024 Tranzify Всі права захищені
+                </div>
+                <a href="#" class="main-footer__link">
+                    Користувацька угода
+                </a>
             </div>
         </div>
     </section>
@@ -537,33 +712,16 @@
 <script>
     var passwordHideIcon = 'img/mdi_hide-outline.svg';
     var passwordShowIcon = 'img/show.svg';
+    var loaderIcon = 'img/loading.gif';
 </script>
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-<script>
-    var options = {
-        chart: {
-            type: 'line',
-            toolbar: false
-        },
-        series: [{
-            name: 'Сумма',
-            data: [500, 700, 900, 2000, 4000, 3000, 5000]
-        }],
-        xaxis: {
-            categories: ['15д', '30д', '45д', '60д', '75д', '90д']
-        },
-        fill: {
-            colors: ['#0CAE35'],
-
-        },
-        stroke: {
-            curve: 'smooth'
+<style>
+    .chart-js {
+        &:after {
+            background-image: url(img/loading.gif);
         }
     }
-
-    var chart = new ApexCharts(document.querySelector("#main-data-chart"), options);
-    chart.render();
-</script>
+</style>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
