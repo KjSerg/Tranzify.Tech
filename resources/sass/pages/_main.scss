@@ -15,8 +15,18 @@
     }
   }
 
+  &-title{
+    margin-bottom: 1.6rem;
+    color: #1E1E1E;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 3.2rem; /* 160% */
+  }
+
   &-header {
     position: relative;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -57,6 +67,12 @@
     display: flex;
     gap: 2.5rem;
     padding: 3rem;
+    &-container{
+      width: 100%;
+      .main-title{
+        padding: 2rem 1.6rem 0 1.6rem;
+      }
+    }
     @media (max-width: 1200px){
       padding: 1.4rem;
       gap: 1.5rem;

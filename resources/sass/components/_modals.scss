@@ -1,0 +1,64 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -2000px);
+  opacity: 0;
+  width: 100%;
+  border-radius: 1.2rem;
+  background: #FFF;
+  pointer-events: none;
+  transition: transform 0.4s ease, opacity 0.5s ease-in-out;
+  max-height: 98vh;
+  overflow: auto;
+  @media (max-width: 560px){
+
+    width: calc(100% - 3.2rem);
+  }
+  &.open {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &-content {
+    padding: 1.6rem 2rem 2rem 2rem;
+  }
+
+  &-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+    cursor: pointer;
+
+    &:hover {
+      svg {
+        path {
+          fill-opacity: 1;
+        }
+      }
+    }
+  }
+
+  &-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem 2rem 1.6rem 2rem;
+    border-bottom: 1px solid rgba(30, 30, 30, 0.10);
+    color: #1E1E1E;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.4rem;
+  }
+
+  &-new-account {
+    max-width: 47rem;
+  }
+}

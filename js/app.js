@@ -1,6 +1,6 @@
 let previousZoom = window.devicePixelRatio;
 let lastWidth = window.innerWidth;
-const doc = document;
+var doc = document;
 var charts = {};
 let resizeTimer;
 addEventListener("DOMContentLoaded", (event) => {
@@ -8,9 +8,10 @@ addEventListener("DOMContentLoaded", (event) => {
     chartInit();
     toggleInputPassword();
     detectFirstLoadZoom();
+    escKeyPressEvent();
     doc.querySelectorAll('.sub-menu').forEach(function (element, index) {
-        const a = element.firstElementChild;
-        const list = element.querySelector('.sub-list');
+        var a = element.firstElementChild;
+        var list = element.querySelector('.sub-list');
         a.addEventListener('click', function (e) {
             e.preventDefault();
             if (element.classList.contains('open')) {
@@ -30,8 +31,8 @@ addEventListener("DOMContentLoaded", (event) => {
     doc.querySelectorAll('.hide-element').forEach(function (element, index) {
         element.addEventListener('click', function (e) {
             e.preventDefault();
-            const href = element.getAttribute('href');
-            const el = doc.querySelector(href);
+            var href = element.getAttribute('href');
+            var el = doc.querySelector(href);
             var isSidebar = el.classList.contains('sidebar');
             if (el) {
                 if (isSidebar && window.innerWidth <= 560) {
@@ -42,7 +43,7 @@ addEventListener("DOMContentLoaded", (event) => {
                 }
                 if (isSidebar) {
 
-                    const body = doc.querySelector('body');
+                    var body = doc.querySelector('body');
                     body.classList.remove('open-sidebar');
                 }
                 if (isSidebar && window.innerWidth > 1024) reinitMainCart();
@@ -52,8 +53,8 @@ addEventListener("DOMContentLoaded", (event) => {
     doc.querySelectorAll('.show-element').forEach(function (element, index) {
         element.addEventListener('click', function (e) {
             e.preventDefault();
-            const href = element.getAttribute('href');
-            const el = doc.querySelector(href);
+            var href = element.getAttribute('href');
+            var el = doc.querySelector(href);
             var isSidebar = el.classList.contains('sidebar');
             if (el) {
                 el.classList.remove('hidden-element');
@@ -65,9 +66,9 @@ addEventListener("DOMContentLoaded", (event) => {
     doc.querySelectorAll('.burger').forEach(function (element, index) {
         element.addEventListener('click', function (e) {
             e.preventDefault();
-            const href = element.getAttribute('href');
-            const el = doc.querySelector(href);
-            const body = doc.querySelector('body');
+            var href = element.getAttribute('href');
+            var el = doc.querySelector(href);
+            var body = doc.querySelector('body');
             if (el) {
                 el.removeAttribute('style');
                 el.classList.add('show');
@@ -80,9 +81,9 @@ addEventListener("DOMContentLoaded", (event) => {
         element.addEventListener('click', function (e) {
             e.preventDefault();
             if (element.classList.contains('active')) return;
-            const id = element.getAttribute('data-element-id');
-            const jsonUrl = element.getAttribute('href');
-            const el = doc.querySelector('#' + id);
+            var id = element.getAttribute('data-element-id');
+            var jsonUrl = element.getAttribute('href');
+            var el = doc.querySelector('#' + id);
             removeClass('.change-chart-data[data-element-id="' + id + '"]', 'active');
             element.classList.add('active');
             if (el && jsonUrl !== undefined) {
@@ -94,13 +95,101 @@ addEventListener("DOMContentLoaded", (event) => {
             }
         });
     });
+    doc.querySelectorAll('.open-modal').forEach(function (element, index) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            var href = element.getAttribute('href');
+            var el = doc.querySelector(href);
+            var rect = element.getBoundingClientRect();
+            openModal(el);
+
+        });
+    });
+    doc.querySelectorAll('.modal-close').forEach(function (element, index) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            var href = element.getAttribute('href');
+            if (href !== undefined) {
+                var el = doc.querySelector(href);
+                closeModal({
+                    element: el
+                });
+            }
+        });
+    });
+    doc.querySelectorAll('.accordion__title').forEach(function (element, index) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            var closest = element.closest('.accordion-item');
+            var accordion = element.closest('.accordion');
+            var content = closest.querySelector('.accordion__text');
+
+            if (closest.classList.contains('showed')) {
+                closest.classList.remove('showed');
+                slideUp(content, 400);
+            } else {
+                accordion.querySelectorAll('.accordion-item').forEach(function (el, index) {
+                    el.classList.remove('showed');
+                    slideUp(el.querySelector('.accordion__text'), 100);
+                });
+                setTimeout(function (){
+
+                    closest.classList.add('showed');
+                    slideDown(content, 500);
+                },101)
+            }
+        });
+    });
+    doc.querySelectorAll('.score__control .switcher input[type="checkbox"]').forEach(function (element, index) {
+        element.addEventListener('change', function (e) {
+            e.preventDefault();
+            var score = element.closest('.score');
+            if (element.checked) {
+                score.classList.remove('disable');
+            } else {
+                score.classList.add('disable');
+            }
+        });
+    });
 });
+
+function escKeyPressEvent() {
+    document.onkeydown = function (evt) {
+        evt = evt || window.event;
+        var isEscape = false;
+        if ("key" in evt) {
+            isEscape = (evt.key === "Escape" || evt.key === "Esc");
+        } else {
+            isEscape = (evt.keyCode === 27);
+        }
+        if (isEscape) {
+            closeModal();
+        }
+    };
+}
+
+function closeModal(args = {}) {
+    var element = args.element || null;
+    doc.querySelector('body').classList.remove('open-modal');
+    if (element !== null) {
+        element.classList.remove('open');
+    } else {
+        doc.querySelectorAll('.modal-window.open').forEach(function (element, index) {
+            element.classList.remove('open');
+        });
+    }
+}
+
+function openModal(el) {
+    el.classList.add('open');
+    doc.querySelector('body').classList.add('open-modal');
+}
 
 window.addEventListener('resize', () => {
     detectPreviousZoom();
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
-        const currentWidth = window.innerWidth;
+        var currentWidth = window.innerWidth;
         if (lastWidth !== currentWidth) {
             lastWidth = currentWidth;
             doc.querySelectorAll('.chart-js').forEach(function (element, index) {
@@ -117,9 +206,9 @@ window.addEventListener('resize', () => {
 });
 
 function isDesktop() {
-    const userAgent = navigator.userAgent.toLowerCase();
-    const isMobile = /mobile|android|iphone|ipad|tablet|touch/.test(userAgent);
-    const hasPointer = window.matchMedia('(pointer: fine)').matches;
+    var userAgent = navigator.userAgent.toLowerCase();
+    var isMobile = /mobile|android|iphone|ipad|tablet|touch/.test(userAgent);
+    var hasPointer = window.matchMedia('(pointer: fine)').matches;
 
     return !isMobile && hasPointer && window.screen.width >= 1024;
 }
@@ -191,7 +280,7 @@ function setParametersAndRenderChart(args) {
     var categories = json.categories;
     var series = json.series;
     if (categories && series) {
-        const chart = new ApexCharts(element, {
+        var chart = new ApexCharts(element, {
             chart: {
                 type: 'line',
                 toolbar: false,
@@ -247,7 +336,7 @@ function chartDestroy(chart) {
 }
 
 function chartReinit(element) {
-    const id = element.getAttribute('id');
+    var id = element.getAttribute('id');
     chartDestroy(charts[id]);
     element.classList.remove('chart-init');
     chartItemInit(element);
@@ -260,8 +349,8 @@ function hideElementsSidebar(args) {
     }
     doc.querySelectorAll('.sub-menu').forEach(function (element, index) {
         if (exclude !== index) {
-            const a = element.firstElementChild;
-            const list = element.querySelector('.sub-list');
+            var a = element.firstElementChild;
+            var list = element.querySelector('.sub-list');
             element.classList.remove("open");
             a.classList.remove("active");
             slideUp(list, 200);
@@ -337,7 +426,7 @@ function slideDown(element, duration = 400) {
     let height = element.offsetHeight;
     element.style.overflow = 'hidden';
     element.style.height = 0;
-    element.style.transition = `height ${duration}ms ease`;
+    element.style.transition = `${duration}ms ease`;
 
     setTimeout(() => {
         element.style.height = height + 'px';
@@ -378,7 +467,7 @@ function slideRight(element, duration = 400) {
 function slideUp(element, duration = 400) {
     element.style.height = element.offsetHeight + 'px';
     element.style.overflow = 'hidden';
-    element.style.transition = `height ${duration}ms ease`;
+    element.style.transition = `${duration}ms ease`;
 
     setTimeout(() => {
         element.style.height = 0;

@@ -1,0 +1,22 @@
+.wrap {
+  padding: 2.5rem;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(30, 30, 30, 0.08);
+  background: #FFF;
+  margin-bottom: 2rem;
+  @media (max-width: 560px) {
+    padding: 1.6rem;
+    margin-left: 1.6rem;
+    margin-right: 1.6rem;
+  }
+
+  &-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 1.6rem;
+    margin-bottom: 1.6rem;
+    border-bottom: 1px solid rgba(30, 30, 30, 0.10);
+  }
+}
