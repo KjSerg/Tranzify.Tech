@@ -73,6 +73,9 @@
         padding: 2rem 1.6rem 0 1.6rem;
       }
     }
+    &--full-height{
+      flex: 1;
+    }
     @media (max-width: 1200px){
       padding: 1.4rem;
       gap: 1.5rem;

@@ -9,6 +9,7 @@ addEventListener("DOMContentLoaded", (event) => {
     toggleInputPassword();
     detectFirstLoadZoom();
     escKeyPressEvent();
+    emojiInit();
     doc.querySelectorAll('.sub-menu').forEach(function (element, index) {
         var a = element.firstElementChild;
         var list = element.querySelector('.sub-list');
@@ -132,12 +133,37 @@ addEventListener("DOMContentLoaded", (event) => {
                     el.classList.remove('showed');
                     slideUp(el.querySelector('.accordion__text'), 100);
                 });
-                setTimeout(function (){
+                setTimeout(function () {
 
                     closest.classList.add('showed');
                     slideDown(content, 500);
-                },101)
+                }, 101)
             }
+        });
+    });
+    doc.querySelectorAll('.correspondence-item__link').forEach(function (element, index) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            var href = element.getAttribute('href');
+            var el = doc.querySelector(href);
+            if (el !== null) {
+                doc.querySelectorAll('.correspondence-item').forEach(function (item) {
+                    item.classList.remove('active');
+                });
+                doc.querySelectorAll('.correspondence-chat-inner').forEach(function (chat) {
+                    chat.style.display = 'none';
+                });
+                el.style.display = 'block';
+                element.closest('.correspondence-item').classList.add('active');
+                doc.querySelector('.correspondence-content').classList.add('active');
+                el.scrollTop = el.scrollHeight;
+            }
+        });
+    });
+    doc.querySelectorAll('.correspondence-content__close').forEach(function (element, index) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            doc.querySelector('.correspondence-content').classList.remove('active');
         });
     });
     doc.querySelectorAll('.score__control .switcher input[type="checkbox"]').forEach(function (element, index) {
@@ -151,7 +177,56 @@ addEventListener("DOMContentLoaded", (event) => {
             }
         });
     });
+    doc.querySelectorAll('input[type="file"]').forEach(function (element, index) {
+        element.addEventListener('change', function (event) {
+            const fileInput = event.target;
+            const preview = document.querySelector(".file-preview");
+            const defaultSrc = preview.dataset.src;
+            const file = fileInput.files[0];
+            if (file) {
+                const fileReader = new FileReader();
+                if (file.type.startsWith("image/")) {
+                    fileReader.onload = function () {
+                        preview.src = fileReader.result;
+                    };
+                    fileReader.readAsDataURL(file);
+                } else if (file.type === "application/pdf") {
+                    preview.src = attachFile;
+                } else {
+                    preview.src = defaultSrc;
+                }
+            } else {
+                preview.src = defaultSrc;
+            }
+        });
+    });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const chatElement = document.querySelector('.correspondence-chat-inner');
+    if(chatElement === null) return;
+    chatElement.scrollTop = chatElement.scrollHeight;
+});
+
+function emojiInit() {
+    var script = doc.getElementById("emoji-button-script");
+    if (script === null) return;
+    const triggerButton = document.querySelector('#emoji-trigger');
+    const inputField = document.querySelector('#message-input');
+    const pickerContainer = document.querySelector('#emoji-picker');
+    if(pickerContainer === null) return;
+    const picker = new EmojiMart.Picker({
+        onEmojiSelect: emoji => {
+            inputField.value += emoji.native;
+            pickerContainer.style.display = 'none';
+        },
+        theme: 'light'
+    });
+    pickerContainer.appendChild(picker);
+    triggerButton.addEventListener('click', () => {
+        pickerContainer.style.display = pickerContainer.style.display === 'none' ? 'block' : 'none';
+    });
+}
 
 function escKeyPressEvent() {
     document.onkeydown = function (evt) {

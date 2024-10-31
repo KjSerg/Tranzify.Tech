@@ -178,6 +178,14 @@ input.error, textarea.error {
       }
 
     }
+    &.third {
+      width: calc(33.3% - 2rem);
+
+      @media (max-width: 560px) {
+        width: 100%;
+      }
+
+    }
   }
 
   &-lost-link {
