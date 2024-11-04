@@ -1,0 +1,49 @@
+.merchant-settings{
+  &-head{
+
+    display: inline-flex;
+    background: #fff;
+    border-radius: 0.6rem;
+
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+    @media (max-width: 560px) {
+      width: 100%;
+      overflow: auto;
+      margin-left: 1.6rem;
+      margin-right: 1.6rem!important;
+    }
+    &__item {
+      min-width: 17.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+      color: #1E1E1E;
+      text-align: center;
+      font-size: 1.4rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.8rem;
+      border-radius: 0.6rem;
+      background: #fff;
+
+      &:hover {
+        background: #1E1E1E;
+        color: #fff;
+      }
+
+      &.active {
+        background: #1E1E1E;
+        color: #fff;
+        font-weight: 500;
+      }
+
+      @media (max-width: 425px) {
+        min-width: 15rem;
+      }
+    }
+  }
+}

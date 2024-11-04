@@ -30,13 +30,13 @@
                 <form class="sidebar-form">
                     <select title="" class="dark" name="type">
                         <option>Гаманець</option>
-                        <option>еквайринг</option>
+                        <option selected>еквайринг</option>
                     </select>
                 </form>
                 <nav class="sidebar-nav">
                     <ul>
                         <li>
-                            <a href="./main-acquiring.html" >
+                            <a href="./main-acquiring.html">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     viewBox="0 0 20 20" fill="none">
   <path d="M17.1672 7.15357V2.94099H13.6835V4.47357L9.99996 1.63989L0 9.33275L2.09508 12.0561L3.1209 11.267V18.3601H9.03961V13.163H11.1939V18.3601H16.8792V11.267L17.905 12.0561L20 9.33278L17.1672 7.15357ZM15.7059 17.1868H12.3671V11.9897H7.86633V17.1868H4.2941V10.3644L10 5.97517L15.7059 10.3644L15.7059 17.1868ZM17.6904 10.4108L10 4.49466L2.30957 10.4108L1.64527 9.54732L10 3.12013L14.8568 6.85638V4.11423H15.994V7.73126L18.3547 9.54732L17.6904 10.4108Z"
@@ -71,7 +71,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="./payments.html" >
+                            <a href="./payments.html" class="">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     viewBox="0 0 20 20" fill="none">
   <g clip-path="url(#clip0_894_31660)">
@@ -93,7 +93,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="./reports.html" class="active">
+                            <a href="./reports.html">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     viewBox="0 0 20 20" fill="none">
   <path d="M15.2734 5.85938H11.7578V8.28125H9.41406V9.45312H7.07031V12.9688H15.2734V5.85938ZM8.24219 11.7969V10.625H9.41406V11.7969H8.24219ZM10.5859 11.7969V9.45312H11.7578V11.7969H10.5859ZM14.1016 11.7969H12.9297V7.03125H14.1016V11.7969Z"
@@ -110,7 +110,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="./payments-in-processing.html" class="">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     viewBox="0 0 20 20" fill="none">
   <path d="M2.46289 15.028H5.67957V16.1997H2.46289V15.028Z" fill="#A7A9AC"/>
@@ -127,7 +127,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="./tools.html" class="">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     viewBox="0 0 20 20" fill="none">
   <g clip-path="url(#clip0_894_31691)">
@@ -144,8 +144,8 @@
                             </a>
                         </li>
 
-                        <li class="sub-menu ">
-                            <a href="#" class="">
+                        <li class="sub-menu open">
+                            <a href="#" class="active">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     viewBox="0 0 20 20" fill="none">
   <g clip-path="url(#clip0_894_31695)">
@@ -167,12 +167,12 @@
         fill="#A7A9AC"/>
 </svg></span>
                             </a>
-                            <ul class="sub-list">
+                            <ul class="sub-list" style="display:block;">
                                 <li>
-                                    <a href="./settings.html">Загально</a>
+                                    <a href="./merchants.html" class="">Всі мерчанти</a>
                                 </li>
                                 <li>
-                                    <a href="./kys.html" class="">KYC</a>
+                                    <a href="./kys.html" class="active">Налаштування мерчантів</a>
                                 </li>
                             </ul>
                         </li>
@@ -240,7 +240,8 @@
                     <span></span>
                 </a>
                 <div class="main-header__title hidden-on-mobile">
-                    Звіти
+                    Налаштування мерчантів
+
                 </div>
                 <div class="main-header-menu">
                     <a href="#" class="chat-link main-header-menu__link">
@@ -277,292 +278,27 @@
             <div class="main-row">
                 <div class="main-row-container">
                     <div class="hidden-on-desktop main-title">
-                        Звіти
+                        Налаштування мерчантів
                     </div>
-                    <div class="history">
-                        <div class="history-head">
-                            <div class="history__title title-head">
-                                Таблиці зі звітами
-                            </div>
-                            <form class="history-form" method="get">
-                                <label>
-                                    <select>
-                                        <option value="">
-                                            Тип звіту
-                                        </option>
-                                        <option value="">
-                                            Тип звіту
-                                        </option>
-                                    </select>
-                                </label>
-                            </form>
-                        </div>
-                        <div class="custom-table-wrapper">
-                            <div class="custom-table last-colum-small">
-                                <form method="get" class="custom-table-head custom-table-row">
-                                    <div class="custom-table-column">
-                                        <div class="custom-table-head__title">
-                                            Дата генерації
-                                        </div>
-                                        <label class="custom-table-head__label">
-                                            <input type="date">
-                                        </label>
-                                    </div>
-                                    <div class="custom-table-column">
-                                        <div class="custom-table-head__title">
-                                            Тип звіту
-                                        </div>
-                                        <label class="custom-table-head__label">
-                                            <select title="" class="custom-table-head__select">
-                                                <option disabled selected>USD</option>
-                                                <option>USDT</option>
-                                            </select>
-                                        </label>
-                                    </div>
-                                    <div class="custom-table-column">
-                                        <div class="custom-table-head__title">
-                                            Період звіту
-                                        </div>
-                                        <label class="custom-table-head__label">
-                                            <select title="" class="custom-table-head__select">
-                                                <option disabled selected>Період</option>
-                                                <option>Серпень 2024</option>
-                                            </select>
-                                        </label>
-                                    </div>
-                                    <div class="custom-table-column">
-                                        <div class="custom-table-head__title">
-                                            Статус платежу
-                                        </div>
-                                        <label class="custom-table-head__label">
-                                            <select title="" class="custom-table-head__select">
-                                                <option disabled selected>Статус транзакції</option>
-                                                <option>Статус транзакції</option>
-                                            </select>
-                                        </label>
-                                    </div>
-                                    <div class="custom-table-column">
-                                        <div class="custom-table-head__title">
-                                            Тип транзакції
-                                        </div>
-                                        <label class="custom-table-head__label">
-                                            <select title="" class="custom-table-head__select">
-                                                <option disabled selected>Тип транзакції</option>
-                                                <option>Тип транзакції</option>
-                                            </select>
-                                        </label>
-                                    </div>
-                                    <div class="custom-table-column">
-                                        <div class="custom-table-head__title">
-                                            Завантажити
-                                        </div>
-                                    </div>
-                                </form>
-                                <div class="custom-table-body">
-                                    <div class="custom-table-row">
-                                        <div class="custom-table-column">
-                                            05.11.2023 11:16:11
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Автоматичні вивантаження
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Серпень 2024
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Статус вивантаження
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Успішно
-                                        </div>
-                                        <div class="custom-table-column">
-                                            <a href="#" class="custom-table__button">
-                                                Завантажити
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="custom-table-row">
-                                        <div class="custom-table-column">
-                                            05.11.2023 11:16:11
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Автоматичні вивантаження
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Серпень 2024
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Статус вивантаження
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Успішно
-                                        </div>
-                                        <div class="custom-table-column">
-                                            <a href="#" class="custom-table__button">
-                                                Завантажити
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="custom-table-row">
-                                        <div class="custom-table-column">
-                                            05.11.2023 11:16:11
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Автоматичні вивантаження
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Серпень 2024
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Статус вивантаження
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Успішно
-                                        </div>
-                                        <div class="custom-table-column">
-                                            <a href="#" class="custom-table__button">
-                                                Завантажити
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="custom-table-row">
-                                        <div class="custom-table-column">
-                                            05.11.2023 11:16:11
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Автоматичні вивантаження
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Серпень 2024
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Статус вивантаження
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Успішно
-                                        </div>
-                                        <div class="custom-table-column">
-                                            <a href="#" class="custom-table__button">
-                                                Завантажити
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="custom-table-row">
-                                        <div class="custom-table-column">
-                                            05.11.2023 11:16:11
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Автоматичні вивантаження
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Серпень 2024
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Статус вивантаження
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Успішно
-                                        </div>
-                                        <div class="custom-table-column">
-                                            <a href="#" class="custom-table__button">
-                                                Завантажити
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="custom-table-row">
-                                        <div class="custom-table-column">
-                                            05.11.2023 11:16:11
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Автоматичні вивантаження
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Серпень 2024
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Статус вивантаження
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Успішно
-                                        </div>
-                                        <div class="custom-table-column">
-                                            <a href="#" class="custom-table__button">
-                                                Завантажити
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="custom-table-row">
-                                        <div class="custom-table-column">
-                                            05.11.2023 11:16:11
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Автоматичні вивантаження
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Серпень 2024
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Статус вивантаження
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Успішно
-                                        </div>
-                                        <div class="custom-table-column">
-                                            <a href="#" class="custom-table__button">
-                                                Завантажити
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="custom-table-row">
-                                        <div class="custom-table-column">
-                                            05.11.2023 11:16:11
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Автоматичні вивантаження
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Серпень 2024
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Статус вивантаження
-                                        </div>
-                                        <div class="custom-table-column">
-                                            Успішно
-                                        </div>
-                                        <div class="custom-table-column">
-                                            <a href="#" class="custom-table__button">
-                                                Завантажити
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="history-controls">
-                            <div class="pagination">
-                                <a href="#" class="pagination__prev">
-                                    <img src="img/arrow-prev.svg" alt="">
-                                </a>
-                                <a href="#" class="current">1</a>
-                                <a href="#">2</a>
-                                <span>...</span>
-                                <a href="#">10</a>
-                                <a href="#" class="pagination__next">
-                                    <img src="img/arrow-next.svg" alt="">
-                                </a>
-                            </div>
-                            <form class="history-ger-page-form" method="get">
-                                <label for="per-page-select">Рядків на сторінці:</label>
-                                <select id="per-page-select">
-                                    <option value="10">10</option>
-                                    <option value="20">20</option>
-                                    <option value="50">50</option>
-                                </select>
-                            </form>
-                        </div>
-                    </div>
-                </div>
 
+                    <div class="merchant-settings">
+                        <div class="merchant-settings-head">
+                            <a href="#" class="merchant-settings-head__item active">
+                                Технічні налаштування
+                            </a>
+                            <a href="#" class="merchant-settings-head__item ">
+                                Доступи
+                            </a>
+                            <a href="#" class="merchant-settings-head__item ">
+                                Дизайн
+                            </a>
+                            <a href="#" class="merchant-settings-head__item ">
+                                Налаштування оплат
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
             <div class="main-footer">
                 <div class="copyright">
@@ -579,6 +315,10 @@
     var passwordHideIcon = 'img/mdi_hide-outline.svg';
     var passwordShowIcon = 'img/show.svg';
     var loaderIcon = 'img/loading.gif';
+    var attachFile = 'img/attach-file.svg';
+    var addAvatarIcon = 'img/add-avatar.svg';
+    var editAvatarIcon = 'img/edit-avatar.svg';
+    var copyText = 'Скопійовано!';
 </script>
 <style>
     .chart-js {
@@ -587,6 +327,9 @@
         }
     }
 </style>
+<div class="modal modal-message modal-window" id="message">
+    <div class="modal__title"></div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="js/app.js"></script>
 </body>

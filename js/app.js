@@ -184,14 +184,15 @@ addEventListener("DOMContentLoaded", (event) => {
             el.click();
         });
     });
-    doc.querySelectorAll('.score__control .switcher input[type="checkbox"]').forEach(function (element, index) {
+    doc.querySelectorAll('.score__control .switcher input[type="checkbox"], .tool .switcher input[type="checkbox"]').forEach(function (element, index) {
         element.addEventListener('change', function (e) {
             e.preventDefault();
-            var score = element.closest('.score');
+            var card = element.closest('.score');
+            if (card === null) card = element.closest('.tool');
             if (element.checked) {
-                score.classList.remove('disable');
+                card.classList.remove('disable');
             } else {
-                score.classList.add('disable');
+                card.classList.add('disable');
             }
         });
     });
@@ -257,6 +258,32 @@ addEventListener("DOMContentLoaded", (event) => {
                 el.classList.add(className);
                 element.classList.add('active');
             }
+        });
+    });
+    doc.querySelectorAll('.tab-link').forEach(function (element, index) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            var href = element.getAttribute('href');
+            var parentSelector = element.getAttribute('data-tab-parent');
+            var el = doc.querySelector(href);
+            var className = 'active';
+            if (element.classList.contains(className)) return;
+            if (parentSelector !== undefined) {
+                parent = doc.querySelector(parentSelector);
+                if (parent !== null) {
+                    el = parent.querySelector(href);
+                    parent.querySelectorAll('.tab-link').forEach(function (link, index) {
+                        link.classList.remove(className);
+                    });
+                    parent.querySelectorAll('.tab-content').forEach(function (box, index) {
+                        box.classList.remove(className);
+                    });
+                }
+
+            }
+            el.classList.add(className);
+            element.classList.add(className);
+
         });
     });
 });
@@ -415,13 +442,13 @@ function isDesktop() {
 function reinitMainCart() {
     var chart = doc.querySelector('.main-content .main-data-chart');
     var bigChart = doc.querySelector('.main-content .main-data-container-chart');
-    if(chart !== null){
+    if (chart !== null) {
         chart.classList.add('loading');
         setTimeout(function () {
             chartReinit(doc.querySelector('.main-content .main-data-chart'));
         }, 1000);
     }
-    if(bigChart !== null){
+    if (bigChart !== null) {
         bigChart.classList.add('loading');
         setTimeout(function () {
             chartReinit(bigChart);
