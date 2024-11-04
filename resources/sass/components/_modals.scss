@@ -11,6 +11,19 @@
   transition: transform 0.4s ease, opacity 0.5s ease-in-out;
   max-height: 98vh;
   overflow: auto;
+  &-message{
+    padding: 2rem;
+    top: 10%;
+    max-width: 47rem;
+    .modal__title{
+      text-align: center;
+      color: #1E1E1E;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 2.4rem; /* 120% */
+    }
+  }
   @media (max-width: 560px){
 
     width: calc(100% - 3.2rem);
@@ -60,5 +73,156 @@
 
   &-new-account {
     max-width: 47rem;
+  }
+}
+
+.authentication-settings{
+  padding: 2rem;
+  max-width: 51.8rem;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(30, 30, 30, 0.08);
+  color: #8A8E94;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.2rem;
+  @media (max-width: 560px){
+    padding: 1.5rem;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.8rem;
+  }
+  &-controls{
+    display: flex;
+    margin-top: 2rem;
+    gap: 0.8rem;
+    &>*{
+      margin-top: 0!important;
+      width: calc(50% - 0.4rem);
+    }
+  }
+  &__subtitle{
+    margin-bottom: 1.6rem;
+    color: #1E1E1E;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.4rem;
+    @media (max-width: 560px){
+      margin-bottom: 0.8rem;
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 2rem;
+    }
+  }
+  &__text{
+    a{
+      color: #5390F3;
+    }
+  }
+  &__qr{
+    margin: 4rem auto;
+    display: flex;
+    width: 28rem;
+    height: 28rem;
+    padding: 1.6rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    border: 1px solid rgba(30, 30, 30, 0.10);
+
+    @media (max-width: 560px){
+      width: 22rem;
+      height: 22rem;
+      margin: 2rem auto;
+    }
+  }
+  &__title{
+    margin-bottom: 2rem;
+    color: #1E1E1E;
+    font-size: 2.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 3.2rem;
+    @media (max-width: 560px){
+      margin-bottom: 1.6rem;
+      font-size: 2.2rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
+  &-head{
+    margin-bottom: 2rem;
+    color: #1E1E1E;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    @media (max-width: 560px){
+      margin-bottom: 1.6rem;
+    }
+    &-row{
+      display: flex;
+      margin-top: 3px;
+      gap: 0.5rem;
+      span{
+        display: block;
+        width: auto;
+        border-radius: 0.1rem;
+        background: #E2E2E2;
+        height: 0.4rem;
+        flex: 1 0 0;
+        &.active{
+          background: #29ED5B;
+        }
+      }
+    }
+  }
+  &-code{
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: rgba(241, 242, 245, 0.20);
+    @media (max-width: 425px){
+      padding: 1.2rem;
+    }
+    &__button{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+      border-radius: 0.8rem;
+      background: #5390F3;
+    }
+    &-controls{
+      display: flex;
+      gap: 0.8rem;
+    }
+    &__string{
+      margin-bottom: 2rem;
+      column-count: 2;
+      column-gap: 0.8rem;
+      color: #000;
+      font-size: 1.8rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      @media (max-width: 425px){
+        width: 16.6rem;
+        margin-bottom: 1.6rem;
+        column-count: 1;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.8rem;
+      }
+    }
+  }
+  .reset-password-form{
+    margin-top: 2rem;
   }
 }

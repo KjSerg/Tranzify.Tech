@@ -10,6 +10,8 @@ addEventListener("DOMContentLoaded", (event) => {
     detectFirstLoadZoom();
     escKeyPressEvent();
     emojiInit();
+    setBrowserName();
+    replaceGap();
     doc.querySelectorAll('.sub-menu').forEach(function (element, index) {
         var a = element.firstElementChild;
         var list = element.querySelector('.sub-list');
@@ -46,6 +48,8 @@ addEventListener("DOMContentLoaded", (event) => {
 
                     var body = doc.querySelector('body');
                     body.classList.remove('open-sidebar');
+
+                    doc.querySelector('.main-content').classList.add('full-width');
                 }
                 if (isSidebar && window.innerWidth > 1024) reinitMainCart();
             }
@@ -60,7 +64,10 @@ addEventListener("DOMContentLoaded", (event) => {
             if (el) {
                 el.classList.remove('hidden-element');
                 slideRight(el, 400);
-                if (isSidebar) reinitMainCart();
+                if (isSidebar) {
+                    reinitMainCart();
+                    doc.querySelector('.main-content').classList.remove('full-width');
+                }
             }
         });
     });
@@ -102,11 +109,13 @@ addEventListener("DOMContentLoaded", (event) => {
             var href = element.getAttribute('href');
             var el = doc.querySelector(href);
             var rect = element.getBoundingClientRect();
+            if (element.classList.contains('open-and-close-modal')) {
+                closeModal();
+            }
             openModal(el);
-
         });
     });
-    doc.querySelectorAll('.modal-close').forEach(function (element, index) {
+    doc.querySelectorAll('.modal-close, .trigger-close-modal').forEach(function (element, index) {
         element.addEventListener('click', function (e) {
             e.preventDefault();
             var href = element.getAttribute('href');
@@ -166,6 +175,15 @@ addEventListener("DOMContentLoaded", (event) => {
             doc.querySelector('.correspondence-content').classList.remove('active');
         });
     });
+    doc.querySelectorAll('.settings-personal-information-avatar-text').forEach(function (element, index) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            var selector = element.getAttribute('href');
+            var el = doc.querySelector(selector);
+            if (el === null) return;
+            el.click();
+        });
+    });
     doc.querySelectorAll('.score__control .switcher input[type="checkbox"]').forEach(function (element, index) {
         element.addEventListener('change', function (e) {
             e.preventDefault();
@@ -181,13 +199,19 @@ addEventListener("DOMContentLoaded", (event) => {
         element.addEventListener('change', function (event) {
             const fileInput = event.target;
             const preview = document.querySelector(".file-preview");
+            const icon = document.querySelector(".avatar-icon");
+            const text = document.querySelector(".settings-personal-information-avatar-text");
             const defaultSrc = preview.dataset.src;
             const file = fileInput.files[0];
+            if (icon !== null) icon.src = addAvatarIcon;
+            if (text !== null) text.innerHTML = text.getAttribute('data-add-text');
             if (file) {
+                if (text !== null) text.innerHTML = text.getAttribute('data-change-text');
                 const fileReader = new FileReader();
                 if (file.type.startsWith("image/")) {
                     fileReader.onload = function () {
                         preview.src = fileReader.result;
+                        if (icon !== null) icon.src = editAvatarIcon;
                     };
                     fileReader.readAsDataURL(file);
                 } else if (file.type === "application/pdf") {
@@ -197,6 +221,41 @@ addEventListener("DOMContentLoaded", (event) => {
                 }
             } else {
                 preview.src = defaultSrc;
+
+            }
+        });
+    });
+    doc.querySelectorAll('.copy-link').forEach(function (element, index) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            var href = element.getAttribute('href');
+            var copy = element.getAttribute('data-copy');
+            if (copy === undefined || copy === null) {
+                copy = href;
+            }
+            console.log(copy)
+            const tempTextArea = document.createElement("textarea");
+            tempTextArea.value = copy;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempTextArea);
+            showMessage(copyText);
+        });
+    });
+    doc.querySelectorAll('.toggle-class-element').forEach(function (element, index) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            var href = element.getAttribute('href');
+            var className = element.getAttribute('data-class-name') || 'active';
+            var el = doc.querySelector(href);
+            if (el.classList.contains(className)) {
+                el.classList.remove(className);
+                element.classList.remove('active');
+            } else {
+
+                el.classList.add(className);
+                element.classList.add('active');
             }
         });
     });
@@ -204,9 +263,73 @@ addEventListener("DOMContentLoaded", (event) => {
 
 document.addEventListener("DOMContentLoaded", function () {
     const chatElement = document.querySelector('.correspondence-chat-inner');
-    if(chatElement === null) return;
+    if (chatElement === null) return;
     chatElement.scrollTop = chatElement.scrollHeight;
 });
+
+var elementsWithGap = Array.from(document.querySelectorAll("*")).filter(element => {
+    const style = window.getComputedStyle(element);
+    return style.gap !== "normal" && style.gap !== "";
+});
+
+function replaceGap() {
+    var browser = detectBrowser();
+    if (browser === 'safari' && !supportsFlexGap()) {
+        document.querySelectorAll("*").forEach(function (element) {
+            var style = window.getComputedStyle(element);
+            var gap = style.gap;
+            if (gap !== "normal" && gap !== "") {
+                element.classList.add('safari-gap');
+            }
+        });
+    }
+}
+
+function supportsFlexGap() {
+    const testElement = document.createElement('div');
+    testElement.style.display = 'flex';
+    testElement.style.gap = '10px';
+    document.body.appendChild(testElement);
+    const supportsGap = window.getComputedStyle(testElement).gap === '10px';
+    document.body.removeChild(testElement);
+    return supportsGap;
+}
+
+function detectBrowser() {
+    const userAgent = navigator.userAgent;
+    let browserName = "Unknown";
+
+    if (userAgent.indexOf("Chrome") > -1) {
+        browserName = "chrome";
+    } else if (userAgent.indexOf("Firefox") > -1) {
+        browserName = "firefox";
+    } else if (userAgent.indexOf("Safari") > -1) {
+        browserName = "safari";
+    } else if (userAgent.indexOf("MSIE") > -1 || userAgent.indexOf("Trident") > -1) {
+        browserName = "internet-explorer";
+    } else if (userAgent.indexOf("Edge") > -1) {
+        browserName = "edge";
+    }
+
+    return browserName;
+}
+
+function setBrowserName() {
+    var browser = detectBrowser();
+    doc.querySelector('body').classList.add(browser);
+}
+
+
+function showMessage(text) {
+    var el = doc.getElementById('message');
+    el.querySelector('.modal__title').innerHTML = text;
+    openModal(el);
+    setTimeout(function () {
+        closeModal({
+            element: el
+        });
+    }, 1000);
+}
 
 function emojiInit() {
     var script = doc.getElementById("emoji-button-script");
@@ -214,7 +337,7 @@ function emojiInit() {
     const triggerButton = document.querySelector('#emoji-trigger');
     const inputField = document.querySelector('#message-input');
     const pickerContainer = document.querySelector('#emoji-picker');
-    if(pickerContainer === null) return;
+    if (pickerContainer === null) return;
     const picker = new EmojiMart.Picker({
         onEmojiSelect: emoji => {
             inputField.value += emoji.native;
@@ -245,7 +368,6 @@ function escKeyPressEvent() {
 
 function closeModal(args = {}) {
     var element = args.element || null;
-    doc.querySelector('body').classList.remove('open-modal');
     if (element !== null) {
         element.classList.remove('open');
     } else {
@@ -253,6 +375,8 @@ function closeModal(args = {}) {
             element.classList.remove('open');
         });
     }
+    var modalsCount = doc.querySelectorAll('.modal-window.open').length;
+    if (modalsCount === 0) doc.querySelector('body').classList.remove('open-modal');
 }
 
 function openModal(el) {
@@ -290,11 +414,20 @@ function isDesktop() {
 
 function reinitMainCart() {
     var chart = doc.querySelector('.main-content .main-data-chart');
-    doc.querySelector('.main-content').classList.add('full-width');
-    chart.classList.add('loading');
-    setTimeout(function () {
-        chartReinit(doc.querySelector('.main-content .main-data-chart'));
-    }, 1000);
+    var bigChart = doc.querySelector('.main-content .main-data-container-chart');
+    if(chart !== null){
+        chart.classList.add('loading');
+        setTimeout(function () {
+            chartReinit(doc.querySelector('.main-content .main-data-chart'));
+        }, 1000);
+    }
+    if(bigChart !== null){
+        bigChart.classList.add('loading');
+        setTimeout(function () {
+            chartReinit(bigChart);
+        }, 1000);
+    }
+
 }
 
 function removeClass(querySelector, className) {
@@ -321,7 +454,6 @@ function chartItemInit(element) {
     var id = element.getAttribute('id');
     var theme = element.getAttribute('data-theme') || 'default';
     var jsonUrl = element.getAttribute('data-json-url');
-
     if (!element.classList.contains('chart-init') && jsonUrl !== undefined) {
         caches.open(id).then(cache => {
             cache.match(jsonUrl).then(cachedResponse => {
@@ -348,17 +480,27 @@ function setParametersAndRenderChart(args) {
     var element = args.element;
     var id = element.getAttribute('id');
     var theme = args.theme || (element.getAttribute('data-theme') || 'default');
+    var type = element.getAttribute('data-type') || 'line';
+    var customLegendItems = element.getAttribute('data-custom-legend-items') || false;
     var strokeWidth = 3;
     if (element.classList.contains('small-chart')) {
-        strokeWidth = 25;
+        strokeWidth = 10;
     }
     var categories = json.categories;
     var series = json.series;
     if (categories && series) {
+        var legend = {
+            show: !!customLegendItems,
+            showForSingleSeries: true,
+            customLegendItems: customLegendItems ? customLegendItems.split(',') : [],
+            position: 'bottom',
+        };
         var chart = new ApexCharts(element, {
             chart: {
-                type: 'line',
-                toolbar: false,
+                type: type,
+                toolbar: {
+                    show: false
+                },
                 height: element.offsetHeight,
                 width: element.offsetWidth,
                 background: theme === 'transparent' ? "transparent" : ''
@@ -395,7 +537,8 @@ function setParametersAndRenderChart(args) {
             },
             tooltip: {
                 enabled: theme !== 'transparent'
-            }
+            },
+            legend: legend,
         });
         chart.render();
         charts[id] = chart;

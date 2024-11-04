@@ -140,7 +140,7 @@ input.error, textarea.error {
   }
 
 
-  a {
+  a:not(.button) {
     display: block;
     color: #0CAE35;
     font-family: "Roboto", sans-serif;

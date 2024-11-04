@@ -171,10 +171,10 @@
                             </a>
                             <ul class="sub-list" style="display:block;">
                                 <li>
-                                    <a href="./settings.html" class="active">Загально</a>
+                                    <a href="./settings.html" >Загально</a>
                                 </li>
                                 <li>
-                                    <a href="./kys.html">KYC</a>
+                                    <a href="./kys.html" class="active">KYC</a>
                                 </li>
                             </ul>
                         </li>
@@ -209,7 +209,7 @@
                     <span></span>
                 </a>
                 <div class="main-header__title hidden-on-mobile">
-                    Налаштування
+                    Know Your Customer
                 </div>
                 <div class="main-header-menu">
                     <a href="#" class="chat-link main-header-menu__link">
@@ -246,130 +246,84 @@
             <div class="main-row main-row--full-height">
                 <div class="main-row-container">
                     <div class="hidden-on-desktop main-title">
-                        Налаштування
+                        Know Your Customer
                     </div>
-                    <div class="settings">
-                        <div class="settings-row settings-row--wrap settings-personal-information-wrap">
-                            <div class="settings-personal-information wrap">
-                                <div class="wrap-head">
-                                    <div class="settings__title">
-                                        Особиста інформація
+                    <div class="checks">
+                        <div class="audit">
+                            <div class="audit__title">
+                                Базова перевірка
+                            </div>
+                            <ul class="audit-list">
+                                <li class="audit-list-item">
+                                    <div class="audit-list-item__icon">
+                                        <img src="img/fi-rs-address-book.svg" alt="">
                                     </div>
-                                </div>
-                                <form method="post" class="settings-personal-information-form form">
-                                    <label class="form-group third">
-                                        <span class="form-group__title">Введіть ім`я</span>
-                                        <input type="text" placeholder="Максим Коваленко" required>
-                                    </label>
-                                    <label class="form-group third">
-                                        <span class="form-group__title">Введіть email</span>
-                                        <input type="email" placeholder="Введіть email" required>
-                                    </label>
-                                    <label class="form-group third">
-                                        <span class="form-group__title">Ведіть номер телефону</span>
-                                        <input type="tel" placeholder="Ведіть номер телефону" required>
-                                    </label>
-                                </form>
-                            </div>
-                            <form method="post" class="settings-personal-information-avatar">
-                                <label class="settings-personal-information-avatar-wrap">
-                                    <input type="file" name="avatar" id="avatar-file" accept="image/*"
-                                           style="display:none;">
-                                    <span class="settings-personal-information-avatar-icon"><img class="avatar-icon"
-                                                                                                 src="img/add-avatar.svg"
-                                                                                                 alt=""></span>
-                                    <span class="settings-personal-information-avatar-preview"><img class="file-preview"
-                                                                                                    data-src="img/anonim.jpg"
-                                                                                                    src="img/anonim.jpg"
-                                                                                                    alt=""></span>
-                                </label>
-                                <a href="#avatar-file" class="settings-personal-information-avatar-text"
-                                   data-add-text="Додати фото профілю"
-                                   data-change-text="Змінити фото профілю"
-                                >Додати фото профілю</a>
-                            </form>
-                        </div>
-                        <div class="settings-row">
-                            <div class="wrap settings-notifications">
-                                <div class="wrap-head">
-                                    <div class="settings__title">
-                                        Сповіщення
+                                    Особиста інформація
+                                </li>
+                                <li class="audit-list-item">
+                                    <div class="audit-list-item__icon">
+                                        <img src="img/fi-rs-time-forward.svg" alt="">
                                     </div>
-                                </div>
-                                <form class="settings-notifications-form " method="post">
-                                    <label class="settings-notification">
-                                        <span class="switcher">
-                                            <input type="checkbox" name="sms" value="on">
-                                            <span></span>
-                                        </span>
-                                        <span class="settings-notification__title">SMS повідомлення</span>
-                                        <span class="settings-notification__text">Ви отримуватимете важливі повідомлення через SMS.</span>
-                                    </label>
-                                    <label class="settings-notification">
-                                        <span class="switcher">
-                                            <input type="checkbox" name="email" value="on">
-                                            <span></span>
-                                        </span>
-                                        <span class="settings-notification__title">Email повідомлення</span>
-                                        <span class="settings-notification__text">Ви отримуватимете важливі повідомлення через вашу особисту пошту.</span>
-                                    </label>
-                                </form>
-                            </div>
+                                    Час перевірки: 1 день
+                                </li>
+                            </ul>
+                            <a href="#" class="audit__button button audit__button--done">Пройдено</a>
                         </div>
-                        <div class="settings-row settings-cards">
-                            <div class="settings-card">
-                                <div class="settings-card__status" style="display:none;">
-                                    Ввімкнено
-                                </div>
-                                <div class="settings-card__image">
-                                    <img src="img/sc1.svg" alt="">
-                                </div>
-                                <div class="settings-card__title">
-                                    Налаштування двофакторної аутифікації
-                                </div>
-                                <div class="settings-card__text">
-                                    Додайте додатковий рівень безпеки до свого облікового запису за допомогою
-                                    двофакторної автентифікації
-                                </div>
-                                <a href="#authentication-settings"
-                                   class="settings-card__button button button--dark open-modal">
-                                    Налаштувати
-                                </a>
-                                <a href="#" class="settings-card__button button settings-card__button--turn-off"
-                                   style="display:none;">
-                                    Відключити
-                                </a>
+                        <div class="audit">
+                            <div class="audit__title">
+                                Проміжна перевірка
                             </div>
-                            <div class="settings-card">
-                                <div class="settings-card__image">
-                                    <img src="img/sc2.svg" alt="">
-                                </div>
-                                <div class="settings-card__title">
-                                    KYC верифікація
-                                </div>
-                                <div class="settings-card__text">
-                                    Пройдіть KYC верифікацію, щоб підтвердити свою особу та забезпечити безпеку ваших
-                                    даних і транзакцій
-                                </div>
-                                <a href="#" class="settings-card__button button button--dark">
-                                    Пройти верифікацію
-                                </a>
+                            <ul class="audit-list">
+                                <li class="audit-list-item">
+                                    <div class="audit-list-item__icon">
+                                        <img src="img/icon1.svg" alt="">
+                                    </div>
+                                    Усі базові вимоги
+                                </li>
+                                <li class="audit-list-item">
+                                    <div class="audit-list-item__icon">
+                                        <img src="img/fi-rs-id-badge.svg" alt="">
+                                    </div>ID верифікація
+                                </li>
+                                <li class="audit-list-item">
+                                    <div class="audit-list-item__icon">
+                                        <img src="img/icon2.svg" alt="">
+                                    </div>
+                                    Верифікація особистості
+                                </li>
+                                <li class="audit-list-item">
+                                    <div class="audit-list-item__icon">
+                                        <img src="img/fi-rs-time-forward.svg" alt="">
+                                    </div>
+                                    Час перевірки: 3 дні
+                                </li>
+                            </ul>
+                            <a href="#" class="audit__button button button--dark">Пройти зараз</a>
+                        </div>
+                        <div class="audit">
+                            <div class="audit__title">
+                                Просунута перевірка
                             </div>
-                            <div class="settings-card">
-                                <div class="settings-card__image">
-                                    <img src="img/sc3.svg" alt="">
-                                </div>
-                                <div class="settings-card__title">
-                                    Зміна паролю
-                                </div>
-                                <div class="settings-card__text">
-                                    Змініть пароль, щоб посилити безпеку вашого облікового запису та захистити особисті
-                                    дані.
-                                </div>
-                                <a href="#reset-password" class="open-modal settings-card__button button button--dark">
-                                    Змінити пароль
-                                </a>
-                            </div>
+                            <ul class="audit-list">
+                                <li class="audit-list-item">
+                                    <div class="audit-list-item__icon">
+                                        <img src="img/icon1.svg" alt="">
+                                    </div>
+                                    Усі вимоги
+                                </li>
+                                <li class="audit-list-item">
+                                    <div class="audit-list-item__icon">
+                                        <img src="img/pin.svg" alt="">
+                                    </div>Підтвердження адреси
+                                </li>
+                                <li class="audit-list-item">
+                                    <div class="audit-list-item__icon">
+                                        <img src="img/fi-rs-time-forward.svg" alt="">
+                                    </div>
+                                    Час перевірки: 4 дні
+                                </li>
+                            </ul>
+                            <a href="#" class="audit__button button button--dark not-active">Після проміжної</a>
                         </div>
                     </div>
                 </div>
@@ -517,7 +471,7 @@
         2. Перевірте код із програми
     </div>
     <form class="authentication-settings__form form">
-        <label for="" class="form-group">
+        <label class="form-group">
             <input type="text" name="code" placeholder="xxx xxx">
         </label>
     </form>
