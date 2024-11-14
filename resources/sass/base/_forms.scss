@@ -186,6 +186,16 @@ input.error, textarea.error {
       }
 
     }
+    &.quarter {
+      width: calc(25% - 2rem);
+      @media (max-width: 1024px) {
+        width: calc(50% - 1rem);
+      }
+      @media (max-width: 560px) {
+        width: 100%;
+      }
+
+    }
   }
 
   &-lost-link {

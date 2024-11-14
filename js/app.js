@@ -199,9 +199,10 @@ addEventListener("DOMContentLoaded", (event) => {
     doc.querySelectorAll('input[type="file"]').forEach(function (element, index) {
         element.addEventListener('change', function (event) {
             const fileInput = event.target;
-            const preview = document.querySelector(".file-preview");
-            const icon = document.querySelector(".avatar-icon");
-            const text = document.querySelector(".settings-personal-information-avatar-text");
+            const form = element.closest('form');
+            const preview = form.querySelector(".file-preview");
+            const icon = form.querySelector(".avatar-icon");
+            const text = form.querySelector(".settings-personal-information-avatar-text");
             const defaultSrc = preview.dataset.src;
             const file = fileInput.files[0];
             if (icon !== null) icon.src = addAvatarIcon;

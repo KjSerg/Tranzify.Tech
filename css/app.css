@@ -424,6 +424,15 @@ strong {
 .button--dark:hover .icon svg path {
   fill: #1E1E1E;
 }
+.button--red {
+  background: #D12929;
+  border: 1px solid #D12929;
+  color: #FFFFFF;
+}
+.button--red:hover {
+  background: #FFFFFF;
+  color: #D12929;
+}
 
 .slide-left-to-right {
   animation: 0.5s linear 0.1ms left-to-right;
@@ -521,7 +530,7 @@ strong {
 
 @media (min-width: 561px) {
   .hidden-on-desktop {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -1020,6 +1029,9 @@ table select:hover {
 table.last-colum-small th:last-child, table.last-colum-small td:last-child {
   width: 15rem;
 }
+table.last-colum-mini th:last-child, table.last-colum-mini td:last-child {
+  width: 9rem;
+}
 
 .table-merchants td {
   vertical-align: middle;
@@ -1073,6 +1085,77 @@ table.last-colum-small th:last-child, table.last-colum-small td:last-child {
   .table-merchants {
     width: 95rem;
   }
+}
+
+.box {
+  padding: 2.5rem;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(30, 30, 30, 0.08);
+  background-color: #fff;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.social-networks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 560px) {
+  .social-networks {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
+.social-networks > *:not(:last-child) {
+  margin-right: 0.8rem;
+}
+@media (max-width: 560px) {
+  .social-networks > *:not(:last-child) {
+    margin-right: 0.4rem;
+  }
+}
+
+.social-network {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 17.7rem;
+  padding: 1rem 2rem;
+  height: 4.4rem;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 0.6rem;
+  background: #1E1E1E;
+  color: #FFF;
+  text-align: center;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.8rem;
+}
+@media (max-width: 560px) {
+  .social-network {
+    width: calc(50% - 0.2rem);
+    min-width: auto;
+  }
+}
+@media (max-width: 450px) {
+  .social-network {
+    padding: 1rem;
+  }
+}
+.social-network__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.8rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .wpcf7-not-valid-tip, .wpcf7-response-output {
@@ -1263,6 +1346,19 @@ input.error, textarea.error {
 }
 @media (max-width: 560px) {
   .form > *.third {
+    width: 100%;
+  }
+}
+.form > *.quarter {
+  width: calc(25% - 2rem);
+}
+@media (max-width: 1024px) {
+  .form > *.quarter {
+    width: calc(50% - 1rem);
+  }
+}
+@media (max-width: 560px) {
+  .form > *.quarter {
     width: 100%;
   }
 }
@@ -4898,6 +4994,7 @@ select.black {
 }
 
 .merchant-settings-head {
+  margin-bottom: 2rem;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -4909,7 +5006,7 @@ select.black {
 }
 @media (max-width: 560px) {
   .merchant-settings-head {
-    width: 100%;
+    width: calc(100% - 3.2rem);
     overflow: auto;
     margin-left: 1.6rem;
     margin-right: 1.6rem !important;
@@ -4932,6 +5029,11 @@ select.black {
   border-radius: 0.6rem;
   background: #fff;
 }
+@media (max-width: 560px) {
+  .merchant-settings-head__item {
+    min-width: 19rem;
+  }
+}
 .merchant-settings-head__item:hover {
   background: #1E1E1E;
   color: #fff;
@@ -4941,9 +5043,112 @@ select.black {
   color: #fff;
   font-weight: 500;
 }
-@media (max-width: 425px) {
-  .merchant-settings-head__item {
-    min-width: 15rem;
+.merchant-settings-head-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.merchant-settings-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 768px) {
+  .merchant-settings-row {
+    flex-wrap: wrap;
+  }
+}
+.merchant-settings-row-column:nth-child(1) {
+  width: 75%;
+}
+@media (max-width: 768px) {
+  .merchant-settings-row-column:nth-child(1) {
+    width: 100%;
+  }
+}
+.merchant-settings-row > *:not(:last-child) {
+  margin-right: 1.6rem;
+}
+@media (max-width: 768px) {
+  .merchant-settings-row > *:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 1.2rem;
+  }
+}
+.merchant-settings .settings-personal-information-avatar {
+  height: auto;
+}
+.merchant-settings select {
+  color: #1E1E1E;
+}
+.merchant-settings-checkbox {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 0.6rem;
+  background: #E9F1FD;
+  color: #1E1E1E;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.merchant-settings-checkbox__icon {
+  margin-right: 0.8rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(30, 30, 30, 0.1);
+  background: #5390F3;
+}
+.merchant-settings-checkbox img {
+  transform: translateY(-1rem) rotate(45deg);
+  opacity: 0;
+  transition: 0.1s ease-in-out;
+}
+.merchant-settings-checkbox input {
+  display: none;
+}
+.merchant-settings-checkbox input:checked + .merchant-settings-checkbox__icon img {
+  transform: translateY(0) rotate(0);
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}
+@media (max-width: 560px) {
+  .merchant-settings-socials {
+    width: 100%;
+  }
+}
+.merchant-settings-socials__title {
+  margin-bottom: 0.8rem;
+  color: #1E1E1E;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+@media (max-width: 1200px) {
+  .merchant-settings-table {
+    width: 100%;
+  }
+}
+@media (max-width: 560px) {
+  .merchant-settings-table {
+    width: 50rem;
   }
 }
 
@@ -5446,6 +5651,16 @@ select.black {
 .modal-content {
   padding: 1.6rem 2rem 2rem 2rem;
 }
+.modal-content__text {
+  color: #8A8E94;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.2rem;
+}
+.modal-content__text:not(:last-child) {
+  margin-bottom: 2rem;
+}
 .modal-close {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5478,6 +5693,16 @@ select.black {
 }
 .modal-new-account {
   max-width: 47rem;
+}
+.modal .row {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.8rem;
+}
+.modal .row > * {
+  width: 100%;
 }
 
 .authentication-settings {
