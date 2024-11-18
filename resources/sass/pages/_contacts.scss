@@ -23,6 +23,7 @@
   }
   &-accordion{
     &__text{
+      color: #1E1E1E;
       & > *:not(:last-child){
         margin-bottom: 1.6rem;
       }

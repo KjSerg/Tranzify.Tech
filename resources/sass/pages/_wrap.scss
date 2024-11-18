@@ -18,5 +18,9 @@
     padding-bottom: 1.6rem;
     margin-bottom: 1.6rem;
     border-bottom: 1px solid rgba(30, 30, 30, 0.10);
+
+    @media (max-width: 374px) {
+      flex-direction: column;
+    }
   }
 }

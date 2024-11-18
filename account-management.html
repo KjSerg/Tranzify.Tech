@@ -13,6 +13,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
+    <style>
+        .chart-js:after {
+            background-image: url(img/loading.gif);
+        }
+    </style>
 </head>
 <body>
 <main class="content flex-column">
@@ -283,7 +288,7 @@
                                     </div>
                                 </div>
                                 <div class="score-controls">
-                                    <a href="#" class="button button--dark score__button">
+                                    <a href="#transaction-details-bts" class="button button--dark score__button open-modal">
                                         Детальніше
                                     </a>
                                     <a href="#" class="button button--blue score__button">
@@ -313,7 +318,7 @@
                                     </div>
                                 </div>
                                 <div class="score-controls">
-                                    <a href="#" class="button button--dark score__button">
+                                    <a href="#transaction-details-usdt" class="button button--dark score__button open-modal">
                                         Детальніше
                                     </a>
                                     <a href="#" class="button button--blue score__button">
@@ -343,7 +348,7 @@
                                     </div>
                                 </div>
                                 <div class="score-controls">
-                                    <a href="#" class="button button--dark score__button">
+                                    <a href="#transaction-details-bts" class="button button--dark score__button open-modal">
                                         Детальніше
                                     </a>
                                     <a href="#" class="button button--blue score__button">
@@ -373,7 +378,7 @@
                                     </div>
                                 </div>
                                 <div class="score-controls">
-                                    <a href="#" class="button button--dark score__button">
+                                    <a href="#transaction-details-bts" class="button button--dark score__button open-modal">
                                         Детальніше
                                     </a>
                                     <a href="#" class="button button--blue score__button">
@@ -403,7 +408,7 @@
                                     </div>
                                 </div>
                                 <div class="score-controls">
-                                    <a href="#" class="button button--dark score__button">
+                                    <a href="#transaction-details-bts" class="button button--dark score__button open-modal">
                                         Детальніше
                                     </a>
                                     <a href="#" class="button button--blue score__button">
@@ -460,18 +465,177 @@
         </form>
     </div>
 </div>
+<div class="modal modal-transaction-details modal-window" id="transaction-details-bts">
+    <div class="modal-head">
+        <div class="modal__title">
+            Деталі Crypto Saver BTC
+        </div>
+        <a href="#transaction-details-bts" class="modal-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <mask id="mask0_894_29406" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
+                      height="24">
+                    <rect width="24" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_894_29406)">
+                    <path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                          fill="#1E1E1E" fill-opacity="0.3"/>
+                </g>
+            </svg>
+        </a>
+    </div>
+    <div class="modal-content">
+        <div class="transaction-data">
+            <div class="transaction-data-qr">
+                <svg xmlns="http://www.w3.org/2000/svg" width="248" height="248" viewBox="0 0 248 248" fill="none">
+                    <path d="M82.2695 0H0V82.5048H82.2695V0ZM70.8392 71.0418H11.4303V11.463H70.8392V71.0418Z" fill="#1E1E1E"/>
+                    <path d="M58.985 23.3503H23.2832V59.1543H58.985V23.3503Z" fill="#1E1E1E"/>
+                    <path d="M165.73 -0.00012207V82.5047H248V-0.00012207H165.73ZM236.57 71.0417H177.161V11.4629H236.57V71.0417Z" fill="#1E1E1E"/>
+                    <path d="M224.716 23.3503H189.015V59.1543H224.716V23.3503Z" fill="#1E1E1E"/>
+                    <path d="M0 247.652H82.2695V165.147H0V247.652ZM11.4303 176.61H70.8392V236.189H11.4303V176.61Z" fill="#1E1E1E"/>
+                    <path d="M58.985 188.498H23.2832V224.301H58.985V188.498Z" fill="#1E1E1E"/>
+                    <path d="M23.2839 94.2621H0V106.111H23.2839V94.2621Z" fill="#1E1E1E"/>
+                    <path d="M70.6273 106.675H82.498V118.022H58.9854V119.643V129.873V141.686V153.535V153.541H70.6273V153.535H94.4755V141.686H70.6273V129.873H94.4755V141.68H106.117V129.873V119.643V118.022H94.1399V94.7859H82.498V94.826H70.6273V106.675Z" fill="#1E1E1E"/>
+                    <path d="M140.761 129.871V141.722H129.119V153.535H117.477V165.392H106.118V177.167H94.4756V153.541L106.118 153.535V141.686H117.759V129.871H140.761Z" fill="#1E1E1E"/>
+                    <path d="M164.798 188.498V177.167V176.647V165.318H153.156V176.647H117.759V188.498H129.26V201.051H117.759V188.498H106.117V200.808H94.1836V212.659H106.117V224.302H94.1836V247.652H106.117H117.185H117.759V224.302H129.26V212.433H140.902V188.498H164.798Z" fill="#1E1E1E"/>
+                    <path d="M152.543 224.301V236.151H188.01V248H223.802V236.151H199.582V224.301V212.433H187.94V224.301H152.543Z" fill="#1E1E1E"/>
+                    <path d="M152.544 236.151H129.401V248H152.544V236.151Z" fill="#1E1E1E"/>
+                    <path d="M165.027 118.021H140.762V129.871H165.027V118.021Z" fill="#1E1E1E"/>
+                    <path d="M234.57 129.881V141.575H246.162V153.445H234.521V141.575H222.879V153.445H211.237V141.575H199.677V118.03L222.749 118.009V106.488H210.819V94.6389H234.393V106.488H234.391V118.03H246.517V129.881H234.57Z" fill="#1E1E1E"/>
+                    <path d="M129.118 153.541V165.39H140.76V153.571H152.402V141.722H140.76V153.541H129.118Z" fill="#1E1E1E"/>
+                    <path d="M152.544 212.433H140.902V224.301H152.544V212.433Z" fill="#1E1E1E"/>
+                    <path d="M222.877 212.418H211.235V224.286H222.877V212.418Z" fill="#1E1E1E"/>
+                    <path d="M176.46 141.722H164.818V153.571H176.46V141.722Z" fill="#1E1E1E"/>
+                    <path d="M165.027 118.022H176.669V106.503H200.172V94.6522H165.027V106.503V118.022Z" fill="#1E1E1E"/>
+                    <path d="M11.6419 117.972H0V153.541H11.6419V117.972Z" fill="#1E1E1E"/>
+                    <path d="M105.726 94.8262H106.119V118.022H117.761V105.817H129.403V94.8262H146.723V94.7861H153.221V47.2974H141.579V59.6074H129.403V71.2826H141.579V83.151H129.403V71.2826H117.761V83.151H105.784V47.4886H117.425V-0.00012207H105.784V11.8721H94.1416V35.6164H105.784V47.2974H94.1416V94.7861H105.726V94.8262Z" fill="#1E1E1E"/>
+                    <path d="M234.521 177.033V189.423H222.879V177.033H211.231V153.445H199.669V141.575H188.027V153.571H176.46V188.496H164.797V200.347H175.362V212.433H187.94V200.347H199.582V188.467L199.589 188.482H211.231V188.433L211.237 188.482V200.333H222.879V212.42H234.521V236.023H246.163V177.035H234.521V177.033ZM199.583 176.631H188.104V165.239H199.591L199.583 176.631Z" fill="#1E1E1E"/>
+                    <path d="M234.52 153.445H222.878V177.033H234.52V153.445Z" fill="#1E1E1E"/>
+                    <path d="M211.238 200.333H199.591V212.42H211.238V200.333Z" fill="#1E1E1E"/>
+                    <path d="M153.128 11.6751V-0.00012207H141.577H132.683H129.401V23.9469H141.577V11.6751H153.128Z" fill="#1E1E1E"/>
+                    <path d="M141.577 35.6221H129.401V47.2973H141.577V35.6221Z" fill="#1E1E1E"/>
+                    <path d="M153.753 23.9469H141.577V35.6221H153.753V23.9469Z" fill="#1E1E1E"/>
+                    <path d="M46.5697 141.68H34.9277V153.541H46.5697V141.68Z" fill="#1E1E1E"/>
+                    <path d="M46.5671 130.395V94.826H34.9251V106.111H23.2832V141.68H34.9251V130.395H46.5671Z" fill="#1E1E1E"/>
+                </svg>
+            </div>
+            <div class="transaction-data-list">
+                <div class="transaction-data-list-item">
+                    <div class="transaction-data-list-item-text">
+                        <div class="transaction-data-list-item__title">Адреса</div>
+                        <div class="transaction-data-list-item__value">0xBeD95ce08D3daCC3889edd0d3D1165c9F8A99F38</div>
+                    </div>
+                    <a href="#" data-copy="0xBeD95ce08D3daCC3889edd0d3D1165c9F8A99F38" class="transaction-data-list-item__button copy-link">
+                        <img src="img/copy.svg" alt="">
+                    </a>
+                </div>
+                <div class="transaction-data-list-item">
+                    <div class="transaction-data-list-item-text">
+                        <div class="transaction-data-list-item__title">Мережа</div>
+                        <div class="transaction-data-list-item__value">https://cwallet.comETH-ARETH-55620406-0</div>
+                    </div>
+                    <a href="#" data-copy="https://cwallet.comETH-ARETH-55620406-0" class="transaction-data-list-item__button copy-link">
+                        <img src="img/copy.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal modal-transaction-details modal-window" id="transaction-details-usdt">
+    <div class="modal-head">
+        <div class="modal__title">
+            Деталі USD Business Account
+        </div>
+        <a href="#transaction-details-usdt" class="modal-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <mask id="mask0_894_29406" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
+                      height="24">
+                    <rect width="24" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_894_29406)">
+                    <path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                          fill="#1E1E1E" fill-opacity="0.3"/>
+                </g>
+            </svg>
+        </a>
+    </div>
+    <div class="modal-content">
+        <div class="transaction-data">
+            <div class="transaction-data-list">
+                <div class="transaction-data-list-item">
+                    <div class="transaction-data-list-item-text">
+                        <div class="transaction-data-list-item__title">Отримувач</div>
+                        <div class="transaction-data-list-item__value">ТОВ "Програмні Рішення"</div>
+                    </div>
+                </div>
+                <div class="transaction-data-list-item">
+                    <div class="transaction-data-list-item-text">
+                        <div class="transaction-data-list-item__title">Номер рахунку / IBAN</div>
+                        <div class="transaction-data-list-item__value">UA123456789012345678901234567890</div>
+                    </div>
+                </div>
+                <div class="transaction-data-list-item">
+                    <div class="transaction-data-list-item-text">
+                        <div class="transaction-data-list-item__title">BIC / SWIFT code</div>
+                        <div class="transaction-data-list-item__value">PBANUA2X</div>
+                    </div>
+                </div>
+                <div class="transaction-data-list-item">
+                    <div class="transaction-data-list-item-text">
+                        <div class="transaction-data-list-item__title">Назва банку</div>
+                        <div class="transaction-data-list-item__value">ПриватБанк</div>
+                    </div>
+                </div>
+                <div class="transaction-data-list-item">
+                    <div class="transaction-data-list-item-text">
+                        <div class="transaction-data-list-item__title">BIC Корреспондента</div>
+                        <div class="transaction-data-list-item__value">PRIVUAUK</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal modal-account-added modal-window" id="account-added">
+    <a href="#account-added" class="modal-close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <mask id="mask0_894_29406" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
+                  height="24">
+                <rect width="24" height="24" fill="#D9D9D9"/>
+            </mask>
+            <g mask="url(#mask0_894_29406)">
+                <path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                      fill="#1E1E1E" fill-opacity="0.3"/>
+            </g>
+        </svg>
+    </a>
+    <div class="modal-account-added__image">
+        <img src="img/account-added.svg" alt="">
+    </div>
+    <div class="modal-account-added__title">
+        Рахунок успішно додано
+    </div>
+</div>
+
+<div class="modal modal-message modal-window" id="message">
+    <div class="modal__title"></div>
+</div>
 <script>
     var passwordHideIcon = 'img/mdi_hide-outline.svg';
     var passwordShowIcon = 'img/show.svg';
     var loaderIcon = 'img/loading.gif';
+    var attachFile = 'img/attach-file.svg';
+    var addAvatarIcon = 'img/upload.svg';
+    var editAvatarIcon = 'img/edit-avatar.svg';
+    var copyText = 'Скопійовано!';
 </script>
-<style>
-    .chart-js {
-        &:after {
-            background-image: url(img/loading.gif);
-        }
-    }
-</style>
+
+<script>
+    setTimeout(function (){
+        openModal(document.querySelector('#account-added'));
+    }, 3000);
+</script>
+
 <script src="js/app.js"></script>
 </body>
 </html>

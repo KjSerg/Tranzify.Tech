@@ -1,0 +1,139 @@
+.chat {
+  &-item {
+
+    width: 24rem;
+    margin-right: auto;
+    &:not(:last-child){
+      margin-bottom: 1.6rem;
+    }
+
+    &-content {
+      border-radius: 0.6rem;
+      border: 1px solid rgba(30, 30, 30, 0.10);
+      background: #F6F6F6;
+      padding: 1.2rem;
+      color: #1E1E1E;
+      font-size: 1.2rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.6rem;
+    }
+
+    &__name {
+      color: #1E1E1E;
+      font-size: 1.2rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.6rem;
+
+
+    }
+
+    &__time {
+      margin-right: 2rem;
+      color: #A7A9AC;
+      font-size: 1.2rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.6rem;
+    }
+
+    &-head {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+
+    &.sent {
+
+      margin-left: auto;
+      margin-right: 0;
+      .chat-item {
+
+        &__time {
+          margin-right: 0;
+          margin-left: 2rem;
+        }
+
+        &-content {
+          margin-left: auto;
+          background: rgba(12, 174, 53, 0.10);
+        }
+
+        &-head {
+          flex-direction: row-reverse;
+        }
+
+        &__name {
+        }
+      }
+    }
+  }
+
+  &-wrap {
+    position: relative;
+  }
+
+  &-header {
+    position: absolute;
+    width: 35rem;
+    background-color: #fff;
+    border-radius: 2rem;
+    right: -4rem;
+    top: calc(100% + 2.6rem);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+
+    transform: translateY(10rem);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease-in;
+    &.active{
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    @media (max-width: 560px){
+      right: -14rem;
+      width: calc(100vw - 2rem);
+    }
+
+    .notifications-arr{
+      @media (max-width: 560px){
+        right: 12.2rem;
+      }
+    }
+
+
+
+    &-form {
+      width: calc(100% - 3rem);
+      margin: 1.5rem;
+    }
+
+    &-container {
+      padding: 1.5rem;
+      padding-bottom: 0;
+      max-height: 40vh;
+      overflow: auto;
+      background-color: #fff;
+    }
+
+    &__title {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+      padding: 2rem 2rem 1.6rem 2rem;
+      color: #1E1E1E;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 2.4rem;
+      @media (max-width: 560px){
+        padding: 1.5rem 2rem 1.2rem 2rem;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 2rem;
+      }
+    }
+  }
+
+}

@@ -2,6 +2,7 @@ let previousZoom = window.devicePixelRatio;
 let lastWidth = window.innerWidth;
 var doc = document;
 var charts = {};
+var dt = new DataTransfer();
 let resizeTimer;
 addEventListener("DOMContentLoaded", (event) => {
     hideLoader();
@@ -85,6 +86,30 @@ addEventListener("DOMContentLoaded", (event) => {
             }
         });
     });
+    doc.querySelectorAll('.notifications-link, .chat-link').forEach(function (element, index) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            var href = element.getAttribute('href');
+            var el = doc.querySelector(href);
+            var body = doc.querySelector('body');
+            var bodyClassName = element.classList.contains('chat-link') ? 'open-chat' : 'open-notifications';
+            if (el) {
+                if (el.classList.contains('active')) {
+                    el.classList.remove('active');
+                    body.classList.remove(bodyClassName);
+                } else {
+                    el.classList.add('active');
+                    body.classList.add(bodyClassName);
+                    if (element.classList.contains('chat-link')) {
+                        var container = el.querySelector('.chat-header-container');
+                        if(container !== null) {
+                            container.scrollTop = container.scrollHeight;
+                        }
+                    }
+                }
+            }
+        });
+    });
     doc.querySelectorAll('.change-chart-data').forEach(function (element, index) {
         element.addEventListener('click', function (e) {
             e.preventDefault();
@@ -154,19 +179,22 @@ addEventListener("DOMContentLoaded", (event) => {
         element.addEventListener('click', function (e) {
             e.preventDefault();
             var href = element.getAttribute('href');
-            var el = doc.querySelector(href);
-            if (el !== null) {
-                doc.querySelectorAll('.correspondence-item').forEach(function (item) {
-                    item.classList.remove('active');
-                });
-                doc.querySelectorAll('.correspondence-chat-inner').forEach(function (chat) {
-                    chat.style.display = 'none';
-                });
-                el.style.display = 'block';
-                element.closest('.correspondence-item').classList.add('active');
-                doc.querySelector('.correspondence-content').classList.add('active');
-                el.scrollTop = el.scrollHeight;
+            if (href && href !== '#') {
+                var el = doc.querySelector(href);
+                if (el !== null) {
+                    doc.querySelectorAll('.correspondence-item').forEach(function (item) {
+                        item.classList.remove('active');
+                    });
+                    doc.querySelectorAll('.correspondence-chat-inner').forEach(function (chat) {
+                        chat.style.display = 'none';
+                    });
+                    el.style.display = 'block';
+                    element.closest('.correspondence-item').classList.add('active');
+                    doc.querySelector('.correspondence-content').classList.add('active');
+                    el.scrollTop = el.scrollHeight;
+                }
             }
+
         });
     });
     doc.querySelectorAll('.correspondence-content__close').forEach(function (element, index) {
@@ -201,30 +229,88 @@ addEventListener("DOMContentLoaded", (event) => {
             const fileInput = event.target;
             const form = element.closest('form');
             const preview = form.querySelector(".file-preview");
-            const icon = form.querySelector(".avatar-icon");
-            const text = form.querySelector(".settings-personal-information-avatar-text");
-            const defaultSrc = preview.dataset.src;
-            const file = fileInput.files[0];
-            if (icon !== null) icon.src = addAvatarIcon;
-            if (text !== null) text.innerHTML = text.getAttribute('data-add-text');
-            if (file) {
-                if (text !== null) text.innerHTML = text.getAttribute('data-change-text');
-                const fileReader = new FileReader();
-                if (file.type.startsWith("image/")) {
-                    fileReader.onload = function () {
-                        preview.src = fileReader.result;
-                        if (icon !== null) icon.src = editAvatarIcon;
-                    };
-                    fileReader.readAsDataURL(file);
-                } else if (file.type === "application/pdf") {
-                    preview.src = attachFile;
+            console.log(preview)
+            if (preview === null) {
+                var fileList = element.closest('.files-list');
+                var closest = element.closest('.form-group-file');
+                var text = closest.querySelector('.form-group-file__text');
+                var max = element.getAttribute('data-max') || 2;
+                max = Number(max);
+                if (fileList === null) {
+                    var file = fileInput.files[0];
+                    if (file) {
+                        var name = file.name;
+                        if (name.length > 20) {
+                            var words = name.split('.');
+                            name = name.slice(0, 10);
+                            name = name + '...';
+                        }
+                        text.innerHTML = name;
+                    } else {
+                        text.innerHTML = text.dataset.text;
+                    }
+                } else {
+                    var files = fileInput.files;
+                    var filesListLength = files.length;
+                    if ((max !== undefined) && !isNaN(max) && filesListLength > max) {
+                        alert(max + ' files max');
+                        element.value = null;
+                        clearFileListItems(fileList);
+                        return;
+                    }
+                    var dtFiles = dt.files;
+                    var dtFilesLength = dtFiles.length;
+                    if (dtFilesLength > 0) {
+                        var testLength = dtFilesLength + filesListLength;
+                        if (testLength > max) {
+                            alert(max + ' files max');
+                            return;
+                        } else {
+                            for (let file of files) {
+                                dt.items.add(file);
+                            }
+                            element.files = dt.files;
+                            renderPreviewFileInput(dt.files, fileList);
+                            return;
+                        }
+                    }
+                    if (files) {
+                        for (let file of files) {
+                            dt.items.add(file);
+                        }
+                        console.log(dt.items)
+                        renderPreviewFileInput(dt.files, fileList);
+                    } else {
+                        clearFileListItems(fileList);
+                    }
+                }
+
+            } else {
+                const icon = form.querySelector(".avatar-icon");
+                const text = form.querySelector(".settings-personal-information-avatar-text");
+                const defaultSrc = preview.dataset.src;
+                var file = fileInput.files[0];
+                if (icon !== null) icon.src = addAvatarIcon;
+                if (text !== null) text.innerHTML = text.getAttribute('data-add-text');
+                if (file) {
+                    if (text !== null) text.innerHTML = text.getAttribute('data-change-text');
+                    const fileReader = new FileReader();
+                    if (file.type.startsWith("image/")) {
+                        fileReader.onload = function () {
+                            preview.src = fileReader.result;
+                            if (icon !== null) icon.src = editAvatarIcon;
+                        };
+                        fileReader.readAsDataURL(file);
+                    } else if (file.type === "application/pdf") {
+                        preview.src = attachFile;
+                    } else {
+                        preview.src = defaultSrc;
+                    }
                 } else {
                     preview.src = defaultSrc;
                 }
-            } else {
-                preview.src = defaultSrc;
-
             }
+
         });
     });
     doc.querySelectorAll('.copy-link').forEach(function (element, index) {
@@ -287,7 +373,89 @@ addEventListener("DOMContentLoaded", (event) => {
 
         });
     });
+    doc.querySelectorAll('.files-list').forEach(function (fileList, index) {
+        fileList.addEventListener('click', function (e) {
+            var element = e.target;
+            if (e.target && e.target.classList.contains("files-list-item__remove")) {
+                e.preventDefault();
+                var index = element.getAttribute('data-index');
+                if (index !== undefined) {
+                    index = Number(index);
+                    if (!isNaN(index)) {
+                        var input = fileList.querySelector('input[type="file"]');
+                        var dataList = dt.items;
+                        dataList.remove(index);
+                        input.files = dt.files;
+                        renderPreviewFileInput(input.files, fileList);
+                    }
+                }
+            }
+        });
+    });
 });
+
+function renderPreviewFileInput(files, fileList) {
+    var html = '';
+    if (files.length === 0) {
+        clearFileListItems(fileList);
+        return;
+    }
+    for (var a = 0; a < files.length; a++) {
+        var ID = makeID();
+        ID = 'file-item-' + ID + '' + a;
+        var file = files[a];
+        var size = getFileSize(file);
+        var name = file.name;
+        if (name.length > 25) {
+            var words = name.split('.');
+            name = name.slice(0, 15);
+            name = name + '...';
+        }
+        var temp = '<div class="files-list-item" id="' + ID + '">';
+        temp += '<div class="files-list-item__icon"><img src="' + fileCheckIcon + '" alt=""></div>';
+        temp += '<div class="files-list-item-text">';
+        temp += '<div class="files-list-item__name">' + name + '</div>';
+        temp += '<div class="files-list-item__size">' + size + '</div>';
+        temp += '</div>';
+        temp += '<div data-selector="' + ID + '" data-index="' + a + '" class="files-list-item__remove"><img src="' + deleteIcon + '" alt=""></div>';
+        temp += '</div>';
+
+        html += temp;
+    }
+    clearFileListItems(fileList);
+    fileList.insertAdjacentHTML("beforeend", html);
+}
+
+function makeID(arguments) {
+    var args = arguments || {};
+    var length = args.length || 5;
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    var counter = 0;
+    while (counter < length) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        counter += 1;
+    }
+    return result;
+}
+
+function getFileSize(file) {
+    var fileSizeInBytes = file.size;
+    var fileSize;
+    if (fileSizeInBytes >= 1048576) {
+        fileSize = (fileSizeInBytes / 1048576).toFixed(2) + " MB";
+    } else {
+        fileSize = (fileSizeInBytes / 1024).toFixed(2) + " KB";
+    }
+    return fileSize;
+}
+
+function clearFileListItems(fileList) {
+    fileList.querySelectorAll('.files-list-item').forEach(function (fileItem, index) {
+        fileItem.remove();
+    });
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     const chatElement = document.querySelector('.correspondence-chat-inner');
@@ -346,7 +514,6 @@ function setBrowserName() {
     var browser = detectBrowser();
     doc.querySelector('body').classList.add(browser);
 }
-
 
 function showMessage(text) {
     var el = doc.getElementById('message');

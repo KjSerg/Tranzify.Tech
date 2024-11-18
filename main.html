@@ -13,6 +13,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
+    <style>
+        .chart-js:after {
+            background-image: url(img/loading.gif);
+        }
+    </style>
 </head>
 <body>
 <main class="content flex-column">
@@ -215,12 +220,148 @@
                     Привіт, Максиме!
                 </div>
                 <div class="main-header-menu">
-                    <a href="#" class="chat-link main-header-menu__link">
-                        <img src="img/chat.svg" alt="">
-                    </a>
-                    <a href="#" class="notifications-link main-header-menu__link">
-                        <img src="img/fi_bell.svg" alt="">
-                    </a>
+                    <div class="chat-wrap">
+                        <a href="#header-chat" class="chat-link main-header-menu__link">
+                            <img src="img/chat.svg" alt="">
+                        </a>
+                        <div id="header-chat" class="chat-header">
+                            <div class="notifications-arr">
+                                <img src="img/triangle.svg" alt="">
+                            </div>
+                            <div class="chat-header__title">
+                                Спеціаліст Tranzify
+                            </div>
+                            <div class="chat-header-container">
+                                <div class="chat-item sent">
+                                    <div class="chat-item-head">
+                                        <div class="chat-item__time">11:35</div>
+                                        <div class="chat-item__name">Максим Коваленко</div>
+                                    </div>
+                                    <div class="chat-item-content">
+
+                                        <div class="chat-item-content__text">
+                                            Доброго дня! Маю питання стосовно виставленого рахунку. Сума не відповідає очікуваній, і я не розумію, чому.
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="chat-item ">
+                                    <div class="chat-item-head">
+                                        <div class="chat-item__time">11:35</div>
+                                        <div class="chat-item__name">Фахівець</div>
+                                    </div>
+                                    <div class="chat-item-content">
+                                        <div class="chat-item-content__text">
+                                            Вітаю! Давайте розберемося. Можете надати більше інформації про платіж, наприклад, дату та приблизний час здійснення?
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="correspondence-footer send-message chat-header-form" autocomplete="off" method="post">
+                                <label class="send-message__file">
+                                    <input type="file" name="file" id="message-file" style="display:none;"
+                                           accept="image/*,.pdf">
+                                    <img src="img/file.svg" class="file-preview" data-src="img/file.svg" alt="">
+                                </label>
+                                <label class="send-message__label">
+                                    <input type="text" name="text" required placeholder=" Введіть текст..."
+                                           id="message-input">
+                                    <a href="#" class="send-message__smile" id="emoji-trigger">
+                                        <img src="img/smile.svg" alt="">
+                                    </a>
+                                    <div id="emoji-picker" class="emoji-picker" style="display: none; position: absolute; z-index: 1000;"></div>
+
+                                </label>
+                                <button type="submit" class="send-message__button">
+                                    <img src="img/send.svg" alt="">
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="notifications-wrap">
+                        <a href="#notifications" class="notifications-link main-header-menu__link">
+                            <img src="img/fi_bell.svg" alt="">
+                        </a>
+                        <div class="notifications" id="notifications">
+                            <div class="notifications-arr">
+                                <img src="img/triangle.svg" alt="">
+                            </div>
+                            <div class="notifications-head">
+                                Сповіщення
+                            </div>
+                            <div class="notifications-list">
+                                <div class="notifications-list-item unread">
+                                    <div class="notifications-list-item__icon">
+                                        <img src="img/time-quarter-to.svg" alt="">
+                                    </div>
+                                    <div class="notifications-list-item-content">
+                                        <div class="notifications-list-item__title">
+                                            Закінчення терміну дії ліцензії №4
+                                        </div>
+                                        <div class="notifications-list-item__text">
+                                            Щоб уникнути втрати доступу, будь ласка, продовжіть ліцензію.
+                                        </div>
+                                        <a href="#" class="notifications-list-item__link">
+                                            Переглянути <span class="icon"><img src="img/arrow-r.svg" alt=""></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="notifications-list-item ">
+                                    <div class="notifications-list-item__icon">
+                                        <img src="img/time-quarter-to.svg" alt="">
+                                    </div>
+                                    <div class="notifications-list-item-content">
+                                        <div class="notifications-list-item__title">
+                                            Закінчення терміну дії ліцензії №4
+                                        </div>
+                                        <div class="notifications-list-item__text">
+                                            Щоб уникнути втрати доступу, будь ласка, продовжіть ліцензію.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="notifications-list-item ">
+                                    <div class="notifications-list-item__icon " style="background-color: #EEF4FE;">
+                                        <img src="img/shield-exclamation.svg" alt="">
+                                    </div>
+                                    <div class="notifications-list-item-content">
+                                        <div class="notifications-list-item__title">
+                                            Налаштуйте параметри входу
+                                        </div>
+                                        <div class="notifications-list-item__text">
+                                            Щоб уникнути втрати доступу, будь ласка, продовжіть ліцензію.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="notifications-list-item ">
+                                    <div class="notifications-list-item__icon" style="background-color: #E7F7EB;">
+                                        <img src="img/update.svg" alt="">
+                                    </div>
+                                    <div class="notifications-list-item-content">
+                                        <div class="notifications-list-item__title">
+                                            Для продукту Облік доступні оновлення
+                                        </div>
+                                        <div class="notifications-list-item__text">
+                                            Щоб уникнути втрати доступу, будь ласка, продовжіть ліцензію.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="notifications-list-item ">
+                                    <div class="notifications-list-item__icon" style="background-color: #E7F7EB;">
+                                        <img src="img/update.svg" alt="">
+                                    </div>
+                                    <div class="notifications-list-item-content">
+                                        <div class="notifications-list-item__title">
+                                            Для продукту Облік доступні оновлення
+                                        </div>
+                                        <div class="notifications-list-item__text">
+                                            Щоб уникнути втрати доступу, будь ласка, продовжіть ліцензію.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="custom-select">
                         <div class="custom-select-value">
                             <div class="custom-select__image"><img src="img/ukraine.png" alt=""></div>
@@ -717,13 +858,8 @@
     var passwordShowIcon = 'img/show.svg';
     var loaderIcon = 'img/loading.gif';
 </script>
-<style>
-    .chart-js {
-        &:after {
-            background-image: url(img/loading.gif);
-        }
-    }
-</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/emoji-mart@3.0.0/dist/css/emoji-mart.css">
+<script id="emoji-button-script"  src="https://cdn.jsdelivr.net/npm/emoji-mart@5.6.0/dist/browser.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="js/app.js"></script>
 </body>

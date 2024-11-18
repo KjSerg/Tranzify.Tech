@@ -13,6 +13,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
+    <style>
+        .chart-js:after {
+            background-image: url(img/loading.gif);
+        }
+    </style>
 </head>
 <body>
 <main class="content flex-column">
@@ -354,7 +359,7 @@
                                             </div>
                                         </div>
                                         <div class="history-table-column">
-                                            <a href="#" class="history-table__button">
+                                            <a href="#transaction-details" class="history-table__button open-modal">
                                                 Детальніше
                                             </a>
                                         </div>
@@ -628,13 +633,71 @@
     var passwordShowIcon = 'img/show.svg';
     var loaderIcon = 'img/loading.gif';
 </script>
-<style>
-    .chart-js {
-        &:after {
-            background-image: url(img/loading.gif);
-        }
-    }
-</style>
+
+
+<div class="modal modal-transaction-details modal-window" id="transaction-details">
+    <div class="modal-head">
+        <div class="modal__title">
+            Деталі транзакції
+        </div>
+        <a href="#transaction-details" class="modal-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <mask id="mask0_894_29406" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
+                      height="24">
+                    <rect width="24" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_894_29406)">
+                    <path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                          fill="#1E1E1E" fill-opacity="0.3"/>
+                </g>
+            </svg>
+        </a>
+    </div>
+    <div class="modal-content">
+        <div class="transaction-details">
+            <div class="transaction-details-item">
+                <div class="transaction-details-item__name">ID</div>
+                <div class="transaction-details-item__value">1234567890</div>
+            </div>
+            <div class="transaction-details-item">
+                <div class="transaction-details-item__name">Референс</div>
+                <div class="transaction-details-item__value">REF12345678</div>
+            </div>
+            <div class="transaction-details-item">
+                <div class="transaction-details-item__name">Дата та час</div>
+                <div class="transaction-details-item__value">12 листопада 2024, 15:30</div>
+            </div>
+            <div class="transaction-details-item">
+                <div class="transaction-details-item__name">Сума</div>
+                <div class="transaction-details-item__value">1,000.00</div>
+            </div>
+            <div class="transaction-details-item">
+                <div class="transaction-details-item__name">Валюта</div>
+                <div class="transaction-details-item__value">USD</div>
+            </div>
+        </div>
+        <div class="transaction-details">
+            <div class="transaction-details-item">
+                <div class="transaction-details-item__name transaction-details-item__name--selected">Відправник</div>
+                <div class="transaction-details-item__value">Шевченко Максим</div>
+            </div>
+            <div class="transaction-details-item">
+                <div class="transaction-details-item__name ">Рахунок відправника</div>
+                <div class="transaction-details-item__value">1234 5678 9012 3456</div>
+            </div>
+        </div>
+        <div class="transaction-details">
+            <div class="transaction-details-item">
+                <div class="transaction-details-item__name transaction-details-item__name--selected">Отримувач</div>
+                <div class="transaction-details-item__value">Мельник Богдан</div>
+            </div>
+            <div class="transaction-details-item">
+                <div class="transaction-details-item__name ">Рахунок отримувача</div>
+                <div class="transaction-details-item__value">6543 2109 8765 4321</div>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="js/app.js"></script>
 </body>

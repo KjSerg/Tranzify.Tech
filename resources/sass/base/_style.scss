@@ -179,6 +179,40 @@ body {
     }
   }
 
+  &.open-notifications {
+    overflow: hidden;
+    pointer-events: none;
+
+    .notifications-wrap {
+      pointer-events: auto;
+    }
+
+    .main-header {
+      z-index: 22;
+    }
+
+    &:after {
+      background-color: rgba(0, 0, 0, 0.22);
+    }
+  }
+
+  &.open-chat {
+    overflow: hidden;
+    pointer-events: none;
+
+    .chat-wrap {
+      pointer-events: auto;
+    }
+
+    .main-header {
+      z-index: 22;
+    }
+
+    &:after {
+      background-color: rgba(0, 0, 0, 0.22);
+    }
+  }
+
   &.safari * {
     backdrop-filter: none !important;
   }
@@ -394,7 +428,8 @@ strong {
     background: #D12929;
     border: 1px solid #D12929;
     color: #FFFFFF;
-    &:hover{
+
+    &:hover {
       background: #FFFFFF;
       color: #D12929;
     }
@@ -498,7 +533,7 @@ strong {
 
 .hidden-on-desktop {
   @media (min-width: 561px) {
-    display: none!important;
+    display: none !important;
   }
 }
 
@@ -1031,6 +1066,7 @@ table {
       }
     }
   }
+
   &.last-colum-mini {
     th, td {
       &:last-child {
@@ -1088,7 +1124,7 @@ table {
     }
   }
 
-  &-merchants{
+  &-merchants {
     @media (max-width: 1200px) {
       width: 120rem;
     }
@@ -1098,31 +1134,33 @@ table {
   }
 }
 
-.box{
+.box {
   padding: 2.5rem;
   border-radius: 1.2rem;
   border: 1px solid rgba(30, 30, 30, 0.08);
   background-color: #fff;
 }
 
-.full-height{
+.full-height {
   height: 100%;
 }
 
-.social-networks{
+.social-networks {
   display: flex;
   @media (max-width: 560px) {
     flex-wrap: wrap;
     width: 100%;
   }
-  &>*:not(:last-child){
+
+  & > *:not(:last-child) {
     margin-right: 0.8rem;
     @media (max-width: 560px) {
       margin-right: 0.4rem;
     }
   }
 }
-.social-network{
+
+.social-network {
   display: flex;
   min-width: 17.7rem;
   padding: 1rem 2rem;
@@ -1144,7 +1182,8 @@ table {
   @media (max-width: 450px) {
     padding: 1rem;
   }
-  &__icon{
+
+  &__icon {
     display: flex;
     align-items: center;
     justify-content: center;
