@@ -1,0 +1,116 @@
+.wallet {
+  &-function {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    display: flex;
+    align-items: center;
+    color: #8A8E94;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.2rem;
+
+    &__icon {
+      margin-right: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.2rem;
+      height: 3.2rem;
+      flex-grow: 0;
+      flex-shrink: 0;
+      padding: 0.8rem;
+      border-radius: 50%;
+      background-color: rgba(#0CAE35, 0.1);
+    }
+  }
+
+  &-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.4rem;
+  }
+
+  &-box {
+    padding: 2.5rem;
+    width: calc(33.3% - 1rem);
+    border-radius: 1.2rem;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: #FFF;
+
+    .main-list-item-head {
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  &-license {
+    &-table {
+      padding-top: 2rem;
+
+      &-row {
+        border-radius: 1.2rem;
+        background: #F6F6F6;
+        padding: 1.4rem 0;
+      }
+      &-column {
+        width: 100%;
+        padding-right: 1.4rem;
+
+        &:nth-child(1) {
+          width: 26.8rem;
+          padding-left: 1.4rem;
+        }
+
+        &:nth-child(2) {
+          width: 37.2rem;
+        }
+
+        &:nth-child(3) {
+          width: 23.3rem;
+        }
+
+        &:nth-child(4) {
+          width: 18.8rem;
+        }
+
+        &:nth-child(5) {
+          width: 43.7rem;
+        }
+      }
+
+      &-head {
+        display: flex;
+        align-items: center;
+        padding-bottom: 1.6rem;
+        color: #8A8E94;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 2.2rem;
+      }
+    }
+
+    &__title {
+      color: #000;
+      font-size: 2.4rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+
+    &-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+    }
+  }
+}

@@ -17,6 +17,10 @@
     height: 2.9rem;
     flex-shrink: 0;
 
+    &--right{
+      margin-left: auto;
+    }
+
     @media (max-width: 720px) {
       max-width: 12rem;
       height: 1.6rem;
@@ -28,7 +32,7 @@
       height: 2.9rem;
       left: 50%;
       pointer-events: none;
-      transform: translateX(-50%) translateY(20rem);
+      transform: translateX(-50%) translateY(18rem);
     }
     &.hidden{
       display: none;

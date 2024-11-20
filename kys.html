@@ -339,6 +339,78 @@
         </div>
     </section>
 </main>
+<div class="modal authentication-settings modal-window" id="reset-password">
+    <div class="authentication-settings-head">
+        <div class="authentication-settings-head__title">Крок: 1/2</div>
+        <div class="authentication-settings-head-row">
+            <span class="active"></span><span></span>
+        </div>
+    </div>
+    <div class="authentication-settings__title">
+        Скинути пароль
+    </div>
+    <div class="authentication-settings__text">
+        <p>
+            Введіть електронну адресу, пов’язану з вашим обліковим записом, і ми надішлемо електронний лист із інструкціями щодо зміни вашого пароля.
+        </p>
+    </div>
+    <form class="form reset-password-form" id="reset-password-form">
+        <label class="form-group">
+            <span class="form-group__title">Введіть email</span>
+            <input type="email" name="email" placeholder="Введіть email">
+        </label>
+    </form>
+    <div class="authentication-settings-controls">
+        <a href="#reset-password"
+           class="authentication-settings__button button trigger-close-modal">Відмінити</a>
+        <a href="#new-password"
+           class="authentication-settings__button button button--dark open-modal open-and-close-modal">Продовжити</a>
+    </div>
+</div>
+<div class="modal authentication-settings modal-window" id="new-password">
+    <div class="authentication-settings-head">
+        <div class="authentication-settings-head__title">Крок: 2/2</div>
+        <div class="authentication-settings-head-row">
+            <span class="active"></span>
+            <span class="active"></span>
+        </div>
+    </div>
+    <div class="authentication-settings__title">
+        Створіть новий пароль
+    </div>
+    <div class="authentication-settings__text">
+        <p>
+            Ваш новий пароль має відрізнятися від попередніх паролів.
+        </p>
+    </div>
+    <form class="form reset-password-form" id="set-password-form">
+        <label class="form-group">
+            <span class="form-group__title">Пароль </span>
+            <span class="form-password">
+                    <input type="password" name="password" placeholder="Введіть пароль" required>
+                    <a href="#" class="form-password__button">
+                        <img src="img/mdi_hide-outline.svg" alt="">
+                    </a>
+                </span>
+        </label>
+        <label class="form-group">
+            <span class="form-group__title">Підтвердіть пароль </span>
+            <span class="form-password">
+                    <input type="password" name="password" placeholder="Введіть пароль" required>
+                    <a href="#" class="form-password__button">
+                        <img src="img/mdi_hide-outline.svg" alt="">
+                    </a>
+                </span>
+        </label>
+        <div class="authentication-settings-controls not-margin">
+            <a href="#new-password"
+               class="authentication-settings__button button trigger-close-modal">Відмінити</a>
+            <button type="submit" class="authentication-settings__button">Зберегти</button>
+
+        </div>
+    </form>
+
+</div>
 <div class="modal modal-new-account modal-window" id="new-account">
     <div class="modal-head">
         <div class="modal__title">
@@ -535,78 +607,6 @@
 <div class="modal modal-message modal-window" id="message">
     <div class="modal__title"></div>
 </div>
-<div class="modal authentication-settings modal-window" id="reset-password">
-    <div class="authentication-settings-head">
-        <div class="authentication-settings-head__title">Крок: 1/2</div>
-        <div class="authentication-settings-head-row">
-            <span class="active"></span><span></span>
-        </div>
-    </div>
-    <div class="authentication-settings__title">
-        Скинути пароль
-    </div>
-    <div class="authentication-settings__text">
-        <p>
-            Введіть електронну адресу, пов’язану з вашим обліковим записом, і ми надішлемо електронний лист із інструкціями щодо зміни вашого пароля.
-        </p>
-    </div>
-    <form class="form reset-password-form" id="reset-password-form">
-        <label class="form-group">
-            <span class="form-group__title">Введіть email</span>
-            <input type="email" name="email" placeholder="Введіть email">
-        </label>
-    </form>
-    <div class="authentication-settings-controls">
-        <a href="#reset-password"
-           class="authentication-settings__button button trigger-close-modal">Відмінити</a>
-        <a href="#new-password"
-           class="authentication-settings__button button button--dark open-modal open-and-close-modal">Продовжити</a>
-    </div>
-</div>
-<div class="modal authentication-settings modal-window" id="new-password">
-    <div class="authentication-settings-head">
-        <div class="authentication-settings-head__title">Крок: 2/2</div>
-        <div class="authentication-settings-head-row">
-            <span class="active"></span>
-            <span class="active"></span>
-        </div>
-    </div>
-    <div class="authentication-settings__title">
-        Створіть новий пароль
-    </div>
-    <div class="authentication-settings__text">
-        <p>
-            Ваш новий пароль має відрізнятися від попередніх паролів.
-        </p>
-    </div>
-    <form class="form reset-password-form" id="set-password-form">
-        <label class="form-group">
-            <span class="form-group__title">Пароль </span>
-            <span class="form-password">
-                    <input type="password" name="password" placeholder="Введіть пароль" required>
-                    <a href="#" class="form-password__button">
-                        <img src="img/mdi_hide-outline.svg" alt="">
-                    </a>
-                </span>
-        </label>
-        <label class="form-group">
-            <span class="form-group__title">Підтвердіть пароль </span>
-            <span class="form-password">
-                    <input type="password" name="password" placeholder="Введіть пароль" required>
-                    <a href="#" class="form-password__button">
-                        <img src="img/mdi_hide-outline.svg" alt="">
-                    </a>
-                </span>
-        </label>
-        <div class="authentication-settings-controls not-margin">
-            <a href="#new-password"
-               class="authentication-settings__button button trigger-close-modal">Відмінити</a>
-            <button type="submit" class="authentication-settings__button">Зберегти</button>
-
-        </div>
-    </form>
-
-</div>
 <script>
     var passwordHideIcon = 'img/mdi_hide-outline.svg';
     var passwordShowIcon = 'img/show.svg';
@@ -617,10 +617,8 @@
     var copyText = 'Скопійовано!';
 </script>
 <style>
-    .chart-js {
-        &:after {
-            background-image: url(img/loading.gif);
-        }
+    .chart-js:after {
+        background-image: url(img/loading.gif);
     }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/emoji-mart@3.0.0/dist/css/emoji-mart.css">

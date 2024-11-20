@@ -112,6 +112,9 @@
   &-account-added{
     max-width: 38.5rem;
     padding: 2rem;
+    @media (max-width: 560px){
+      padding: 1.5rem;
+    }
     &__title{
       padding: 2rem 0;
       color: #1E1E1E;
@@ -120,6 +123,12 @@
       font-style: normal;
       font-weight: 600;
       line-height: 2.4rem;
+      @media (max-width: 560px){
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 2rem;
+      }
     }
     &__image{
       margin: auto;

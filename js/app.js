@@ -102,7 +102,7 @@ addEventListener("DOMContentLoaded", (event) => {
                     body.classList.add(bodyClassName);
                     if (element.classList.contains('chat-link')) {
                         var container = el.querySelector('.chat-header-container');
-                        if(container !== null) {
+                        if (container !== null) {
                             container.scrollTop = container.scrollHeight;
                         }
                     }
@@ -214,13 +214,18 @@ addEventListener("DOMContentLoaded", (event) => {
     });
     doc.querySelectorAll('.score__control .switcher input[type="checkbox"], .tool .switcher input[type="checkbox"]').forEach(function (element, index) {
         element.addEventListener('change', function (e) {
-            e.preventDefault();
             var card = element.closest('.score');
             if (card === null) card = element.closest('.tool');
+            var uncheckedModal = element.getAttribute('data-unchecked-modal');
+            var checkedModal = element.getAttribute('data-checked-modal');
+            if (uncheckedModal !== undefined) uncheckedModal = doc.querySelector(uncheckedModal);
+            if (checkedModal !== undefined) checkedModal = doc.querySelector(checkedModal);
             if (element.checked) {
                 card.classList.remove('disable');
+                if (checkedModal !== null) openModal(checkedModal);
             } else {
                 card.classList.add('disable');
+                if (uncheckedModal !== null) openModal(uncheckedModal);
             }
         });
     });
@@ -390,6 +395,27 @@ addEventListener("DOMContentLoaded", (event) => {
                     }
                 }
             }
+        });
+    });
+    doc.querySelectorAll('.deactivate-accesses, .activate-accesses').forEach(function (element, index) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            var forElement = element.getAttribute('data-for');
+            var href = element.getAttribute('href');
+            var el = doc.querySelector(href);
+            var trigger = el.querySelector('.trigger-on-change');
+            if (trigger !== null) {
+                trigger.setAttribute('href', forElement);
+            }
+        });
+    });
+    doc.querySelectorAll('.trigger-on-change').forEach(function (element, index) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            closeModal();
+            var href = element.getAttribute('href');
+            var el = doc.querySelector(href);
+            if (el !== null) el.click();
         });
     });
 });
