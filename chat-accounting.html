@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="UA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="msapplication-TileColor" content="#1E1E1E">
+    <meta name="theme-color" content="#1E1E1E">
+    <title>Tranzify.Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<main class="content flex-column">
+    <section class="section main-section">
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-container">
+                <div class="sidebar-head">
+                    <div class="sidebar__logo">
+                        <img src="img/logo-main.svg" alt="">
+                    </div>
+                    <a href="#sidebar" class="sidebar-hide hide-element">
+                        <img src="img/arrow-left.svg" alt="">
+                    </a>
+                </div>
+                <form class="sidebar-form">
+                    <select title="" class="dark" name="type">
+                        <option>Облік</option>
+                        <option>Гаманець</option>
+                        <option>еквайринг</option>
+                    </select>
+                </form>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="./main-accounting.html" class="">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    viewBox="0 0 20 20" fill="none">
+  <path d="M17.1672 7.15357V2.94099H13.6835V4.47357L9.99996 1.63989L0 9.33275L2.09508 12.0561L3.1209 11.267V18.3601H9.03961V13.163H11.1939V18.3601H16.8792V11.267L17.905 12.0561L20 9.33278L17.1672 7.15357ZM15.7059 17.1868H12.3671V11.9897H7.86633V17.1868H4.2941V10.3644L10 5.97517L15.7059 10.3644L15.7059 17.1868ZM17.6904 10.4108L10 4.49466L2.30957 10.4108L1.64527 9.54732L10 3.12013L14.8568 6.85638V4.11423H15.994V7.73126L18.3547 9.54732L17.6904 10.4108Z"
+        fill="white"/>
+</svg></span>
+                                Головна
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./history-accounting.html">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    viewBox="0 0 20 20" fill="none">
+  <path d="M15.5882 9.73368V4.77179L11.1277 0H0V20H14.9992V19.9988C21.3166 19.7794 21.7981 10.6873 15.5882 9.73368ZM11.4653 2.10628L13.4461 4.22535H11.4653V2.10628ZM1.17795 18.7928V1.20724H10.2874V5.4326H14.4102V9.7338C10.058 10.2564 8.41564 15.9291 11.7723 18.7927L1.17795 18.7928ZM15.5888 18.7453H14.4108C12.7596 18.4842 11.4515 17.1433 11.1973 15.4508V14.4482C11.4525 12.7569 12.7605 11.2126 14.4108 10.9516H15.5888C17.2392 11.2126 18.5468 12.5523 18.8019 14.2436L18.8023 15.4508C18.5481 17.1433 17.24 18.4842 15.5888 18.7453Z"
+        fill="#A7A9AC"/>
+  <path d="M15 12.2985H14V15.3731H17V14.3507H15V12.2985Z" fill="#A7A9AC"/>
+  <path d="M2.86719 7.52539H12.7227V8.73263H2.86719V7.52539Z" fill="#A7A9AC"/>
+  <path d="M2.86719 2.69629H6.00838V3.90353H2.86719V2.69629Z" fill="#A7A9AC"/>
+  <path d="M2.86719 5.11084H6.00838V6.31808H2.86719V5.11084Z" fill="#A7A9AC"/>
+</svg></span>
+                                Історія транзакцій
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./install.html">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <g clip-path="url(#clip0_1451_25658)">
+    <path d="M19.1224 14.9708L13.3129 9.1613L14.4888 7.98548C17.9064 9.2164 21.1608 5.62523 19.5815 2.33883L19.2234 1.58919L16.559 4.25363L15.7282 3.42277L18.3926 0.758406L17.643 0.40033C16.0737 -0.349346 14.1927 -0.0263998 12.9625 1.20382C11.8331 2.33323 11.4685 4.01132 11.9964 5.49309L9.98973 7.49977L6.58011 4.0902L6.9956 2.844L5.39576 1.24412L1.81833 0.0305053L0.0282236 1.82057L1.24191 5.39804L2.8418 6.99796L4.08796 6.5824L7.49757 9.99197L5.50295 11.9866C2.08543 10.7554 -1.16906 14.347 0.410229 17.6332L0.768305 18.3828L3.2907 15.8604L4.12148 16.6912L1.59913 19.2136L2.34876 19.5717C3.92484 20.3247 5.80451 19.9929 7.02929 18.7682C8.15873 17.6388 8.52335 15.9607 7.99542 14.4789L9.15902 13.3153L14.9684 19.1247C17.8222 21.7769 21.7736 17.8215 19.1224 14.9708ZM4.40526 5.23802L3.15911 5.65358L2.26656 4.761L1.37558 2.13486L2.13266 1.37782L4.7588 2.26872L5.65134 3.16131L5.23577 4.40751L9.15894 8.33056L8.32839 9.16111L4.40526 5.23802ZM6.59347 14.2192L6.77253 14.594C7.79071 16.6892 5.99027 19.1144 3.70591 18.7684L5.78301 16.6912L3.29066 14.1988L1.21348 16.2759C1.08624 15.3775 1.3802 14.4476 2.04446 13.7833C2.92322 12.9046 4.26682 12.6739 5.38781 13.2093L5.76265 13.3883L13.3983 5.75271L13.2192 5.37787C12.6838 4.25696 12.9145 2.91332 13.7933 2.03456C14.4575 1.3703 15.3874 1.0765 16.2858 1.20354L14.0667 3.42273L16.5591 5.91516L18.7783 3.69598C18.9055 4.59443 18.6115 5.5243 17.9473 6.18856C17.0685 7.06736 15.7249 7.29808 14.6039 6.76263L14.2291 6.58357L6.59347 14.2192ZM9.98977 12.4845L12.4822 9.99205L17.4608 14.9707L16.6301 15.8015L12.476 11.6476L11.6453 12.4784L15.7992 16.6323L14.9684 17.4631L9.98977 12.4845ZM17.0454 18.8102C16.5746 18.8102 16.1321 18.6268 15.7992 18.2939L18.2916 15.8015C19.3983 16.8906 18.6007 18.8217 17.0454 18.8102Z" fill="#A7A9AC"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_1451_25658">
+      <rect width="20" height="20" fill="white"/>
+    </clipPath>
+  </defs>
+</svg></span>
+                                Встановлення
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./create-payment1.html">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <g clip-path="url(#clip0_1451_25662)">
+    <path d="M17.6561 7.89008V0H0V12.1099H2.34391V20H20V7.89008H17.6561ZM16.4842 4.68777H1.17188V3.51578H16.4842V4.68777ZM16.4842 1.17188V2.34391H1.17188V1.17188H16.4842ZM1.17188 10.938V5.85965H16.4842V7.89008H2.34391V10.938H1.17188V10.938ZM18.8281 18.8281H3.51578V9.06195H18.8281V18.8281Z" fill="#A7A9AC"/>
+    <path d="M4.6875 16.4843H8.2291V17.6561H4.6875V16.4843Z" fill="#A7A9AC"/>
+    <path d="M9.40234 16.4843H12.944V17.6561H9.40234V16.4843Z" fill="#A7A9AC"/>
+    <path d="M14.1133 16.4843H17.6549V17.6561H14.1133V16.4843Z" fill="#A7A9AC"/>
+    <path d="M17.6565 10.2339H12.9688V13.7496H17.6565V10.2339ZM16.4846 12.5778H14.1406V11.4058H16.4846V12.5778Z" fill="#A7A9AC"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_1451_25662">
+      <rect width="20" height="20" fill="white"/>
+    </clipPath>
+  </defs>
+</svg></span>
+                                Створення транзакції/обміну
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./account-management1.html">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M4.21094 10H8.58713V11H4.21094V10Z" fill="#A7A9AC"/>
+  <path d="M4.21094 12H8.58713V13H4.21094V12Z" fill="#A7A9AC"/>
+  <path d="M13.3398 11.7676H17.1968V12.9395H13.3398V11.7676Z" fill="#A7A9AC"/>
+  <path d="M13.3398 14.1211H14.6219V15.293H13.3398V14.1211Z" fill="#A7A9AC"/>
+  <path d="M15.918 14.1211H17.2001V15.293H15.918V14.1211Z" fill="#A7A9AC"/>
+  <path d="M13.3398 16.4746H14.6219V17.6465H13.3398V16.4746Z" fill="#A7A9AC"/>
+  <path d="M15.918 16.4746H17.2001V17.6465H15.918V16.4746Z" fill="#A7A9AC"/>
+  <path d="M17.1986 9.41406V3.87352L12.9608 0H1.77344V18.8232H10.7668V20H19.7734V9.41406H17.1986ZM13.3363 2.00051L15.0099 3.53027H13.3363V2.00051ZM3.05553 17.6514V1.17188H12.0542V4.70215H15.9164V9.41406H10.7667V17.6514H3.05553ZM18.4914 18.8281H12.0489V10.5859H18.4914V18.8281Z" fill="#A7A9AC"/>
+  <path d="M6.77968 4.9442H6.17791C5.92735 4.9442 5.72349 4.75787 5.72349 4.52885C5.72349 4.29982 5.92735 4.1135 6.17791 4.1135H6.79036C7.03024 4.1135 7.22542 4.29186 7.22542 4.51115H8.5075C8.5075 3.74873 7.90958 3.11182 7.11986 2.97092V2.37549H5.83777V2.97236C5.04258 3.11732 4.44141 3.76002 4.44141 4.52885C4.44141 5.40404 5.2204 6.11607 6.17791 6.11607H6.77968C7.03024 6.11607 7.23409 6.3024 7.23409 6.53143C7.23409 6.76045 7.03024 6.94678 6.77968 6.94678H6.19171C5.94077 6.94678 5.73661 6.76018 5.73661 6.5308H4.45453C4.45453 7.29553 5.04903 7.93561 5.83777 8.08541V8.68475H7.11986V8.08783C7.91501 7.94287 8.51618 7.30018 8.51618 6.53139C8.51618 5.65623 7.73718 4.9442 6.77968 4.9442Z" fill="#A7A9AC"/>
+</svg></span>
+                                Керування рахунками
+                            </a>
+                        </li>
+                        <li class="sub-menu open">
+                            <a href="#" class="active">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                    viewBox="0 0 18 18" fill="none">
+  <g clip-path="url(#clip0_894_26168)">
+    <path d="M4.25391 7.41797H3.19922V6.89062C3.19922 3.67267 5.80145 1.05469 9 1.05469C12.1986 1.05469 14.8008 3.67267 14.8008 6.89062V7.41797H13.7461V13.7461H14.8008V15.3633C14.8008 15.6541 14.5642 15.8906 14.2734 15.8906H10.4913C10.2736 15.2769 9.68748 14.8359 9 14.8359C8.12767 14.8359 7.41797 15.5456 7.41797 16.418C7.41797 17.2903 8.12767 18 9 18C9.68748 18 10.2736 17.5591 10.4913 16.9453H14.2734C15.1458 16.9453 15.8555 16.2356 15.8555 15.3633V13.7461H18V7.41797H15.8555V6.89062C15.8555 3.09111 12.7801 0 9 0C5.21989 0 2.14453 3.09111 2.14453 6.89062V7.41797H0V12.6914H4.25391V7.41797ZM9 16.9453C8.70922 16.9453 8.47266 16.7087 8.47266 16.418C8.47266 16.1272 8.70922 15.8906 9 15.8906C9.29078 15.8906 9.52734 16.1272 9.52734 16.418C9.52734 16.7087 9.29078 16.9453 9 16.9453ZM16.9453 12.6914H14.8008V8.47266H16.9453V12.6914ZM3.19922 11.6367H1.05469V8.47266H3.19922V11.6367Z"
+          fill="#A7A9AC"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_894_26168">
+      <rect width="18" height="18" fill="white"/>
+    </clipPath>
+  </defs>
+</svg></span>
+                                Підтримка
+                                <span class="arrow"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                         viewBox="0 0 14 14" fill="none">
+  <path d="M7.46824 9.80994L12.8083 4.50758C12.9319 4.38495 13 4.22124 13 4.04668C13 3.87212 12.9319 3.70841 12.8083 3.58577L12.4151 3.19529C12.1589 2.9412 11.7425 2.9412 11.4867 3.19529L7.00249 7.64781L2.51326 3.19035C2.38965 3.06771 2.22487 3 2.04916 3C1.87326 3 1.70848 3.06771 1.58477 3.19035L1.19171 3.58083C1.0681 3.70356 1 3.86718 1 4.04174C1 4.2163 1.0681 4.38001 1.19171 4.50264L6.53664 9.80994C6.66064 9.93287 6.8262 10.0004 7.00219 10C7.17888 10.0004 7.34434 9.93287 7.46824 9.80994Z"
+        fill="#A7A9AC"/>
+</svg></span>
+                            </a>
+                            <ul class="sub-list" style="display:block;">
+                                <li>
+                                    <a href="./contacts-accounting.html" class="">Контакти</a>
+                                </li>
+                                <li>
+                                    <a href="./chat-accounting.html" class="active">Чат онлайн</a>
+                                </li>
+                                <li>
+                                    <a href="./requests-accounting.html">Запити</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu">
+                            <a href="#">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    viewBox="0 0 20 20" fill="none">
+  <g clip-path="url(#clip0_894_28380)">
+    <path d="M20 12.3976V7.60238L18.155 7.32C18.0208 6.91176 17.8556 6.51336 17.6611 6.12914L18.7664 4.6243L15.3757 1.23355L13.8708 2.33887C13.4866 2.14438 13.0882 1.97918 12.68 1.84496L12.3976 0H7.60238L7.32 1.845C6.91176 1.97918 6.51336 2.14441 6.12914 2.33891L4.6243 1.23359L1.23355 4.62434L2.33887 6.12918C2.14438 6.5134 1.97918 6.9118 1.84496 7.32004L0 7.60238V12.3976L1.845 12.68C1.97918 13.0882 2.14441 13.4866 2.33891 13.8709L1.23359 15.3757L4.62434 18.7664L6.12918 17.6611C6.5134 17.8556 6.9118 18.0208 7.32004 18.155L7.60238 20H12.3976L12.68 18.155C13.0882 18.0208 13.4866 17.8556 13.8709 17.6611L15.3757 18.7664L18.7664 15.3757L17.6611 13.8708C17.8556 13.4866 18.0208 13.0882 18.155 12.68L20 12.3976ZM17.2393 11.6346L17.1375 11.9989C16.9788 12.5671 16.7508 13.1168 16.46 13.6327L16.2742 13.9623L17.2263 15.2586L15.2585 17.2264L13.9622 16.2743L13.6326 16.46C13.1167 16.7508 12.567 16.9788 11.9989 17.1376L11.6346 17.2394L11.3914 18.8281H8.60855L8.36535 17.2393L8.00109 17.1375C7.43293 16.9788 6.88324 16.7508 6.36734 16.46L6.03773 16.2742L4.74145 17.2263L2.77363 15.2585L3.72574 13.9622L3.53996 13.6326C3.24918 13.1167 3.02121 12.567 2.86242 11.9989L2.76062 11.6346L1.17188 11.3914V8.60855L2.76066 8.36535L2.86246 8.00109C3.02125 7.43293 3.24918 6.88324 3.54 6.36734L3.72578 6.03773L2.77367 4.74145L4.74148 2.77363L6.03777 3.72574L6.36738 3.53996C6.88328 3.24918 7.43297 3.02121 8.00113 2.86242L8.36539 2.76062L8.60855 1.17188H11.3914L11.6346 2.76066L11.9989 2.86246C12.5671 3.02125 13.1168 3.24918 13.6327 3.54L13.9623 3.72578L15.2586 2.77367L17.2264 4.74148L16.2743 6.03777L16.46 6.36738C16.7508 6.88328 16.9788 7.43297 17.1376 8.00113L17.2394 8.36539L18.8281 8.60855V11.3914L17.2393 11.6346Z"
+          fill="#A7A9AC"/>
+    <path d="M9.99965 5.16052C7.33113 5.16052 5.16016 7.3315 5.16016 10C5.16016 12.6685 7.33113 14.8395 9.99965 14.8395C12.6682 14.8395 14.8391 12.6685 14.8391 10C14.8391 7.3315 12.6682 5.16052 9.99965 5.16052ZM9.99965 13.6676C7.97734 13.6676 6.33203 12.0224 6.33203 10C6.33203 7.97767 7.9773 6.3324 9.99965 6.3324C12.022 6.3324 13.6673 7.97767 13.6673 10C13.6673 12.0224 12.022 13.6676 9.99965 13.6676Z"
+          fill="#A7A9AC"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_894_28380">
+      <rect width="20" height="20" fill="white"/>
+    </clipPath>
+  </defs>
+</svg></span>
+                                Налаштування
+                                <span class="arrow"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                         viewBox="0 0 14 14" fill="none">
+  <path d="M7.46824 9.80994L12.8083 4.50758C12.9319 4.38495 13 4.22124 13 4.04668C13 3.87212 12.9319 3.70841 12.8083 3.58577L12.4151 3.19529C12.1589 2.9412 11.7425 2.9412 11.4867 3.19529L7.00249 7.64781L2.51326 3.19035C2.38965 3.06771 2.22487 3 2.04916 3C1.87326 3 1.70848 3.06771 1.58477 3.19035L1.19171 3.58083C1.0681 3.70356 1 3.86718 1 4.04174C1 4.2163 1.0681 4.38001 1.19171 4.50264L6.53664 9.80994C6.66064 9.93287 6.8262 10.0004 7.00219 10C7.17888 10.0004 7.34434 9.93287 7.46824 9.80994Z"
+        fill="#A7A9AC"/>
+</svg></span>
+                            </a>
+                            <ul class="sub-list">
+                                <li>
+                                    <a href="#">Налаштування</a>
+                                </li>
+                                <li>
+                                    <a href="#">Налаштування</a>
+                                </li>
+                                <li>
+                                    <a href="#">Налаштування</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="sidebar-user">
+                    <div class="sidebar-user__avatar">
+                        <img class="cover" src="img/user-avatar.png" alt="">
+                    </div>
+                    <div class="sidebar-user-description">
+                        <a href="#" class="sidebar-user__name">
+                            Максим Коваленко
+                        </a>
+                        <div class="sidebar-user__role">
+                            Користувач
+                        </div>
+                    </div>
+                    <a href="#" class="sidebar-user-arrow">
+                        <img src="img/arrow-right.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="main-header">
+                <a href="#sidebar" class="sidebar-show show-element">
+                    <img src="img/arrow-left.svg" alt="">
+                </a>
+                <a href="#sidebar" class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <div class="main-header__title hidden-on-mobile">
+                    Чат онлайн
+                </div>
+                <div class="main-header-menu">
+                    <a href="#" class="chat-link main-header-menu__link">
+                        <img src="img/chat.svg" alt="">
+                    </a>
+                    <a href="#" class="notifications-link main-header-menu__link">
+                        <img src="img/fi_bell.svg" alt="">
+                    </a>
+                    <div class="custom-select">
+                        <div class="custom-select-value">
+                            <div class="custom-select__image"><img src="img/ukraine.png" alt=""></div>
+                            <div class="custom-select-value__text">UA</div>
+                            <div class="custom-select-value__icon">
+                                <img src="img/arrow-down.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="custom-select-list">
+                            <a href="#" class="custom-select-list__item current">
+                                <div class="custom-select__image"><img src="img/ukraine.png" alt=""></div>
+                                <div class="custom-select-value__text">UA</div>
+                            </a>
+                            <a href="#" class="custom-select-list__item">
+                                <div class="custom-select__image"><img src="img/ukraine.png" alt=""></div>
+                                <div class="custom-select-value__text">EN</div>
+                            </a>
+                            <a href="#" class="custom-select-list__item">
+                                <div class="custom-select__image"><img src="img/ukraine.png" alt=""></div>
+                                <div class="custom-select-value__text">IT</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-row main-row--full-height">
+                <div class="main-row-container">
+                    <div class="hidden-on-desktop main-title">
+                        Чат онлайн
+                    </div>
+                    <div class="correspondence wrap">
+                        <div class="correspondence-sidebar">
+                            <div class="correspondence-sidebar-head">
+                                <form method="post" class="correspondence-sidebar-search" autocomplete="off">
+                                    <button type="submit"><img src="img/search.svg" alt=""></button>
+                                    <label><input type="text" name="s" placeholder="Пошук "></label>
+                                </form>
+                                <a href="#new-chat" class="correspondence-sidebar__button add-chat open-modal">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                         fill="none">
+                                        <g clip-path="url(#clip0_894_29746)">
+                                            <path d="M8 15.5C7.80575 15.5 7.61946 15.4228 7.4821 15.2855C7.34474 15.1481 7.26758 14.9618 7.26758 14.7676V1.23242C7.26758 1.03817 7.34474 0.851877 7.4821 0.714521C7.61946 0.577166 7.80575 0.5 8 0.5C8.19425 0.5 8.38054 0.577166 8.5179 0.714521C8.65526 0.851877 8.73242 1.03817 8.73242 1.23242V14.7676C8.73242 14.9618 8.65526 15.1481 8.5179 15.2855C8.38054 15.4228 8.19425 15.5 8 15.5Z"
+                                                  fill="white"/>
+                                            <path d="M14.7676 8.73242H1.23242C1.03817 8.73242 0.851877 8.65526 0.714521 8.5179C0.577166 8.38054 0.5 8.19425 0.5 8C0.5 7.80575 0.577166 7.61946 0.714521 7.4821C0.851877 7.34474 1.03817 7.26758 1.23242 7.26758H14.7676C14.9618 7.26758 15.1481 7.34474 15.2855 7.4821C15.4228 7.61946 15.5 7.80575 15.5 8C15.5 8.19425 15.4228 8.38054 15.2855 8.5179C15.1481 8.65526 14.9618 8.73242 14.7676 8.73242Z"
+                                                  fill="white"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_894_29746">
+                                                <rect width="15" height="15" fill="white"
+                                                      transform="translate(0.5 0.5)"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="correspondence-sidebar-body">
+                                <div class="correspondence-sidebar-body-content">
+                                    <div class="correspondence-item read active">
+                                        <a href="#chat-100" class="correspondence-item__link"></a>
+                                        <div class="correspondence-item__avatar">
+                                            <img src="img/avatar1.png" alt="">
+                                        </div>
+                                        <div class="correspondence-item-content">
+                                            <div class="correspondence-item-head">
+                                                <div class="correspondence-item__name">
+                                                    Марія Пилипенко
+                                                </div>
+                                                <div class="correspondence-item__date">
+                                                    Сьогодні
+                                                </div>
+                                            </div>
+                                            <div class="correspondence-item-body">
+                                                <div class="correspondence-item__preview">
+                                                    <p>Вітаємо! Як можу допомогти з вашим рахунком...</p>
+                                                </div>
+                                                <div class="correspondence-item__status">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11"
+                                                         viewBox="0 0 18 11" fill="none">
+                                                        <path d="M1 5.26471L4.6129 9.5L11.8387 0.5" stroke="#0CAE35"
+                                                              stroke-opacity="0.3"/>
+                                                        <path d="M8.22656 7.91177L9.77495 9.50001L17.0008 1.02942"
+                                                              stroke="#0CAE35" stroke-opacity="0.3"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-item income">
+                                        <a href="#chat-101"  class="correspondence-item__link"></a>
+                                        <div class="correspondence-item__avatar">
+                                            <img src="img/avatar2.png" alt="">
+                                        </div>
+                                        <div class="correspondence-item-content">
+                                            <div class="correspondence-item-head">
+                                                <div class="correspondence-item__name">
+                                                    Олександр Литвиненко
+                                                </div>
+                                                <div class="correspondence-item__date">
+                                                    Сьогодні
+                                                </div>
+                                            </div>
+                                            <div class="correspondence-item-body">
+                                                <div class="correspondence-item__preview">
+                                                    <p>Вітаємо! Як можу допомогти з вашим рахунком...</p>
+                                                </div>
+                                                <div class="correspondence-item__status">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11"
+                                                         viewBox="0 0 18 11" fill="none">
+                                                        <path d="M1 5.26471L4.6129 9.5L11.8387 0.5" stroke="#0CAE35"
+                                                              stroke-opacity="0.3"/>
+                                                        <path d="M8.22656 7.91177L9.77495 9.50001L17.0008 1.02942"
+                                                              stroke="#0CAE35" stroke-opacity="0.3"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-item income not-read">
+                                        <a href="#" class="correspondence-item__link"></a>
+                                        <div class="correspondence-item__avatar">
+                                            <img src="img/anonim.jpg" alt="">
+                                        </div>
+                                        <div class="correspondence-item-content">
+                                            <div class="correspondence-item-head">
+                                                <div class="correspondence-item__name">
+                                                    Сергій Кравченко
+                                                </div>
+                                                <div class="correspondence-item__date">
+                                                    14 вер.
+                                                </div>
+                                            </div>
+                                            <div class="correspondence-item-body">
+                                                <div class="correspondence-item__preview">
+                                                    <p>Вітаємо! Як можу допомогти з вашим рахунком...</p>
+                                                </div>
+                                                <div class="correspondence-item__status">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11"
+                                                         viewBox="0 0 18 11" fill="none">
+                                                        <path d="M1 5.26471L4.6129 9.5L11.8387 0.5" stroke="#0CAE35"
+                                                              stroke-opacity="0.3"/>
+                                                        <path d="M8.22656 7.91177L9.77495 9.50001L17.0008 1.02942"
+                                                              stroke="#0CAE35" stroke-opacity="0.3"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-item income not-read">
+                                        <a href="#" class="correspondence-item__link"></a>
+                                        <div class="correspondence-item__avatar">
+                                            <img src="img/anonim.jpg" alt="">
+                                        </div>
+                                        <div class="correspondence-item-content">
+                                            <div class="correspondence-item-head">
+                                                <div class="correspondence-item__name">
+                                                    Сергій Кравченко
+                                                </div>
+                                                <div class="correspondence-item__date">
+                                                    14 вер.
+                                                </div>
+                                            </div>
+                                            <div class="correspondence-item-body">
+                                                <div class="correspondence-item__preview">
+                                                    <p>Вітаємо! Як можу допомогти з вашим рахунком...</p>
+                                                </div>
+                                                <div class="correspondence-item__status">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11"
+                                                         viewBox="0 0 18 11" fill="none">
+                                                        <path d="M1 5.26471L4.6129 9.5L11.8387 0.5" stroke="#0CAE35"
+                                                              stroke-opacity="0.3"/>
+                                                        <path d="M8.22656 7.91177L9.77495 9.50001L17.0008 1.02942"
+                                                              stroke="#0CAE35" stroke-opacity="0.3"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-item income ">
+                                        <a href="#" class="correspondence-item__link"></a>
+                                        <div class="correspondence-item__avatar">
+                                            <img src="img/avatar2.png" alt="">
+                                        </div>
+                                        <div class="correspondence-item-content">
+                                            <div class="correspondence-item-head">
+                                                <div class="correspondence-item__name">
+                                                    Олександр Литвиненко
+                                                </div>
+                                                <div class="correspondence-item__date">
+                                                    Сьогодні
+                                                </div>
+                                            </div>
+                                            <div class="correspondence-item-body">
+                                                <div class="correspondence-item__preview">
+                                                    <p>Вітаємо! Як можу допомогти з вашим рахунком...</p>
+                                                </div>
+                                                <div class="correspondence-item__status">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11"
+                                                         viewBox="0 0 18 11" fill="none">
+                                                        <path d="M1 5.26471L4.6129 9.5L11.8387 0.5" stroke="#0CAE35"
+                                                              stroke-opacity="0.3"/>
+                                                        <path d="M8.22656 7.91177L9.77495 9.50001L17.0008 1.02942"
+                                                              stroke="#0CAE35" stroke-opacity="0.3"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-item">
+                                        <a href="#" class="correspondence-item__link"></a>
+                                        <div class="correspondence-item__avatar">
+                                            <img src="img/avatar1.png" alt="">
+                                        </div>
+                                        <div class="correspondence-item-content">
+                                            <div class="correspondence-item-head">
+                                                <div class="correspondence-item__name">
+                                                    Марія Пилипенко
+                                                </div>
+                                                <div class="correspondence-item__date">
+                                                    Сьогодні
+                                                </div>
+                                            </div>
+                                            <div class="correspondence-item-body">
+                                                <div class="correspondence-item__preview">
+                                                    <p>Вітаємо! Як можу допомогти з вашим рахунком...</p>
+                                                </div>
+                                                <div class="correspondence-item__status">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11"
+                                                         viewBox="0 0 18 11" fill="none">
+                                                        <path d="M1 5.26471L4.6129 9.5L11.8387 0.5" stroke="#0CAE35"
+                                                              stroke-opacity="0.3"/>
+                                                        <path d="M8.22656 7.91177L9.77495 9.50001L17.0008 1.02942"
+                                                              stroke="#0CAE35" stroke-opacity="0.3"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-item">
+                                        <a href="#" class="correspondence-item__link"></a>
+                                        <div class="correspondence-item__avatar">
+                                            <img src="img/avatar2.png" alt="">
+                                        </div>
+                                        <div class="correspondence-item-content">
+                                            <div class="correspondence-item-head">
+                                                <div class="correspondence-item__name">
+                                                    Олександр Литвиненко
+                                                </div>
+                                                <div class="correspondence-item__date">
+                                                    Сьогодні
+                                                </div>
+                                            </div>
+                                            <div class="correspondence-item-body">
+                                                <div class="correspondence-item__preview">
+                                                    <p>Вітаємо! Як можу допомогти з вашим рахунком...</p>
+                                                </div>
+                                                <div class="correspondence-item__status">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11"
+                                                         viewBox="0 0 18 11" fill="none">
+                                                        <path d="M1 5.26471L4.6129 9.5L11.8387 0.5" stroke="#0CAE35"
+                                                              stroke-opacity="0.3"/>
+                                                        <path d="M8.22656 7.91177L9.77495 9.50001L17.0008 1.02942"
+                                                              stroke="#0CAE35" stroke-opacity="0.3"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-item">
+                                        <a href="#" class="correspondence-item__link"></a>
+                                        <div class="correspondence-item__avatar">
+                                            <img src="img/avatar1.png" alt="">
+                                        </div>
+                                        <div class="correspondence-item-content">
+                                            <div class="correspondence-item-head">
+                                                <div class="correspondence-item__name">
+                                                    Марія Пилипенко
+                                                </div>
+                                                <div class="correspondence-item__date">
+                                                    Сьогодні
+                                                </div>
+                                            </div>
+                                            <div class="correspondence-item-body">
+                                                <div class="correspondence-item__preview">
+                                                    <p>Вітаємо! Як можу допомогти з вашим рахунком...</p>
+                                                </div>
+                                                <div class="correspondence-item__status">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11"
+                                                         viewBox="0 0 18 11" fill="none">
+                                                        <path d="M1 5.26471L4.6129 9.5L11.8387 0.5" stroke="#0CAE35"
+                                                              stroke-opacity="0.3"/>
+                                                        <path d="M8.22656 7.91177L9.77495 9.50001L17.0008 1.02942"
+                                                              stroke="#0CAE35" stroke-opacity="0.3"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-item">
+                                        <a href="#" class="correspondence-item__link"></a>
+                                        <div class="correspondence-item__avatar">
+                                            <img src="img/avatar2.png" alt="">
+                                        </div>
+                                        <div class="correspondence-item-content">
+                                            <div class="correspondence-item-head">
+                                                <div class="correspondence-item__name">
+                                                    Олександр Литвиненко
+                                                </div>
+                                                <div class="correspondence-item__date">
+                                                    Сьогодні
+                                                </div>
+                                            </div>
+                                            <div class="correspondence-item-body">
+                                                <div class="correspondence-item__preview">
+                                                    <p>Вітаємо! Як можу допомогти з вашим рахунком...</p>
+                                                </div>
+                                                <div class="correspondence-item__status">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11"
+                                                         viewBox="0 0 18 11" fill="none">
+                                                        <path d="M1 5.26471L4.6129 9.5L11.8387 0.5" stroke="#0CAE35"
+                                                              stroke-opacity="0.3"/>
+                                                        <path d="M8.22656 7.91177L9.77495 9.50001L17.0008 1.02942"
+                                                              stroke="#0CAE35" stroke-opacity="0.3"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-item">
+                                        <a href="#" class="correspondence-item__link"></a>
+                                        <div class="correspondence-item__avatar">
+                                            <img src="img/avatar1.png" alt="">
+                                        </div>
+                                        <div class="correspondence-item-content">
+                                            <div class="correspondence-item-head">
+                                                <div class="correspondence-item__name">
+                                                    Марія Пилипенко
+                                                </div>
+                                                <div class="correspondence-item__date">
+                                                    Сьогодні
+                                                </div>
+                                            </div>
+                                            <div class="correspondence-item-body">
+                                                <div class="correspondence-item__preview">
+                                                    <p>Вітаємо! Як можу допомогти з вашим рахунком...</p>
+                                                </div>
+                                                <div class="correspondence-item__status">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11"
+                                                         viewBox="0 0 18 11" fill="none">
+                                                        <path d="M1 5.26471L4.6129 9.5L11.8387 0.5" stroke="#0CAE35"
+                                                              stroke-opacity="0.3"/>
+                                                        <path d="M8.22656 7.91177L9.77495 9.50001L17.0008 1.02942"
+                                                              stroke="#0CAE35" stroke-opacity="0.3"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-item">
+                                        <a href="#" class="correspondence-item__link"></a>
+                                        <div class="correspondence-item__avatar">
+                                            <img src="img/avatar2.png" alt="">
+                                        </div>
+                                        <div class="correspondence-item-content">
+                                            <div class="correspondence-item-head">
+                                                <div class="correspondence-item__name">
+                                                    Олександр Литвиненко
+                                                </div>
+                                                <div class="correspondence-item__date">
+                                                    Сьогодні
+                                                </div>
+                                            </div>
+                                            <div class="correspondence-item-body">
+                                                <div class="correspondence-item__preview">
+                                                    <p>Вітаємо! Як можу допомогти з вашим рахунком...</p>
+                                                </div>
+                                                <div class="correspondence-item__status">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11"
+                                                         viewBox="0 0 18 11" fill="none">
+                                                        <path d="M1 5.26471L4.6129 9.5L11.8387 0.5" stroke="#0CAE35"
+                                                              stroke-opacity="0.3"/>
+                                                        <path d="M8.22656 7.91177L9.77495 9.50001L17.0008 1.02942"
+                                                              stroke="#0CAE35" stroke-opacity="0.3"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-item">
+                                        <a href="#" class="correspondence-item__link"></a>
+                                        <div class="correspondence-item__avatar">
+                                            <img src="img/avatar1.png" alt="">
+                                        </div>
+                                        <div class="correspondence-item-content">
+                                            <div class="correspondence-item-head">
+                                                <div class="correspondence-item__name">
+                                                    Марія Пилипенко
+                                                </div>
+                                                <div class="correspondence-item__date">
+                                                    Сьогодні
+                                                </div>
+                                            </div>
+                                            <div class="correspondence-item-body">
+                                                <div class="correspondence-item__preview">
+                                                    <p>Вітаємо! Як можу допомогти з вашим рахунком...</p>
+                                                </div>
+                                                <div class="correspondence-item__status">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11"
+                                                         viewBox="0 0 18 11" fill="none">
+                                                        <path d="M1 5.26471L4.6129 9.5L11.8387 0.5" stroke="#0CAE35"
+                                                              stroke-opacity="0.3"/>
+                                                        <path d="M8.22656 7.91177L9.77495 9.50001L17.0008 1.02942"
+                                                              stroke="#0CAE35" stroke-opacity="0.3"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-item">
+                                        <a href="#" class="correspondence-item__link"></a>
+                                        <div class="correspondence-item__avatar">
+                                            <img src="img/avatar2.png" alt="">
+                                        </div>
+                                        <div class="correspondence-item-content">
+                                            <div class="correspondence-item-head">
+                                                <div class="correspondence-item__name">
+                                                    Олександр Литвиненко
+                                                </div>
+                                                <div class="correspondence-item__date">
+                                                    Сьогодні
+                                                </div>
+                                            </div>
+                                            <div class="correspondence-item-body">
+                                                <div class="correspondence-item__preview">
+                                                    <p>Вітаємо! Як можу допомогти з вашим рахунком...</p>
+                                                </div>
+                                                <div class="correspondence-item__status">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11"
+                                                         viewBox="0 0 18 11" fill="none">
+                                                        <path d="M1 5.26471L4.6129 9.5L11.8387 0.5" stroke="#0CAE35"
+                                                              stroke-opacity="0.3"/>
+                                                        <path d="M8.22656 7.91177L9.77495 9.50001L17.0008 1.02942"
+                                                              stroke="#0CAE35" stroke-opacity="0.3"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="correspondence-content">
+                            <div class="correspondence-content-head">
+                                <a href="#" class="correspondence-content__close">
+                                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.19006 6.46824L5.49242 11.8083C5.61505 11.9319 5.77876 12 5.95332 12C6.12788 12 6.29159 11.9319 6.41423 11.8083L6.80471 11.4151C7.0588 11.1589 7.0588 10.7425 6.80471 10.4867L2.35219 6.00249L6.80965 1.51326C6.93229 1.38965 7 1.22487 7 1.04916C7 0.87326 6.93229 0.708481 6.80965 0.584775L6.41917 0.191706C6.29644 0.0680971 6.13282 -7.58111e-08 5.95826 -9.10715e-08C5.7837 -1.06332e-07 5.62 0.068097 5.49736 0.191706L0.19006 5.53664C0.0671321 5.66064 -0.000386175 5.8262 1.47802e-06 6.00219C-0.000386206 6.17888 0.067132 6.34434 0.19006 6.46824Z" fill="#0CAE35"/>
+                                    </svg>
+
+                                </a>
+                                <div class="correspondence-content-head__avatar">
+                                    <img src="img/avatar1.png" alt="">
+                                </div>
+                                <div class="correspondence-item__name">
+                                    Марія Пилипенко
+                                </div>
+                                <form method="post" class="correspondence-content-head-search" autocomplete="off">
+                                    <button type="submit"><img src="img/search.svg" alt=""></button>
+                                    <label><input type="text" name="s" placeholder="Пошук "></label>
+                                </form>
+                            </div>
+                            <div class="correspondence-chat">
+                                <div id="chat-100" style="display:block;" class="correspondence-chat-inner">
+                                    <div class="correspondence-chat-date">
+                                        Вчора
+                                    </div>
+                                    <div class="correspondence-chat-item sent">
+                                        <div class="correspondence-chat-item-head">
+                                            <div class="correspondence-chat-item__time">11:35</div>
+                                            <div class="correspondence-item__name">Максим Коваленко</div>
+                                        </div>
+                                        <div class="correspondence-chat-item-content">
+
+                                            <div class="correspondence-chat-item-content__text">
+                                                Доброго дня! Маю питання стосовно виставленого рахунку. Сума не відповідає очікуваній, і я не розумію, чому.
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-chat-date">
+                                        Сьогодні
+                                    </div>
+                                    <div class="correspondence-chat-item">
+                                        <div class="correspondence-chat-item-head">
+                                            <div class="correspondence-chat-item__time">11:35</div>
+                                            <div class="correspondence-item__name">Максим Коваленко</div>
+                                        </div>
+                                        <div class="correspondence-chat-item-content">
+
+                                            <div class="correspondence-chat-item-content__text">
+                                                Доброго дня! Маю питання стосовно виставленого рахунку. Сума не відповідає очікуваній, і я не розумію, чому.
+                                            </div>
+                                            <a href="img/authorization-image.png"  target="_blank" class="correspondence-chat-item-content__attach">
+                                                img/authorization-image.png <span class="icon"><img src="img/attach-file.svg" alt=""></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-chat-item sent">
+                                        <div class="correspondence-chat-item-head">
+                                            <div class="correspondence-chat-item__time">11:35</div>
+                                            <div class="correspondence-item__name">Максим Коваленко</div>
+                                        </div>
+                                        <div class="correspondence-chat-item-content">
+                                            <a href="img/authorization-image.png" target="_blank" class="correspondence-chat-item-content__image">
+                                                <img src="img/authorization-image.png" alt="">
+                                            </a>
+                                            <div class="correspondence-chat-item-content__text">
+                                                Доброго дня! Маю питання стосовно виставленого рахунку. Сума не відповідає очікуваній, і я не розумію, чому.
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-chat-item">
+                                        <div class="correspondence-chat-item-head">
+                                            <div class="correspondence-chat-item__time">11:35</div>
+                                            <div class="correspondence-item__name">Максим Коваленко</div>
+                                        </div>
+                                        <div class="correspondence-chat-item-content">
+
+                                            <div class="correspondence-chat-item-content__text">
+                                                Доброго дня! Маю питання стосовно виставленого рахунку. Сума не відповідає очікуваній, і я не розумію, чому.
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="chat-101" style="display:none;" class="correspondence-chat-inner">
+                                    <div class="correspondence-chat-date">
+                                        12.08.2024
+                                    </div>
+                                    <div class="correspondence-chat-item sent">
+                                        <div class="correspondence-chat-item-head">
+                                            <div class="correspondence-chat-item__time">11:35</div>
+                                            <div class="correspondence-item__name">Максим Коваленко</div>
+                                        </div>
+                                        <div class="correspondence-chat-item-content">
+
+                                            <div class="correspondence-chat-item-content__text">
+                                                Доброго дня! Маю питання стосовно виставленого рахунку. Сума не відповідає очікуваній, і я не розумію, чому.
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-chat-date">
+                                        Сьогодні
+                                    </div>
+                                    <div class="correspondence-chat-item">
+                                        <div class="correspondence-chat-item-head">
+                                            <div class="correspondence-chat-item__time">11:35</div>
+                                            <div class="correspondence-item__name">Максим Коваленко</div>
+                                        </div>
+                                        <div class="correspondence-chat-item-content">
+
+                                            <div class="correspondence-chat-item-content__text">
+                                                Доброго дня! Маю питання стосовно виставленого рахунку. Сума не відповідає очікуваній, і я не розумію, чому.
+                                            </div>
+                                            <a href="img/authorization-image.png"  target="_blank" class="correspondence-chat-item-content__attach">
+                                                img/authorization-image.png <span class="icon"><img src="img/attach-file.svg" alt=""></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-chat-item sent">
+                                        <div class="correspondence-chat-item-head">
+                                            <div class="correspondence-chat-item__time">11:35</div>
+                                            <div class="correspondence-item__name">Максим Коваленко</div>
+                                        </div>
+                                        <div class="correspondence-chat-item-content">
+                                            <a href="img/authorization-image.png" target="_blank" class="correspondence-chat-item-content__image">
+                                                <img src="img/authorization-image.png" alt="">
+                                            </a>
+                                            <div class="correspondence-chat-item-content__text">
+                                                Доброго дня! Маю питання стосовно виставленого рахунку. Сума не відповідає очікуваній, і я не розумію, чому.
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-chat-item">
+                                        <div class="correspondence-chat-item-head">
+                                            <div class="correspondence-chat-item__time">11:35</div>
+                                            <div class="correspondence-item__name">Максим Коваленко</div>
+                                        </div>
+                                        <div class="correspondence-chat-item-content">
+
+                                            <div class="correspondence-chat-item-content__text">
+                                                Доброго дня! Маю питання стосовно виставленого рахунку. Сума не відповідає очікуваній, і я не розумію, чому.
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-chat-item">
+                                        <div class="correspondence-chat-item-head">
+                                            <div class="correspondence-chat-item__time">11:35</div>
+                                            <div class="correspondence-item__name">Максим Коваленко</div>
+                                        </div>
+                                        <div class="correspondence-chat-item-content">
+
+                                            <div class="correspondence-chat-item-content__text">
+                                                Доброго дня! Маю питання стосовно виставленого рахунку. Сума не відповідає очікуваній, і я не розумію, чому.
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="correspondence-chat-item">
+                                        <div class="correspondence-chat-item-head">
+                                            <div class="correspondence-chat-item__time">11:35</div>
+                                            <div class="correspondence-item__name">Максим Коваленко</div>
+                                        </div>
+                                        <div class="correspondence-chat-item-content">
+
+                                            <div class="correspondence-chat-item-content__text">
+                                                test
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="correspondence-footer send-message" autocomplete="off" method="post">
+                                <label class="send-message__file">
+                                    <input type="file" name="file" id="message-file" style="display:none;"
+                                           accept="image/*,.pdf">
+                                    <img src="img/file.svg" class="file-preview" data-src="img/file.svg" alt="">
+                                </label>
+                                <label class="send-message__label">
+                                    <input type="text" name="text" required placeholder=" Введіть текст..."
+                                           id="message-input">
+                                    <a href="#" class="send-message__smile" id="emoji-trigger">
+                                        <img src="img/smile.svg" alt="">
+                                    </a>
+                                    <div id="emoji-picker" class="emoji-picker" style="display: none; position: absolute; z-index: 1000;"></div>
+
+                                </label>
+                                <button type="submit" class="send-message__button">
+                                    <img src="img/send.svg" alt="">
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-footer">
+                <div class="copyright">
+                    © 2024 Tranzify Всі права захищені
+                </div>
+                <a href="#" class="main-footer__link">
+                    Користувацька угода
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+<div class="modal modal-new-account modal-window" id="new-account">
+    <div class="modal-head">
+        <div class="modal__title">
+            Додати рахунок
+        </div>
+        <a href="#new-account" class="modal-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <mask id="mask0_894_29406" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
+                      height="24">
+                    <rect width="24" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_894_29406)">
+                    <path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                          fill="#1E1E1E" fill-opacity="0.3"/>
+                </g>
+            </svg>
+        </a>
+    </div>
+    <div class="modal-content">
+        <form class="form create-account">
+            <label class="form-group">
+                <span class="form-group__title">Оберіть валюту</span>
+                <select>
+                    <option>Оберіть валюту</option>
+                    <option>USD</option>
+                </select>
+            </label>
+            <button type="submit">
+                Додати рахунок
+            </button>
+        </form>
+    </div>
+</div>
+<div class="modal modal-new-account modal-window" id="new-chat">
+    <div class="modal-head">
+        <div class="modal__title">
+            Створити чат
+        </div>
+        <a href="#new-chat" class="modal-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <mask id="mask0_894_29406" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
+                      height="24">
+                    <rect width="24" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_894_29406)">
+                    <path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                          fill="#1E1E1E" fill-opacity="0.3"/>
+                </g>
+            </svg>
+        </a>
+    </div>
+    <div class="modal-content">
+        <form class="form create-account">
+            <label class="form-group">
+                <span class="form-group__title">Тема чату</span>
+                <select>
+                    <option>Оберіть тему чату</option>
+                    <option>USD</option>
+                </select>
+            </label>
+            <button type="submit">
+                Створити чат
+            </button>
+        </form>
+    </div>
+</div>
+<script>
+    var passwordHideIcon = 'img/mdi_hide-outline.svg';
+    var passwordShowIcon = 'img/show.svg';
+    var loaderIcon = 'img/loading.gif';
+    var attachFile = 'img/attach-file.svg';
+</script>
+<style>
+    .chart-js {
+        &:after {
+            background-image: url(img/loading.gif);
+        }
+    }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/emoji-mart@3.0.0/dist/css/emoji-mart.css">
+<script id="emoji-button-script"  src="https://cdn.jsdelivr.net/npm/emoji-mart@5.6.0/dist/browser.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

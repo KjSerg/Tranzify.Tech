@@ -349,6 +349,15 @@ strong {
   font-style: normal;
   font-weight: 400;
   line-height: 2.2rem;
+  
+  strong{
+    display: block;
+    color: #1E1E1E;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.2rem;
+  }
 
   & > *:not(:last-child) {
     margin-bottom: 1rem;
@@ -464,6 +473,16 @@ strong {
     border: 1px solid #D12929;
     color: #FFFFFF;
 
+    &:hover {
+      background: #FFFFFF;
+      color: #D12929;
+    }
+  }
+  &--green {
+    border-radius: 0.8rem;
+    background: rgba(12, 174, 53, 0.10);
+    border-color:rgba(12, 174, 53, 0);
+    color: #0CAE35;
     &:hover {
       background: #FFFFFF;
       color: #D12929;
@@ -1237,5 +1256,19 @@ table {
 
   &.form-lost-link {
     text-align: left;
+  }
+}
+
+.language-switcher{
+  .custom-select__image{
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    flex-grow: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
   }
 }

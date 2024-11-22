@@ -315,5 +315,18 @@
       font-weight: 500;
       line-height: normal;
     }
+
+    &.half{
+      width: 50%;
+      max-width: 100%;
+      @media (max-width: 640px){
+        width: 100%;
+        max-width: 100%;
+      }
+      @media (max-width: 560px){
+        width: calc(100% - 3.2rem);
+        max-width: 100%;
+      }
+    }
   }
 }

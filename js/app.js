@@ -13,6 +13,7 @@ addEventListener("DOMContentLoaded", (event) => {
     emojiInit();
     setBrowserName();
     replaceGap();
+    customCarouselInit();
     doc.querySelectorAll('.sub-menu').forEach(function (element, index) {
         var a = element.firstElementChild;
         var list = element.querySelector('.sub-list');
@@ -419,6 +420,40 @@ addEventListener("DOMContentLoaded", (event) => {
         });
     });
 });
+
+function customCarouselInit() {
+    doc.querySelectorAll('.custom-carousel-nav').forEach(function (element, index) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            var isPrev = element.classList.contains('prev');
+            var href = element.getAttribute('href');
+            var slider = doc.querySelector(href);
+            var slides = slider.querySelectorAll('.custom-carousel-item');
+            var currentSlide = slider.querySelector('.custom-carousel-item.custom-carousel-item-current');
+            if (currentSlide === null) {
+                currentSlide = slider.firstElementChild;
+            }
+            var index = Array.from(slides).indexOf(currentSlide);
+            var nextSlideIndex = index + 2;
+            if (isPrev) {
+                nextSlideIndex = index === 0 ? Array.from(slides).length : index;
+                console.log(Array.from(slides).length)
+            }
+            console.log(index)
+            console.log(nextSlideIndex)
+            var nextSlide = slider.querySelector('.custom-carousel-item:nth-child(' + nextSlideIndex + ')');
+            console.log(nextSlide)
+            if (nextSlide === null) {
+                nextSlide = slider.firstElementChild;
+            }
+            currentSlide.style.display = 'none';
+            currentSlide.classList.remove('custom-carousel-item-current');
+            nextSlide.style.display = 'block';
+            nextSlide.classList.add('custom-carousel-item-current');
+
+        });
+    });
+}
 
 function renderPreviewFileInput(files, fileList) {
     var html = '';
@@ -942,6 +977,15 @@ function slideToggle(element, duration = 400) {
         slideDown(element, duration);
     } else {
         slideUp(element, duration);
+    }
+}
+
+function slideToggleWith(element, duration = 400) {
+    if (window.getComputedStyle(element).display === 'none') {
+
+        slideRight(element, duration);
+    } else {
+        slideLeft(element, duration);
     }
 }
 

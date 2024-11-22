@@ -139,6 +139,23 @@
       margin-left: auto;
     }
   }
+
+  &-transactions{
+    max-width: 46.6rem;
+    .transactions-form{
+      width: 100%;
+    }
+    .transactions-head{
+      flex-direction: column;
+    }
+    &__subtitle{
+      width: 100%;
+      font-size: 1.4rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
 }
 
 .authentication-settings{

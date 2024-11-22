@@ -1,0 +1,13 @@
+.custom-carousel{
+  display: flex;
+  overflow: hidden;
+  &-item{
+    width: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: none;
+    &:first-child{
+      display: block;
+    }
+  }
+}

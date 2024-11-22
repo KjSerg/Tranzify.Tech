@@ -1,0 +1,326 @@
+.install {
+  display: flex;
+  @media (max-width: 650px) {
+    flex-direction: column;
+  }
+
+  &__title {
+    padding-bottom: 1.6rem;
+    margin-bottom: 1.6rem;
+    border-bottom: 1px solid rgba(30, 30, 30, 0.10);
+    color: #1E1E1E;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.4rem;
+
+    @media (max-width: 470px) {
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 2rem;
+    }
+  }
+
+  &-instruction {
+    width: 100%;
+    @media (max-width: 768px) {
+      padding: 1.4rem;
+    }
+
+    &.wrap {
+      @media (max-width: 560px) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    &-item {
+      @media (max-width: 768px) {
+        padding: 1.4rem;
+      }
+
+      &.accordion-item {
+        @media (max-width: 768px) {
+          padding: 1.4rem;
+        }
+      }
+
+      &-controls {
+        margin-top: 1.6rem;
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: 360px) {
+          flex-direction: column-reverse;
+          align-items: center;
+        }
+
+        &-button {
+          width: 5rem;
+          height: 4rem;
+          flex-grow: 0;
+          flex-shrink: 0;
+          padding: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #1E1E1E;
+          border: 1px solid #1E1E1E;
+
+          @media (max-width: 470px) {
+            width: 5rem;
+            height: 3.6rem;
+          }
+
+          &.prev {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+          }
+
+          &.next {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+          }
+
+          svg {
+            path {
+              fill: #fff;
+            }
+          }
+
+          &:hover {
+            border-color: rgba(#1E1E1E, 0.4);
+            background-color: #fff;
+
+            svg {
+              path {
+                fill: #1E1E1E;
+              }
+            }
+          }
+        }
+
+        &-buttons {
+          display: flex;
+          @media (max-width: 360px) {
+            margin-bottom: 2rem;
+          }
+
+          & > *:not(:last-child) {
+            margin-right: 1rem;
+          }
+        }
+      }
+
+      &__button {
+        min-width: 20rem;
+
+        @media (max-width: 470px) {
+          min-width: 12rem;
+          padding: 0.8rem;
+          font-size: 1.4rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 1.6rem;
+        }
+        @media (max-width: 360px) {
+          width: 100%;
+        }
+      }
+
+      strong {
+        color: #1E1E1E;
+      }
+
+      &__status {
+        margin-right: 1.6rem;
+        display: flex;
+        width: 3.5rem;
+        height: 3.5rem;
+        padding: 0.4rem;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 0;
+        flex-shrink: 0;
+        border-radius: 50%;
+        border: 1px solid rgba(30, 30, 30, 0.40);
+        background-color: #fff;
+        color: #1E1E1E;
+        text-align: center;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.8rem;
+
+        .done, .doing {
+          display: none;
+        }
+
+        @media (max-width: 470px) {
+          margin-right: 0.8rem;
+          width: 3rem;
+          height: 3rem;
+          padding: 0.2rem;
+        }
+      }
+
+      &__title {
+        color: #1E1E1E;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 2.2rem;
+
+        &.accordion__title {
+          @media (max-width: 560px) {
+            align-items: center;
+          }
+        }
+
+        @media (max-width: 470px) {
+          font-size: 1.6rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 2rem;
+        }
+
+
+        span {
+          margin-right: auto;
+
+        }
+      }
+
+      &--done {
+        .install-instruction-item__status {
+          background-color: #0CAE35;
+          border: 1px solid rgba(30, 30, 30, 0);
+        }
+
+        .number {
+          display: none;
+        }
+
+        .done {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      &--doing {
+        .install-instruction-item__status {
+          background-color: #5390F3;
+          border: 1px solid rgba(30, 30, 30, 0);
+        }
+
+        .number {
+          display: none;
+        }
+
+        .doing {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  &-documentation {
+    width: 53rem;
+    margin-left: 2rem;
+    @media (max-width: 1024px) {
+      margin-left: 1rem;
+    }
+    @media (max-width: 768px) {
+      padding: 1.4rem;
+    }
+    @media (max-width: 650px) {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    &-list {
+      width: 100%;
+
+      &-item {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 1.2rem;
+        border-bottom: 1px solid rgba(30, 30, 30, 0.10);
+
+        &:not(:last-child) {
+          margin-bottom: 1.2rem;
+        }
+
+        &__title {
+          margin-bottom: 0.4rem;
+          color: #1E1E1E;
+          font-size: 1.6rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+
+        &__text {
+          opacity: 0.4;
+          color: #1E1E1E;
+          font-size: 1.4rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 1.8rem;
+        }
+
+        &-text {
+          padding-right: 2rem;
+
+        }
+
+        &__link {
+          margin-left: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 3.5rem;
+          height: 3.5rem;
+          flex-shrink: 0;
+          flex-grow: 0;
+        }
+      }
+    }
+  }
+}
+
+.installation-table {
+  @media (max-width: 1200px) {
+    width: 110rem;
+  }
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+  @media (max-width: 560px) {
+    width: 60rem;
+  }
+  @media (max-width: 470px) {
+    width: 50rem;
+  }
+  .default-table-column-inner{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+
+  td, th {
+    vertical-align: middle;
+  }
+
+  &--small{
+    @media (max-width: 470px) {
+      width: 60rem;
+    }
+  }
+
+}

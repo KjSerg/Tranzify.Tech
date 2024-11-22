@@ -35,7 +35,7 @@
                 <nav class="sidebar-nav">
                     <ul>
                         <li>
-                            <a href="./main-index.html" class="active">
+                            <a href="./main-index.html" class="">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     viewBox="0 0 20 20" fill="none">
   <path d="M17.1672 7.15357V2.94099H13.6835V4.47357L9.99996 1.63989L0 9.33275L2.09508 12.0561L3.1209 11.267V18.3601H9.03961V13.163H11.1939V18.3601H16.8792V11.267L17.905 12.0561L20 9.33278L17.1672 7.15357ZM15.7059 17.1868H12.3671V11.9897H7.86633V17.1868H4.2941V10.3644L10 5.97517L15.7059 10.3644L15.7059 17.1868ZM17.6904 10.4108L10 4.49466L2.30957 10.4108L1.64527 9.54732L10 3.12013L14.8568 6.85638V4.11423H15.994V7.73126L18.3547 9.54732L17.6904 10.4108Z"
@@ -44,8 +44,8 @@
                                 Головна
                             </a>
                         </li>
-                        <li class="sub-menu">
-                            <a href="#">
+                        <li class="sub-menu open">
+                            <a href="#" class="active">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     viewBox="0 0 20 20" fill="none">
   <path d="M4.21094 10H8.58713V11H4.21094V10Z" fill="#A7A9AC"/>
@@ -67,15 +67,15 @@
         fill="#A7A9AC"/>
 </svg></span>
                             </a>
-                            <ul class="sub-list">
+                            <ul class="sub-list" style="display: block;">
                                 <li>
-                                    <a href="#">Налаштування</a>
+                                    <a href="#" class="active">Гаманець</a>
                                 </li>
                                 <li>
-                                    <a href="#">Налаштування</a>
+                                    <a href="#">Еквайринг</a>
                                 </li>
                                 <li>
-                                    <a href="#">Налаштування</a>
+                                    <a href="#">Облік</a>
                                 </li>
                             </ul>
                         </li>
@@ -447,48 +447,215 @@
                                     Купити ліцензію
                                 </a>
                             </div>
-                            <div class="wallet-license-table">
-                                <div class="wallet-license-table-head ">
-                                    <div class="wallet-license-table-column">
-                                        Назва
-                                    </div>
-                                    <div class="wallet-license-table-column">
-                                        Термін дії
-                                    </div>
-                                    <div class="wallet-license-table-column">
-                                        Статус
-                                    </div>
-                                    <div class="wallet-license-table-column">
-                                        Тип
-                                    </div>
-                                    <div class="wallet-license-table-column">
-                                        Дії
-                                    </div>
-                                </div>
-                                <div class="wallet-license-table-row">
-                                    <div class="wallet-license-table-column">
-                                        <div class="wallet-license-table__head">
-                                            Ліцензія №1
+                            <div class="wallet-license-table-wrap">
+                                <div class="wallet-license-table">
+                                    <div class="wallet-license-table-head ">
+                                        <div class="wallet-license-table-column">
+                                            Назва
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            Термін дії
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            Статус
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            Тип
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            Дії
                                         </div>
                                     </div>
-                                    <div class="wallet-license-table-column">
-                                        Травень 2024 - Липень 2025
+                                    <div class="wallet-license-table-row">
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table__head">
+                                                Ліцензія №1
+                                            </div>
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-column__head">Термін дії</div>
+                                            Травень 2024 - Липень 2025
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-column__head">Статус</div>
+                                            Нективна
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-column__head">Тип</div>
+                                            Преміум
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-controls">
+                                                <a href="#" class="button button--green wallet-license-table__button">
+                                                    Встановити
+                                                </a>
+                                                <a href="#" class="button wallet-license-table__button">
+                                                    Продовжити
+                                                </a>
+                                                <a href="#" class="button button--dark wallet-license-table__button">
+                                                    Оновити
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="wallet-license-table-column">
-                                        Нективна
+                                    <div class="wallet-license-table-row">
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table__head">
+                                                Ліцензія №1
+                                            </div>
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-column__head">Термін дії</div>
+                                            Травень 2024 - Липень 2025
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-column__head">Статус</div>
+                                            Нективна
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-column__head">Тип</div>
+                                            Преміум
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-controls">
+                                                <a href="#" class="button button--green wallet-license-table__button">
+                                                    Встановити
+                                                </a>
+                                                <a href="#" class="button wallet-license-table__button">
+                                                    Продовжити
+                                                </a>
+                                                <a href="#" class="button button--dark wallet-license-table__button">
+                                                    Оновити
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="wallet-license-table-column">
-                                        Преміум
+                                    <div class="wallet-license-table-row">
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table__head">
+                                                Ліцензія №1
+                                            </div>
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-column__head">Термін дії</div>
+                                            Травень 2024 - Липень 2025
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-column__head">Статус</div>
+                                            Нективна
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-column__head">Тип</div>
+                                            Преміум
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-controls">
+                                                <a href="#" class="button button--green wallet-license-table__button">
+                                                    Встановити
+                                                </a>
+                                                <a href="#" class="button wallet-license-table__button">
+                                                    Продовжити
+                                                </a>
+                                                <a href="#" class="button button--dark wallet-license-table__button">
+                                                    Оновити
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="wallet-license-table-column">
-                                        <div class="wallet-license-table-controls">
-                                            <a href="#" class="button">
-                                                Продовжити ліцензію
-                                            </a>
-                                            <a href="#" class="button button--dark">
-                                                Оновити ліцензію
-                                            </a>
-
+                                    <div class="wallet-license-table-row">
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table__head">
+                                                Ліцензія №1
+                                            </div>
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-column__head">Термін дії</div>
+                                            Травень 2024 - Липень 2025
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-column__head">Статус</div>
+                                            Нективна
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-column__head">Тип</div>
+                                            Преміум
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-controls">
+                                                <a href="#" class="button button--green wallet-license-table__button">
+                                                    Встановити
+                                                </a>
+                                                <a href="#" class="button wallet-license-table__button">
+                                                    Продовжити
+                                                </a>
+                                                <a href="#" class="button button--dark wallet-license-table__button">
+                                                    Оновити
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wallet-license-table-row">
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table__head">
+                                                Ліцензія №1
+                                            </div>
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-column__head">Термін дії</div>
+                                            Травень 2024 - Липень 2025
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-column__head">Статус</div>
+                                            Нективна
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-column__head">Тип</div>
+                                            Преміум
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-controls">
+                                                <a href="#" class="button button--green wallet-license-table__button">
+                                                    Встановити
+                                                </a>
+                                                <a href="#" class="button wallet-license-table__button">
+                                                    Продовжити
+                                                </a>
+                                                <a href="#" class="button button--dark wallet-license-table__button">
+                                                    Оновити
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wallet-license-table-row">
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table__head">
+                                                Ліцензія №1
+                                            </div>
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-column__head">Термін дії</div>
+                                            Травень 2024 - Липень 2025
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-column__head">Статус</div>
+                                            Нективна
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-column__head">Тип</div>
+                                            Преміум
+                                        </div>
+                                        <div class="wallet-license-table-column">
+                                            <div class="wallet-license-table-controls">
+                                                <a href="#" class="button button--green wallet-license-table__button">
+                                                    Встановити
+                                                </a>
+                                                <a href="#" class="button wallet-license-table__button">
+                                                    Продовжити
+                                                </a>
+                                                <a href="#" class="button button--dark wallet-license-table__button">
+                                                    Оновити
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
