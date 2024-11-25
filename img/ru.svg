@@ -1,0 +1,27 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1661_753)">
+<mask id="mask0_1661_753" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+<path d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_1661_753)">
+<path d="M-6.69922 0H26.7008V20.04H-6.69922V0Z" fill="white"/>
+</g>
+<mask id="mask1_1661_753" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+<path d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="white"/>
+</mask>
+<g mask="url(#mask1_1661_753)">
+<path d="M-6.69922 6.68018H26.7008V20.0402H-6.69922V6.68018Z" fill="#0038A6"/>
+</g>
+<mask id="mask2_1661_753" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+<path d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="white"/>
+</mask>
+<g mask="url(#mask2_1661_753)">
+<path d="M-6.69922 13.3599H26.7008V20.0399H-6.69922V13.3599Z" fill="#D52A1E"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_1661_753">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+</defs>
+</svg>
