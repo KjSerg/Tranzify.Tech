@@ -156,6 +156,16 @@
       line-height: normal;
     }
   }
+
+  & > .modal-close{
+    position: absolute;
+    top: 2.4rem;
+    right: 2rem;
+
+    & + *{
+      padding-right: 3rem;
+    }
+  }
 }
 
 .authentication-settings{

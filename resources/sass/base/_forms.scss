@@ -217,6 +217,7 @@ input.error, textarea.error {
     align-items: center;
 
     &__title {
+      width: 100%;
       display: block;
       margin-bottom: 1rem;
       color: #1E1E1E;
@@ -266,6 +267,22 @@ input.error, textarea.error {
         }
       }
     }
+
+    &-copy{
+      display: inline-flex;
+      position: relative;
+      width: 100%;
+      input{
+        padding-right: 5rem;
+      }
+      .copy-link{
+        position: absolute;
+        display: flex;
+        right: 1.2rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
   }
 
   &-password {
@@ -311,6 +328,16 @@ input.error, textarea.error {
     &:hover {
       background: #000000;
     }
+
+    &:disabled{
+      pointer-events: none;
+      background: rgba(30, 30, 30, 0.30);
+    }
+  }
+
+  input, select{
+    color: #1E1E1E;
+
   }
 }
 

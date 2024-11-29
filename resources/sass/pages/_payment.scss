@@ -3,14 +3,19 @@
   border-radius: 1.2rem;
   border: 1px solid rgba(30, 30, 30, 0.08);
   background: #FFF;
+  margin-bottom: 2rem;
   @media (max-width: 560px) {
+    margin-bottom: 1.6rem;
     padding: 1.6rem;
+    width: calc(100% - 3.2rem);
+    margin-right: 1.6rem;
+    margin-left: 1.6rem;
   }
 
   &-form {
     align-items: flex-end;
     flex-wrap: nowrap;
-    gap: 0.8rem;
+    gap: 1.6rem 0.8rem;
 
     @media (max-width: 767px) {
       flex-wrap: wrap;
@@ -22,13 +27,34 @@
       @media (max-width: 767px) {
         max-width: 100%;
       }
+      .icon{
+
+        @media (max-width: 992px) {
+          display: none;
+        }
+        @media (max-width: 768px) {
+          display: block;
+        }
+      }
+    }
+
+    .button{
+      .icon{
+
+        @media (max-width: 992px) {
+          display: none;
+        }
+        @media (max-width: 768px) {
+          display: block;
+        }
+      }
     }
 
     & > * {
       &:not(:last-child) {
-        margin-left: 0.8rem;
+        margin-right: 0.8rem;
         @media (max-width: 767px) {
-          margin-left: 0;
+          margin-right: 0;
         }
       }
     }
@@ -107,6 +133,31 @@
         }
         @media (max-width: 470px){
           min-width: 100%;
+        }
+      }
+    }
+    &--row{
+      .form-group.half {
+        width: 100%;
+        max-width: 50%;
+        @media (max-width: 767px) {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+      .button-container{
+        width: 20rem;
+        flex-grow: 0;
+        flex-shrink: 0;
+        @media (max-width: 992px) {
+          width: 16rem;
+        }
+        @media (max-width: 767px) {
+          width: 100%;
+          max-width: 100%;
+        }
+        button, .button{
+          width: 100%;
         }
       }
     }
