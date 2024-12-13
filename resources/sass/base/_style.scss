@@ -823,6 +823,12 @@ strong {
       margin-bottom: 1.6rem;
     }
 
+    &--many-columns{
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-right: 1px;
+    }
+
     @media (max-width: 1500px) {
       overflow: auto;
     }
@@ -1014,6 +1020,11 @@ table {
   font-style: normal;
   font-weight: 400;
   line-height: 1.8rem;
+  &.many-columns{
+    @media (max-width: 1700px) {
+      width: 140rem;
+    }
+  }
   @media (max-width: 1200px) {
     width: 140rem;
   }
@@ -1046,13 +1057,15 @@ table {
   }
 
   th, td {
-
-
     padding: 1.2rem;
 
     &:not(:last-child) {
       border-right: 1px solid rgba(30, 30, 30, 0.10);
     }
+  }
+
+  td{
+    vertical-align: middle;
   }
 
   label {
@@ -1271,4 +1284,12 @@ table {
     border-radius: 50%;
     overflow: hidden;
   }
+}
+
+.border-none{
+  border: none!important;
+}
+
+.padding-bottom-none{
+  padding-bottom: 0!important;
 }

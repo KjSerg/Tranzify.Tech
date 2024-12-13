@@ -189,7 +189,7 @@ input.error, textarea.error {
     &.quarter {
       width: calc(25% - 2rem);
       @media (max-width: 1024px) {
-        width: calc(50% - 1rem);
+        width: calc(50% - 1.8rem);
       }
       @media (max-width: 560px) {
         width: 100%;
@@ -283,6 +283,12 @@ input.error, textarea.error {
         transform: translateY(-50%);
       }
     }
+
+    &.error{
+      select {
+        border-color: red;
+      }
+    }
   }
 
   &-password {
@@ -342,7 +348,7 @@ input.error, textarea.error {
 }
 
 select {
-  padding: 1.2rem;
+  padding: 1.2rem 3rem 1.2rem 1.2rem;
   border-radius: 0.6rem;
   border: 1px solid rgba(30, 30, 30, 0.10);
   width: 100%;

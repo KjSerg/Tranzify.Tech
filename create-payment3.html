@@ -251,13 +251,13 @@
                     <div class="hidden-on-desktop main-title">
                         Створення платежу/переказу
                     </div>
-                    <div class="payment">
+                    <form class="payment">
                         <div class="payment-head">
                             <div class="payment__title title-head">
                                 Крипто-платежі
                             </div>
                         </div>
-                        <form method="post" class="payment-form form">
+                        <div class="payment-form form">
                             <label class="form-group ">
                                 <span class="form-group__title">Рахунок для переказу</span>
                                 <select name="method">
@@ -287,15 +287,14 @@
                                 <span class="form-group__title">Призначення платежу</span>
                                 <input type="text" placeholder="Ввести призначення">
                             </label>
-                        </form>
-                    </div>
-                    <div class="payment">
+                        </div>
+
                         <div class="payment-head">
                             <div class="payment__title title-head">
                                 Отримувач
                             </div>
                         </div>
-                        <form method="post" class="payment-form payment-form--row form">
+                        <div class="payment-form payment-form--row form">
                             <label class="form-group half">
                                 <span class="form-group__title">Криптоадреса</span>
                                 <input type="text" placeholder="Ввести адресу">
@@ -308,8 +307,8 @@
                             <div class="form-group button-container">
                                 <button type="submit" disabled>Відправити платіж</button>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
 
             </div>

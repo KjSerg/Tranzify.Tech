@@ -3,6 +3,7 @@ let lastWidth = window.innerWidth;
 var doc = document;
 var charts = {};
 var dt = new DataTransfer();
+var formScroll = null;
 let resizeTimer;
 addEventListener("DOMContentLoaded", (event) => {
     hideLoader();
@@ -52,6 +53,9 @@ addEventListener("DOMContentLoaded", (event) => {
                     body.classList.remove('open-sidebar');
 
                     doc.querySelector('.main-content').classList.add('full-width');
+                    setTimeout(function () {
+                        scrollingFormToLeft(formScroll);
+                    }, 500);
                 }
                 if (isSidebar && window.innerWidth > 1024) reinitMainCart();
             }
@@ -69,6 +73,9 @@ addEventListener("DOMContentLoaded", (event) => {
                 if (isSidebar) {
                     reinitMainCart();
                     doc.querySelector('.main-content').classList.remove('full-width');
+                    setTimeout(function () {
+                        scrollingFormToLeft(formScroll);
+                    }, 500);
                 }
             }
         });
@@ -419,7 +426,189 @@ addEventListener("DOMContentLoaded", (event) => {
             if (el !== null) el.click();
         });
     });
+    doc.querySelectorAll('.custom-form-js').forEach(function (element) {
+        element.setAttribute('novalidate', 'novalidate');
+        element.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var form = element;
+            var this_form = form.getAttribute('id');
+            var openAfterSubmit = form.getAttribute('data-result');
+            var test = true,
+                thsInputs = form.querySelectorAll('input, textarea'),
+                select = form.querySelectorAll('select[required]');
+
+            select.forEach(function (select) {
+                var label = select.closest('.form-group');
+                var val = select.value;
+                if (Array.isArray(val) && val.length === 0) {
+                    test = false;
+                    label.classList.add('error');
+                } else {
+                    label.classList.remove('error');
+                    console.log(val)
+                    if (val === null || val === undefined || val === "") {
+                        test = false;
+                        label.classList.add('error');
+                    }
+                }
+            });
+            thsInputs.forEach(function (thsInput) {
+                var label = thsInput.closest('.form-group'),
+                    thsInputType = thsInput.getAttribute('type'),
+                    thsInputVal = thsInput.value.trim(),
+                    inputReg = new RegExp(thsInput.getAttribute('data-reg')),
+                    inputTest = inputReg.test(thsInputVal);
+                if (thsInput.hasAttribute('required')) {
+                    if (thsInputVal.length <= 0) {
+                        test = false;
+                        thsInput.classList.add('error');
+                        label.classList.add('error');
+                        thsInput.focus();
+                    } else {
+                        thsInput.classList.remove('error');
+                        label.classList.remove('error');
+                        if (thsInput.getAttribute('data-reg')) {
+                            if (inputTest === false) {
+                                test = false;
+                                thsInput.classList.add('error');
+                                label.classList.add('error');
+                                thsInput.focus();
+                            } else {
+                                thsInput.classList.remove('error');
+                                label.classList.remove('error');
+                            }
+                        }
+                    }
+                }
+            });
+            if (test) {
+                var boxes = form.querySelectorAll('.payment-form');
+                var obj = {};
+                var html = '';
+                boxes.forEach(function (box) {
+                    var fields = box.querySelectorAll('select, input, textarea');
+                    var boxTitle = "";
+                    var previousElement = box.previousElementSibling;
+                    if (previousElement && previousElement.classList.contains('payment-head')) {
+                        boxTitle = previousElement.querySelector('.payment__title').innerHTML.trim();
+                    }
+                    var boxItem = {};
+                    fields.forEach(function (field) {
+                        var name = field.getAttribute('name');
+                        var dataTitle = field.getAttribute('data-title') || '';
+                        var title = field.closest('.form-group').querySelector('.form-group__title').innerHTML.trim();
+                        var val = field.value.trim();
+                        boxItem[name] = {
+                            val: val,
+                            dataName: title || dataTitle
+                        };
+                    });
+                    obj[boxTitle] = boxItem;
+                });
+                html = getPaymentFormHTML(obj);
+                var htmlFields = getPaymentFormFieldsHTML(obj);
+                doc.querySelectorAll(openAfterSubmit).forEach(function (item) {
+                    item.querySelectorAll('.confirmation-row').forEach(function (row) {
+                        row.innerHTML = html;
+                    });
+                    item.querySelectorAll('.payment-form-result').forEach(function (row) {
+                        row.innerHTML = htmlFields;
+                    });
+                });
+                slideDown(doc.querySelector('.confirmation-cancel'), 400);
+                scrollingFormToLeft(form);
+            }
+        });
+    });
+    doc.querySelectorAll('.confirmation-cancel').forEach(function (element, index) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            formScroll = null;
+            doc.querySelector('.payment-container').scrollTo({top: 0, left: 0, behavior: 'smooth'});
+            slideUp(element, 400);
+        });
+    });
+    doc.querySelectorAll('table').forEach(function (element, index) {
+        var columns = element.querySelectorAll('th');
+        if (columns.length >= 10 && !element.classList.contains('many-columns')) {
+            var scrollableElement = element.closest('.custom-table-wrapper');
+            element.classList.add('many-columns');
+            element.closest('.custom-table-wrapper').classList.add('custom-table-wrapper--many-columns');
+            scrollableElement.addEventListener('wheel', (event) => {
+                if (event.deltaY !== 0) {
+                    scrollableElement.scrollLeft += event.deltaY;
+                    event.preventDefault();
+                }
+            });
+        }
+    });
 });
+
+function scrollingFormToLeft(form) {
+    if (form === null) return;
+    var left = form.offsetWidth;
+    if (window.outerWidth <= 560) left = left + 32;
+    doc.querySelector('.payment-container').scrollTo({top: 0, left: left, behavior: 'smooth'});
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    formScroll = form;
+}
+
+function getPaymentFormHTML(obj) {
+    var html = '';
+    var prevCount = 0;
+    var prevID = 0;
+    for (var title in obj) {
+        var items = obj[title];
+        var id = makeID(10);
+        var count = Object.keys(items).length;
+        var columnClassName = '';
+        if (prevCount > 0) {
+            var diff = count - prevCount;
+            diff = Math.abs(diff);
+            if (diff > 2) {
+                columnClassName = 'confirmation-column--wide';
+            }
+        }
+        prevCount = count;
+        html += '<div class="confirmation-column ' + columnClassName + '" id="' + id + '">';
+        html += ' <div class="confirmation-column__title">' + title + '</div>';
+        html += '<ul class="confirmation-list">';
+        for (var key in items) {
+            var item = items[key];
+            html += '<li>' + item.dataName + ' <strong>' + item.val + '</strong></li>';
+        }
+        html += "  </ul>";
+        html += "  </div>";
+    }
+    return html;
+}
+
+function getPaymentFormFieldsHTML(obj) {
+    var html = '';
+    for (var title in obj) {
+        var items = obj[title];
+
+        for (var key in items) {
+            var item = items[key];
+            var id = makeID(10);
+            html += '<input type="hidden" name="' + key + '" value="' + item.val + '" id="' + id + '">';
+        }
+
+    }
+    return html;
+}
+
+function makeid(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        counter += 1;
+    }
+    return result;
+}
 
 function customCarouselInit() {
     doc.querySelectorAll('.custom-carousel-nav').forEach(function (element, index) {
@@ -656,6 +845,7 @@ window.addEventListener('resize', () => {
                 element.classList.add('loading');
                 chartReinit(element);
             });
+            scrollingFormToLeft(formScroll);
         }
     }, 500);
 });
@@ -982,13 +1172,8 @@ function slideToggle(element, duration = 400) {
 
 function slideToggleWith(element, duration = 400) {
     if (window.getComputedStyle(element).display === 'none') {
-
         slideRight(element, duration);
     } else {
         slideLeft(element, duration);
     }
 }
-
-
-
-

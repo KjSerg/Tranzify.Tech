@@ -79,7 +79,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="./create-payment.html"  class="active">
+                            <a href="./create-payment.html" class="active">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     viewBox="0 0 20 20" fill="none">
   <g clip-path="url(#clip0_894_28356)">
@@ -251,94 +251,149 @@
                     <div class="hidden-on-desktop main-title">
                         Створення платежу/переказу
                     </div>
-                    <div class="payment">
-                        <div class="payment-head">
-                            <div class="payment__title title-head">
-                                Банківські перекази
-                            </div>
-                        </div>
-                        <form method="post" class="payment-form form">
-                            <label class="form-group ">
-                                <span class="form-group__title">Рахунок для переказу</span>
-                                <select name="method">
-                                    <option >Обрати рахунок</option>
-                                    <option >Обрати рахунок 2</option>
-                                </select>
-                            </label>
-                            <label class="form-group ">
-                                <span class="form-group__title">Отримувач</span>
-                                <select name="recipient">
-                                    <option >Одержувач</option>
-                                    <option >Одержувач 2</option>
-                                </select>
-                            </label>
-                            <label class="form-group small">
-                                <span class="form-group__title">Введіть суму</span>
-                                <input type="text" name="sum" placeholder="Введіть суму">
-                            </label>
-                            <label class="form-group mini">
-                                <span class="form-group__title"></span>
-                                <select name="currency" >
-                                    <option value="USD">USD</option>
-                                    <option value="USDT">USDT</option>
-                                </select>
-                            </label>
-                            <label class="form-group ">
-                                <span class="form-group__title">Призначення платежу</span>
-                                <input type="text" placeholder="Ввести призначення">
-                            </label>
-                        </form>
-                    </div>
-                    <div class="payment">
-                        <div class="payment-head">
-                            <div class="payment__title title-head">
-                                Отримувач
-                            </div>
-                        </div>
-                        <form method="post" class="payment-form payment-form--wrap form">
-                            <label class="form-group quarter">
-                                <span class="form-group__title">Країна</span>
-                                <select name="method">
-                                    <option >Україна</option>
-                                    <option >Оберіть тип 2</option>
-                                </select>
-                            </label>
 
-                            <label class="form-group quarter">
-                                <span class="form-group__title">Номер рахунку</span>
-                                <input type="text" placeholder="5555 5555 5555 5555">
-                            </label>
-                            <label class="form-group quarter">
-                                <span class="form-group__title">Вибір валюти</span>
-                                <select name="method">
-                                    <option >USD</option>
-                                    <option >Спосіб оплати 2</option>
-                                </select>
-                            </label>
-                            <label class="form-group quarter">
-                                <span class="form-group__title">BIC/SWIFT код</span>
-                                <input type="text" placeholder="AAAA-BB-CC-123">
-                            </label>
-                            <label class="form-group quarter">
-                                <span class="form-group__title">Імʼя отримувача</span>
-                                <input type="text" placeholder="Ihor">
-                            </label>
-                            <label class="form-group quarter">
-                                <span class="form-group__title">Прізвище отримувача</span>
-                                <input type="text" placeholder="Ihorovych">
-                            </label>
-                            <label class="form-group quarter">
-                                <span class="form-group__title">Email отримувача</span>
-                                <input type="email" placeholder="email@com">
-                            </label>
-                            <label class="form-group quarter">
-                                <span class="form-group__title">Телефон отримувача</span>
-                                <input type="tel" placeholder="+ 380 635 555 55 55">
-                            </label>
-                            <div class="form-group">
-                                <button type="submit">Надіслати</button>
+                    <a href="#" style="display:none;" class="confirmation-cancel">
+                        <span class="icon"><svg width="7" height="12" viewBox="0 0 7 12" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+<path d="M0.19006 6.46824L5.49242 11.8083C5.61505 11.9319 5.77876 12 5.95332 12C6.12788 12 6.29159 11.9319 6.41423 11.8083L6.80471 11.4151C7.0588 11.1589 7.0588 10.7425 6.80471 10.4867L2.35219 6.00249L6.80965 1.51326C6.93229 1.38965 7 1.22487 7 1.04916C7 0.87326 6.93229 0.708481 6.80965 0.584775L6.41917 0.191706C6.29644 0.0680971 6.13282 -7.58111e-08 5.95826 -9.10715e-08C5.7837 -1.06332e-07 5.62 0.068097 5.49736 0.191706L0.19006 5.53664C0.0671321 5.66064 -0.000386175 5.8262 1.47802e-06 6.00219C-0.000386206 6.17888 0.067132 6.34434 0.19006 6.46824Z"
+      fill="#1E1E1E"/>
+</svg>
+</span>
+                        Назад
+                    </a>
+                    <div class="payment-container">
+                        <form class="payment custom-form-js  " data-result=".payment-result">
+                            <div class="payment-head">
+                                <div class="payment__title title-head">
+                                    Банківські перекази
+                                </div>
+                            </div>
+                            <div class="payment-form form">
+                                <label class="form-group ">
+                                    <span class="form-group__title">Рахунок для переказу</span>
+                                    <select name="score" required>
+                                        <option value="" selected disabled>Обрати рахунок</option>
+                                        <option>Обрати рахунок</option>
+                                        <option>Обрати рахунок 2</option>
+                                    </select>
+                                </label>
+                                <label class="form-group ">
+                                    <span class="form-group__title">Отримувач</span>
+                                    <select name="recipient" required>
+                                        <option>Одержувач</option>
+                                        <option>Одержувач 2</option>
+                                    </select>
+                                </label>
+                                <label class="form-group small">
+                                    <span class="form-group__title">Введіть суму</span>
+                                    <input type="text" name="sum" required placeholder="Введіть суму">
+                                </label>
+                                <label class="form-group mini">
+                                    <span class="form-group__title"></span>
+                                    <select name="currency" data-title="Валюта" required>
+                                        <option value="USD">USD</option>
+                                        <option value="USDT">USDT</option>
+                                    </select>
+                                </label>
+                                <label class="form-group ">
+                                    <span class="form-group__title">Призначення платежу</span>
+                                    <input type="text" required name="Appointment" placeholder="Ввести призначення">
+                                </label>
+                            </div>
+
+                            <div class="payment-head">
+                                <div class="payment__title title-head">
+                                    Отримувач
+                                </div>
+                            </div>
+                            <div class="payment-form payment-form--wrap form">
+                                <label class="form-group quarter">
+                                    <span class="form-group__title">Країна</span>
+                                    <select name="Country" required>
+                                        <option>Україна</option>
+                                        <option>Оберіть тип 2</option>
+                                    </select>
+                                </label>
+
+                                <label class="form-group quarter">
+                                    <span class="form-group__title">Номер рахунку</span>
+                                    <input type="text" name="Account_number" required placeholder="5555 5555 5555 5555">
+                                </label>
+                                <label class="form-group quarter">
+                                    <span class="form-group__title">Вибір валюти</span>
+                                    <select name="currency2" required>
+                                        <option>USD</option>
+                                        <option>Спосіб оплати 2</option>
+                                    </select>
+                                </label>
+                                <label class="form-group quarter">
+                                    <span class="form-group__title">BIC/SWIFT код</span>
+                                    <input type="text" name="SWIFT" required placeholder="AAAA-BB-CC-123">
+                                </label>
+                                <label class="form-group quarter">
+                                    <span class="form-group__title">Імʼя отримувача</span>
+                                    <input type="text" name="name" required placeholder="Ihor">
+                                </label>
+                                <label class="form-group quarter">
+                                    <span class="form-group__title">Прізвище отримувача</span>
+                                    <input type="text" name="last_name" required placeholder="Ihorovych">
+                                </label>
+                                <label class="form-group quarter">
+                                    <span class="form-group__title">Email отримувача</span>
+                                    <input type="email" name="email" required placeholder="email@com">
+                                </label>
+                                <label class="form-group quarter">
+                                    <span class="form-group__title">Телефон отримувача</span>
+                                    <input type="tel" name="tel" required placeholder="+ 380 635 555 55 55">
+                                </label>
+                                <div class="form-group">
+                                    <button type="submit">Надіслати</button>
+                                </div>
                             </div>
                         </form>
+                        <div class="payment payment-result ">
+                            <div class="payment-head border-none">
+                                <div class="payment__title title-head">
+                                    Підтвердження платежу
+                                </div>
+                            </div>
+
+                            <div class="confirmation-row">
+                                <div class="confirmation-column">
+                                    <div class="confirmation-column__title">
+                                        Банківські перекази
+                                    </div>
+                                    <ul class="confirmation-list">
+                                        <li>Рахунок для переказу <strong>1234567890</strong></li>
+                                        <li>Отримувач <strong>123</strong></li>
+                                        <li>Сума <strong>1,000.00</strong></li>
+                                        <li>Валюта <strong>USD</strong></li>
+                                    </ul>
+                                </div>
+                                <div class="confirmation-column confirmation-column--wide">
+                                    <div class="confirmation-column__title">
+                                        Отримувач
+                                    </div>
+                                    <ul class="confirmation-list">
+                                        <li>Країна <strong>1234567890</strong></li>
+                                        <li>Отримувач <strong>Ihor Ihorovych</strong></li>
+                                        <li>Номер рахунку <strong>123</strong></li>
+                                        <li>Email <strong>email@com</strong></li>
+                                        <li>Валюта <strong>USD</strong></li>
+                                        <li>Телефон <strong>9999999</strong></li>
+                                        <li>BIC/SWIFT код <strong>1,000.00</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <form class="payment-form payment-form--wrap form ">
+                                <div class="payment-form-result" style="display: none"></div>
+                                <div class="form-group">
+                                    <button type="submit">Надіслати</button>
+                                </div>
+                            </form>
+
+                        </div>
                     </div>
                 </div>
 
