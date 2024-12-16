@@ -1121,6 +1121,15 @@ table.last-colum-small th:last-child, table.last-colum-small td:last-child {
 table.last-colum-mini th:last-child, table.last-colum-mini td:last-child {
   width: 9rem;
 }
+table .switcher {
+  margin-top: 0;
+}
+table .small-column {
+  width: 5rem;
+}
+table.application-list-table th.small-column:last-child {
+  width: 5rem;
+}
 
 .table-merchants td {
   vertical-align: middle;

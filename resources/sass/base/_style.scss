@@ -1145,6 +1145,18 @@ table {
       }
     }
   }
+
+  .switcher {
+    margin-top: 0;
+  }
+
+  .small-column{
+    width: 5rem;
+  }
+
+  &.application-list-table th.small-column:last-child{
+    width: 5rem;
+  }
 }
 
 .table {

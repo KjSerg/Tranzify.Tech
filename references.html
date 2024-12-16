@@ -46,8 +46,8 @@
                                 Головна
                             </a>
                         </li>
-                        <li class="sub-menu open">
-                            <a href="#" class="active">
+                        <li class="sub-menu ">
+                            <a href="#" class="">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     viewBox="0 0 20 20" fill="none">
   <g clip-path="url(#clip0_1915_19100)">
@@ -68,11 +68,11 @@
         fill="#A7A9AC"/>
 </svg></span>
                             </a>
-                            <ul class="sub-list" style="display:block;">
+                            <ul class="sub-list" style="">
                                 <li><a href="./clients.html">Всі клієнти</a></li>
                                 <li><a href="./clients-accounts.html">Рахунки</a></li>
                                 <li><a href="./clients-application.html">Заявки на оплату</a></li>
-                                <li><a href="./clients-transactions.html" class="active">Транзакції</a></li>
+                                <li><a href="./clients-transactions.html" class="">Транзакції</a></li>
                                 <li><a href="./clients-statistic.html">Статистика</a></li>
                             </ul>
                         </li>
@@ -107,7 +107,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="./main-accounting-new.html" class="">
+                            <a href="./references.html" class="active">
                             <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     viewBox="0 0 20 20" fill="none">
   <g clip-path="url(#clip0_1915_19119)">
@@ -226,7 +226,7 @@
                     <span></span>
                 </a>
                 <div class="main-header__title hidden-on-mobile">
-                    Транзакції
+                    Довідники
                 </div>
                 <div class="main-header-menu">
                     <a href="#" class="chat-link main-header-menu__link">
@@ -263,7 +263,7 @@
             <div class="main-row">
                 <div class="main-row-container">
                     <div class="hidden-on-desktop main-title">
-                        Транзакції
+                        Довідники
                     </div>
                     <div class="history">
                         <div class="history-head">
@@ -275,11 +275,7 @@
                                     <input type="text" name="s" placeholder="Пошук за назвою рахунку">
                                 </label>
                             </form>
-                            <div class="history-head-controls application-list-head-controls">
-                                <a href="#new-application" class="history-head__button button button--dark open-modal">
-                                    + Створити транзакцію
-                                </a>
-                            </div>
+
                         </div>
                         <div class="custom-table-wrapper">
                             <table class="default-table application-list-table">
@@ -287,8 +283,13 @@
                                     <tr class="default-table-head default-table-row">
                                         <th class="default-table-column">
                                             <div class="default-table-head__title">
-                                                ID <br>
-                                                транзакції
+                                                ID
+                                            </div>
+                                            <label class="default-table-head__label"></label>
+                                        </th>
+                                        <th class="default-table-column">
+                                            <div class="default-table-head__title">
+                                                Назва довідника
                                             </div>
                                             <label class="default-table-head__label"></label>
                                         </th>
@@ -296,68 +297,21 @@
                                             <div class="default-table-head__title">
                                                 Дата створення
                                             </div>
-                                            <label class="default-table-head__label">
-                                                <input type="date">
-                                            </label>
+                                            <label class="default-table-head__label"></label>
                                         </th>
                                         <th class="default-table-column">
                                             <div class="default-table-head__title">
-                                                Рахунок списання
-                                            </div>
-                                            <label class="default-table-head__label">
-                                                <select>
-                                                    <option>Обрати рахунок</option>
-                                                    <option>Обрати рахунок</option>
-                                                </select>
-                                            </label>
-                                        </th>
-                                        <th class="default-table-column">
-                                            <div class="default-table-head__title">
-                                                Рахунок зарахування
-                                            </div>
-                                            <label class="default-table-head__label">
-                                                <select>
-                                                    <option>Обрати рахунок</option>
-                                                    <option>Обрати рахунок</option>
-                                                </select>
-                                            </label>
-                                        </th>
-                                        <th class="default-table-column">
-                                            <div class="default-table-head__title">
-                                                Сума <br>
-                                                транзакції
+                                                Автор довідника
                                             </div>
                                             <label class="default-table-head__label"></label>
                                         </th>
                                         <th class="default-table-column">
                                             <div class="default-table-head__title">
-                                                Статус<br>
-                                                транзакції
+                                                Опис довідника
                                             </div>
                                             <label class="default-table-head__label"></label>
                                         </th>
-                                        <th class="default-table-column">
-                                            <div class="default-table-head__title">
-                                                Стаття видатків/доходів
-                                            </div>
-                                            <label class="default-table-head__label">
-                                                <select>
-                                                    <option>Стаття заявки</option>
-                                                    <option>Стаття заявки</option>
-                                                </select>
-                                            </label>
-                                        </th>
-                                        <th class="default-table-column">
-                                            <div class="default-table-head__title">
-                                                Тип транзакції
-                                            </div>
-                                            <label class="default-table-head__label">
-                                                <select>
-                                                    <option>Стаття заявки</option>
-                                                    <option>Стаття заявки</option>
-                                                </select>
-                                            </label>
-                                        </th>
+
                                         <th class="default-table-column">
                                             <div class="default-table-head__title">
                                                 Дії
@@ -373,24 +327,21 @@
                                             00012
                                         </td>
                                         <td class="default-table-column">
+                                            Назва 1
+                                        </td>
+                                        <td class="default-table-column">
                                             05.11.2023 11:16:11
                                         </td>
                                         <td class="default-table-column">
-                                            54321
+                                            Автор 1
                                         </td>
                                         <td class="default-table-column">
-                                            98565
+                                            Включає інформацію про юридичних і фізичних осіб.
                                         </td>
-                                        <td class="default-table-column">
-                                            2345
-                                        </td>
-                                        <td class="default-table-column">Активний</td>
-                                        <td class="default-table-column">Стаття 1</td>
-                                        <td class="default-table-column">Стаття 1</td>
                                         <td class="default-table-column">
                                             <div class="application-list-table-controls">
                                                 <a href="#client-transaction-details"
-                                                   class="application-list-table__button button open-modal">
+                                                   class="application-list-table__button button button--dark open-modal">
                                                     Деталі
                                                 </a>
                                             </div>
@@ -402,24 +353,21 @@
                                             00012
                                         </td>
                                         <td class="default-table-column">
+                                            Назва 1
+                                        </td>
+                                        <td class="default-table-column">
                                             05.11.2023 11:16:11
                                         </td>
                                         <td class="default-table-column">
-                                            54321
+                                            Автор 1
                                         </td>
                                         <td class="default-table-column">
-                                            98565
+                                            Включає інформацію про юридичних і фізичних осіб.
                                         </td>
-                                        <td class="default-table-column">
-                                            2345
-                                        </td>
-                                        <td class="default-table-column">Активний</td>
-                                        <td class="default-table-column">Стаття 1</td>
-                                        <td class="default-table-column">Стаття 1</td>
                                         <td class="default-table-column">
                                             <div class="application-list-table-controls">
                                                 <a href="#client-transaction-details"
-                                                   class="application-list-table__button button open-modal">
+                                                   class="application-list-table__button button button--dark open-modal">
                                                     Деталі
                                                 </a>
                                             </div>
@@ -431,24 +379,21 @@
                                             00012
                                         </td>
                                         <td class="default-table-column">
+                                            Назва 1
+                                        </td>
+                                        <td class="default-table-column">
                                             05.11.2023 11:16:11
                                         </td>
                                         <td class="default-table-column">
-                                            54321
+                                            Автор 1
                                         </td>
                                         <td class="default-table-column">
-                                            98565
+                                            Включає інформацію про юридичних і фізичних осіб.
                                         </td>
-                                        <td class="default-table-column">
-                                            2345
-                                        </td>
-                                        <td class="default-table-column">Активний</td>
-                                        <td class="default-table-column">Стаття 1</td>
-                                        <td class="default-table-column">Стаття 1</td>
                                         <td class="default-table-column">
                                             <div class="application-list-table-controls">
                                                 <a href="#client-transaction-details"
-                                                   class="application-list-table__button button open-modal">
+                                                   class="application-list-table__button button button--dark open-modal">
                                                     Деталі
                                                 </a>
                                             </div>
@@ -460,24 +405,21 @@
                                             00012
                                         </td>
                                         <td class="default-table-column">
+                                            Назва 1
+                                        </td>
+                                        <td class="default-table-column">
                                             05.11.2023 11:16:11
                                         </td>
                                         <td class="default-table-column">
-                                            54321
+                                            Автор 1
                                         </td>
                                         <td class="default-table-column">
-                                            98565
+                                            Включає інформацію про юридичних і фізичних осіб.
                                         </td>
-                                        <td class="default-table-column">
-                                            2345
-                                        </td>
-                                        <td class="default-table-column">Активний</td>
-                                        <td class="default-table-column">Стаття 1</td>
-                                        <td class="default-table-column">Стаття 1</td>
                                         <td class="default-table-column">
                                             <div class="application-list-table-controls">
                                                 <a href="#client-transaction-details"
-                                                   class="application-list-table__button button open-modal">
+                                                   class="application-list-table__button button button--dark open-modal">
                                                     Деталі
                                                 </a>
                                             </div>
@@ -489,24 +431,21 @@
                                             00012
                                         </td>
                                         <td class="default-table-column">
+                                            Назва 1
+                                        </td>
+                                        <td class="default-table-column">
                                             05.11.2023 11:16:11
                                         </td>
                                         <td class="default-table-column">
-                                            54321
+                                            Автор 1
                                         </td>
                                         <td class="default-table-column">
-                                            98565
+                                            Включає інформацію про юридичних і фізичних осіб.
                                         </td>
-                                        <td class="default-table-column">
-                                            2345
-                                        </td>
-                                        <td class="default-table-column">Активний</td>
-                                        <td class="default-table-column">Стаття 1</td>
-                                        <td class="default-table-column">Стаття 1</td>
                                         <td class="default-table-column">
                                             <div class="application-list-table-controls">
                                                 <a href="#client-transaction-details"
-                                                   class="application-list-table__button button open-modal">
+                                                   class="application-list-table__button button button--dark open-modal">
                                                     Деталі
                                                 </a>
                                             </div>
@@ -518,24 +457,21 @@
                                             00012
                                         </td>
                                         <td class="default-table-column">
+                                            Назва 1
+                                        </td>
+                                        <td class="default-table-column">
                                             05.11.2023 11:16:11
                                         </td>
                                         <td class="default-table-column">
-                                            54321
+                                            Автор 1
                                         </td>
                                         <td class="default-table-column">
-                                            98565
+                                            Включає інформацію про юридичних і фізичних осіб.
                                         </td>
-                                        <td class="default-table-column">
-                                            2345
-                                        </td>
-                                        <td class="default-table-column">Активний</td>
-                                        <td class="default-table-column">Стаття 1</td>
-                                        <td class="default-table-column">Стаття 1</td>
                                         <td class="default-table-column">
                                             <div class="application-list-table-controls">
                                                 <a href="#client-transaction-details"
-                                                   class="application-list-table__button button open-modal">
+                                                   class="application-list-table__button button button--dark open-modal">
                                                     Деталі
                                                 </a>
                                             </div>
@@ -547,24 +483,73 @@
                                             00012
                                         </td>
                                         <td class="default-table-column">
+                                            Назва 1
+                                        </td>
+                                        <td class="default-table-column">
                                             05.11.2023 11:16:11
                                         </td>
                                         <td class="default-table-column">
-                                            54321
+                                            Автор 1
                                         </td>
                                         <td class="default-table-column">
-                                            98565
+                                            Включає інформацію про юридичних і фізичних осіб.
                                         </td>
-                                        <td class="default-table-column">
-                                            2345
-                                        </td>
-                                        <td class="default-table-column">Активний</td>
-                                        <td class="default-table-column">Стаття 1</td>
-                                        <td class="default-table-column">Стаття 1</td>
                                         <td class="default-table-column">
                                             <div class="application-list-table-controls">
                                                 <a href="#client-transaction-details"
-                                                   class="application-list-table__button button open-modal">
+                                                   class="application-list-table__button button button--dark open-modal">
+                                                    Деталі
+                                                </a>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr class="default-table-row">
+                                        <td class="default-table-column">
+                                            00012
+                                        </td>
+                                        <td class="default-table-column">
+                                            Назва 1
+                                        </td>
+                                        <td class="default-table-column">
+                                            05.11.2023 11:16:11
+                                        </td>
+                                        <td class="default-table-column">
+                                            Автор 1
+                                        </td>
+                                        <td class="default-table-column">
+                                            Включає інформацію про юридичних і фізичних осіб.
+                                        </td>
+                                        <td class="default-table-column">
+                                            <div class="application-list-table-controls">
+                                                <a href="#client-transaction-details"
+                                                   class="application-list-table__button button button--dark open-modal">
+                                                    Деталі
+                                                </a>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr class="default-table-row">
+                                        <td class="default-table-column">
+                                            00012
+                                        </td>
+                                        <td class="default-table-column">
+                                            Назва 1
+                                        </td>
+                                        <td class="default-table-column">
+                                            05.11.2023 11:16:11
+                                        </td>
+                                        <td class="default-table-column">
+                                            Автор 1
+                                        </td>
+                                        <td class="default-table-column">
+                                            Включає інформацію про юридичних і фізичних осіб.
+                                        </td>
+                                        <td class="default-table-column">
+                                            <div class="application-list-table-controls">
+                                                <a href="#client-transaction-details"
+                                                   class="application-list-table__button button button--dark open-modal">
                                                     Деталі
                                                 </a>
                                             </div>
