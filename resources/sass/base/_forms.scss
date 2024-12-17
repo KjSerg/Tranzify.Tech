@@ -283,6 +283,24 @@ input.error, textarea.error {
         transform: translateY(-50%);
       }
     }
+    &-has-image{
+      display: inline-flex;
+      position: relative;
+      width: 100%;
+      input{
+        padding-right: 5rem;
+      }
+      .image{
+        position: absolute;
+        display: flex;
+        right: 1.2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3.5rem;
+        height: 2.4rem;
+        flex-shrink: 0;
+      }
+    }
 
     &.error{
       select {

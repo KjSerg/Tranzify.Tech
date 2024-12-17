@@ -166,7 +166,6 @@ addEventListener("DOMContentLoaded", (event) => {
             var closest = element.closest('.accordion-item');
             var accordion = element.closest('.accordion');
             var content = closest.querySelector('.accordion__text');
-
             if (closest.classList.contains('showed')) {
                 closest.classList.remove('showed');
                 slideUp(content, 400);
@@ -180,6 +179,17 @@ addEventListener("DOMContentLoaded", (event) => {
                     closest.classList.add('showed');
                     slideDown(content, 500);
                 }, 101)
+            }
+        });
+    });
+    doc.querySelectorAll('.toggle-element').forEach(function (element, index) {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            var href = element.getAttribute('href');
+            if (href === '#') return;
+            var subject = doc.querySelector(href);
+            if (subject) {
+                slideToggle(subject, 400);
             }
         });
     });
@@ -526,6 +536,28 @@ addEventListener("DOMContentLoaded", (event) => {
             formScroll = null;
             doc.querySelector('.payment-container').scrollTo({top: 0, left: 0, behavior: 'smooth'});
             slideUp(element, 400);
+        });
+    });
+    doc.querySelectorAll('.card-number').forEach(function (input, index) {
+        input.addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, '');
+            value = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+            e.target.value = value;
+        });
+    });
+    doc.querySelectorAll('.cvv').forEach(function (input, index) {
+        input.addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, '');
+            e.target.value = value;
+        });
+    });
+    doc.querySelectorAll('.expiry-date').forEach(function (expiryInput, index) {
+        expiryInput.addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2, 6);
+            }
+            e.target.value = value;
         });
     });
     doc.querySelectorAll('table').forEach(function (element, index) {
