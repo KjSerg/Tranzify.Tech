@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="UA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="msapplication-TileColor" content="#1E1E1E">
+    <meta name="theme-color" content="#1E1E1E">
+    <title>Tranzify.Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+
+<main class="content flex-column">
+    <section class="section payment-section payment-section--dark ">
+        <div class="pay-form-container pay-form-container--main" style="background: #F1F1F1;">
+            <div class="pay-form-data">
+                <div class="pay-form-data-head">
+                    <a href="./index.html" class="payment-section__back pay-form-data__back">
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 14 14" fill="none"><path
+                            d="M3.69006 6.03176L8.99242 0.691706C9.11505 0.568097 9.27876 0.5 9.45332 0.5C9.62788 0.5 9.79159 0.568097 9.91423 0.691706L10.3047 1.08487C10.5588 1.34107 10.5588 1.75745 10.3047 2.01326L5.85219 6.49751L10.3097 10.9867C10.4323 11.1104 10.5 11.2751 10.5 11.4508C10.5 11.6267 10.4323 11.7915 10.3097 11.9152L9.91917 12.3083C9.79644 12.4319 9.63282 12.5 9.45826 12.5C9.2837 12.5 9.11999 12.4319 8.99736 12.3083L3.69006 6.96336C3.56713 6.83936 3.49961 6.6738 3.5 6.49781C3.49961 6.32112 3.56713 6.15566 3.69006 6.03176Z"
+                            fill="#A7A9AC"/></svg></span>
+                        Назад
+                    </a>
+                    <a href="#" class="payment-section__logo pay-form-data__logo">
+                        <img src="../img/payment-logo.svg" alt="">
+                    </a>
+                </div>
+                <div class="payment-section__title">
+                    Оплата
+                </div>
+                <a href="#payment-products" class="payment-products__title toggle-element">
+                    3 товари
+                    <span class="icon"><img src="../img/arr-down.svg" alt=""></span>
+                </a>
+                <div id="payment-products" class="payment-products-container payment-products">
+                    <div class="payment-products-item">
+                        <div class="payment-products-item-column">
+                            <div class="payment-products-item-column__head">Назва товару</div>
+                            <div class="payment-products-item-column__value">Товар 1</div>
+                        </div>
+                        <div class="payment-products-item-column">
+                            <div class="payment-products-item-column__head">Вартість</div>
+                            <div class="payment-products-item-column__value">2,000.43 UAH</div>
+                        </div>
+                        <div class="payment-products-item-column">
+                            <div class="payment-products-item-column__head">К-сть</div>
+                            <div class="payment-products-item-column__value">×1од.</div>
+                        </div>
+                    </div>
+                    <div class="payment-products-item">
+                        <div class="payment-products-item-column">
+                            <div class="payment-products-item-column__head">Назва товару</div>
+                            <div class="payment-products-item-column__value">Товар 1</div>
+                        </div>
+                        <div class="payment-products-item-column">
+                            <div class="payment-products-item-column__head">Вартість</div>
+                            <div class="payment-products-item-column__value">2,000.43 UAH</div>
+                        </div>
+                        <div class="payment-products-item-column">
+                            <div class="payment-products-item-column__head">К-сть</div>
+                            <div class="payment-products-item-column__value">×1од.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-products-footer">
+                    Загальна вартість: <strong class="total-cost">12,000.43 UAH</strong>
+                </div>
+            </div>
+            <div class="pay-form-container-head">
+                <div class="pay-form-container__title">
+                    Eкспрес-оформлення
+                </div>
+                <div class="pay-form-container-methods">
+                    <a href="#" class="pay-method">
+                        <img src="../img/g-pay.svg" alt="">
+                    </a>
+                    <a href="#" class="pay-method">
+                        <img src="../img/a-pay.svg" alt="">
+                    </a>
+                    <a href="#" class="pay-method" style="background: #FFC43A;">
+                        <img src="../img/pay-pal.svg" alt="">
+                    </a>
+                    <a href="#сryptocurrency-payment" class="pay-method open-modal">
+                        <img src="../img/group-pay.svg" alt="">
+                    </a>
+                </div>
+                <div class="pay-form-container-separator line-block">
+                    <div class="line"></div>
+                    <div class="center-text">або введіть дані нижче</div>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <form method="post" id="pay-form" class="pay-form form">
+                <label class="form-group ">
+                    <span class="form-group__title">Дані картки</span>
+                    <span class="form-group-has-image"><input required class="card-number" maxlength="19"
+                                                              type="text"
+                                                              placeholder="4444 5555 6666 7778"
+                                                              name="card"><span class="image"><img
+                            src="../img/Mastercard.svg" alt=""></span></span>
+                </label>
+                <label class="form-group half">
+                    <input type="text" required class="expiry-date" maxlength="7" placeholder="MM/YYYY"
+                           name="to">
+                </label>
+                <label class="form-group half">
+                    <input type="text" required placeholder="CVV" maxlength="3" class="cvv" name="cvv">
+                </label>
+                <label class="form-group ">
+                    <span class="form-group__title">Імʼя та Прізвище</span>
+                    <input required type="text"
+                           placeholder="Введіть імʼя та прізвище"
+                           name="name">
+                </label>
+                <label class="form-group ">
+                    <span class="form-group__title">Email </span>
+                    <input required type="email"
+                           placeholder="Email "
+                           name="email">
+                </label>
+                <label class="form-group ">
+                    <span class="form-group__title">Телефон </span>
+                    <input required type="tel"
+                           placeholder="Телефон "
+                           name="tel">
+                </label>
+                <button type="submit">
+                    Оплатити
+                    <span class="total-cost">12,000.345 UAH</span>
+                </button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<div class="modal modal-new-account modal-window" id="сryptocurrency-payment">
+    <div class="modal-head">
+        <div class="modal__title">
+            Оплата криптовалютою
+        </div>
+        <a href="#сryptocurrency-payment" class="modal-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <mask id="mask0_894_29406" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
+                      height="24">
+                    <rect width="24" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_894_29406)">
+                    <path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                          fill="#1E1E1E" fill-opacity="0.3"/>
+                </g>
+            </svg>
+        </a>
+    </div>
+    <div class="modal-content">
+        <form class="form create-account">
+            <label class="form-group">
+                <span class="form-group__title">Оберіть валюту</span>
+                <select class="main-select" name="currency">
+                    <option data-src="../img/сс1.svg">ETH (Ethereum)</option>
+                    <option data-src="../img/сс2.svg">BTC (Bitcoin)</option>
+                    <option data-src="../img/сс3.svg">USDT (Tether)</option>
+                    <option data-src="../img/сс4.svg">SOL (Solana)</option>
+                    <option value="TON">TON (The Open Network)</option>
+                </select>
+            </label>
+            <button type="submit">
+                Оплатити
+            </button>
+        </form>
+    </div>
+</div>
+
+<script>
+    var passwordHideIcon = 'img/mdi_hide-outline.svg';
+    var passwordShowIcon = 'img/show.svg';
+</script>
+<script src="../js/app.js"></script>
+<script src="../js/main-select.js"></script>
+</body>
+</html>

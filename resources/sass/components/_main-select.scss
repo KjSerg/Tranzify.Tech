@@ -1,0 +1,83 @@
+.main-select{
+  color: #1E1E1E;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.8rem;
+  &-wrapper{
+    position: relative;
+    width: 100%;
+
+    &__value{
+      width: 100%;
+      padding: 1.2rem 4rem 1.2rem 1.2rem;
+      border-radius: 0.6rem;
+      border: 1px solid #1E1E1E;
+      cursor: pointer;
+
+      color:  #1E1E1E;
+      font-size: 1.4rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.8rem;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDE0IDE0IiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNNy40NjgyNCA5LjgwOTk0TDEyLjgwODMgNC41MDc1OEMxMi45MzE5IDQuMzg0OTUgMTMgNC4yMjEyNCAxMyA0LjA0NjY4QzEzIDMuODcyMTIgMTIuOTMxOSAzLjcwODQxIDEyLjgwODMgMy41ODU3N0wxMi40MTUxIDMuMTk1MjlDMTIuMTU4OSAyLjk0MTIgMTEuNzQyNSAyLjk0MTIgMTEuNDg2NyAzLjE5NTI5TDcuMDAyNDkgNy42NDc4MUwyLjUxMzI2IDMuMTkwMzVDMi4zODk2NSAzLjA2NzcxIDIuMjI0ODcgMyAwMi4wNDkxNiAzQzEuODczMjYgMyAxLjcwODQ4IDMuMDY3NzEgMS41ODQ3NyAzLjE5MDM1TDEuMTkxNzEgMy41ODA4M0MxLjA2ODEgMy43MDM1NiAxIDMuODY3MTggMSA0LjA0MTc0QzEgNC4yMTYzIDEuMDY4MSA0LjM4MDAxIDEuMTkxNzEgNC41MDI2NEw2LjUzNjY0IDkuODA5OTRDNi42NjA2NCA5LjkzMjg3IDYuODI2MiAxMCA3LjAwMjE5IDEwQzcuMTc4ODggMTAuMDAwNCA3LjM0NDM0IDkuOTMyODcgNy40NjgyNCA5LjgwOTk0WiIgZmlsbD0iIzFFMUUxRSIvPjwvc3ZnPg==);
+      background-repeat: no-repeat;
+      background-position: 95% 50%;
+
+      .main-select-option {
+        padding: 0;
+        pointer-events: none;
+      }
+    }
+  }
+  &-box{
+    width: 100%;
+  }
+  &-option{
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    &:hover{
+      background-color: #cecece;
+    }
+    &__text{
+      pointer-events: none;
+    }
+    &__image{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.4rem;
+      height: 2.4rem;
+      flex-grow: 0;
+      flex-shrink: 0;
+      margin-right: 0.8rem;
+      pointer-events: none;
+    }
+  }
+
+  &-options{
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+    display: none;
+    top: 0;
+    left: 0;
+    max-height: 20rem;
+    overflow: auto;
+    border-radius: 0rem 0rem 0.6rem 0.6rem;
+    border-right: 1px solid rgba(30, 30, 30, 0.10);
+    border-bottom: 1px solid rgba(30, 30, 30, 0.10);
+    border-left: 1px solid rgba(30, 30, 30, 0.10);
+    background: #FFF;
+    &.active{
+      display: block;
+      z-index: 99999;
+      pointer-events: auto;
+    }
+    &.active-top{
+      border-radius:  0.6rem 0.6rem 0rem 0rem;
+    }
+  }
+}
