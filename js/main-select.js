@@ -2,6 +2,7 @@ var doc = document;
 addEventListener("DOMContentLoaded", (event) => {
     doc.querySelectorAll('.main-select').forEach(function (select, index) {
         var options = select.querySelectorAll('option');
+        if(options.length === 0) return;
         var selectID = select.getAttribute('id');
         var ID = 'main-select-' + index;
         var optionsID = 'main-select-options-' + index;
