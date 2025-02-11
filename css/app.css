@@ -1285,6 +1285,91 @@ table.application-list-table th.small-column:last-child {
   padding-bottom: 0 !important;
 }
 
+.loader {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: 0.2s ease-in-out;
+  pointer-events: none;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5)));
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+  opacity: 0;
+}
+.loader__text {
+  color: #FFF;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2.4rem;
+  text-align: center;
+}
+.loader__image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 9rem;
+  height: 9rem;
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-bottom: 2rem;
+}
+.loader__image img, .loader__image svg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.loader.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.loader.active img, .loader.active svg {
+  animation: rotate infinite 1s linear;
+}
+.loader--demo {
+  opacity: 0;
+  animation: fade-out 2s 0s linear;
+}
+.loader--demo img, .loader--demo svg {
+  animation: rotate infinite 1s linear;
+}
+
+body.loading .loader {
+  opacity: 1;
+  pointer-events: auto;
+}
+body.loading .loader img, body.loading .loader svg {
+  animation: rotate infinite 1s linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .wpcf7-not-valid-tip, .wpcf7-response-output {
   display: none !important;
 }

@@ -1,0 +1,13 @@
+<svg width="90" height="91" viewBox="0 0 90 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Loader anim">
+<path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M45 90.5C69.8528 90.5 90 70.3528 90 45.5C90 20.6472 69.8528 0.5 45 0.5C20.1472 0.5 0 20.6472 0 45.5C0 70.3528 20.1472 90.5 45 90.5ZM45 83C65.7107 83 82.5 66.2107 82.5 45.5C82.5 24.7893 65.7107 8 45 8C24.2893 8 7.5 24.7893 7.5 45.5C7.5 66.2107 24.2893 83 45 83Z" fill="url(#paint0_angular_2404_2608)"/>
+<path id="Ellipse 8 (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M85.4312 36.5027C87.4853 36.2377 89.3652 37.688 89.6302 39.742C89.8766 41.6515 90.0001 43.5748 90.0001 45.5001C90.0001 47.5711 88.3212 49.2501 86.2501 49.2501C84.1791 49.2501 82.5001 47.5711 82.5001 45.5001C82.5001 43.8957 82.3972 42.2929 82.1919 40.7017C81.9269 38.6476 83.3772 36.7677 85.4312 36.5027Z" fill="#0CAE35"/>
+</g>
+<defs>
+<radialGradient id="paint0_angular_2404_2608" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(45 45.5) scale(45)">
+<stop stop-color="#0CAE35" stop-opacity="0"/>
+<stop offset="0.0001" stop-color="#0CAE35" stop-opacity="0"/>
+<stop offset="1" stop-color="#0CAE35"/>
+</radialGradient>
+</defs>
+</svg>
