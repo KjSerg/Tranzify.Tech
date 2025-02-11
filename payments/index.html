@@ -194,7 +194,7 @@
 </main>
 
 <!--add class "active" to .loader or "loading" to body-->
-<div class="loader loader--demo">
+<div class="loader active" id="loader">
     <div class="loader__image">
         <img src="../img/loader.png" alt="">
     </div>
@@ -202,6 +202,13 @@
         Завантаження....
     </div>
 </div>
+
+<script>
+    var loader = document.getElementById('loader');
+    setTimeout(function () {
+        loader.classList.remove('active');
+    }, 1500);
+</script>
 
 <script>
     var passwordHideIcon = 'img/mdi_hide-outline.svg';

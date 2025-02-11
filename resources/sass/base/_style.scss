@@ -609,7 +609,7 @@ strong {
 
 .hidden-on-tablet {
   @media (max-width: 830px) {
-    display: none;
+    display: none!important;
   }
 }
 

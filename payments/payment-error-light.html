@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="UA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="msapplication-TileColor" content="#1E1E1E">
+    <meta name="theme-color" content="#1E1E1E">
+    <title>Tranzify.Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+
+<main class="content flex-column">
+    <section class="section payment-section payment-section-status ">
+        <div class="payment-section-container">
+            <div class="payment-section-content ">
+                <a href="#" class="payment-section__logo">
+                    <img src="../img/payment-logo.svg" alt="">
+                </a>
+                <div class="payment-status payment-status--light">
+                    <div class="payment-status__image payment-status__image--error">
+                        <img src="../img/pe.svg" alt="">
+                    </div>
+                    <div class="payment-status-text">
+                        <div class="payment-status__title">
+                            Ой, сталася помилка
+                        </div>
+                        <div class="payment-status__text">
+                            Не вдалося завершити платіж. Будь ласка, перевірте введені дані або спробуйте пізніше. Якщо проблема зберігається, зверніться до служби підтримки.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="payment-section-container-footer main-footer payment-section-container-footer--main">
+                <div class="copyright">
+                    © 2024 Tranzify Всі права захищені
+                </div>
+                <a href="#" class="main-footer__link">
+                    Користувацька угода
+                </a>
+            </div>
+        </div>
+        <div class="payment-section-container payment-section-container--padding hidden-on-tablet">
+            <div class="payment-section__image">
+                <picture>
+                    <source media="(min-width: 560px)" srcset="../img/payment-image.png">
+                    <img src="../img/access1.jpg" class="cover " alt="">
+                </picture>
+            </div>
+        </div>
+        <div class="payment-section-container-footer main-footer payment-section-container-footer--mobile">
+            <div class="copyright">
+                © 2024 Tranzify Всі права захищені
+            </div>
+            <a href="#" class="main-footer__link">
+                Користувацька угода
+            </a>
+        </div>
+    </section>
+</main>
+
+<!--add class "active" to .loader or "loading" to body-->
+<div class="loader">
+    <div class="loader__image">
+        <img src="../img/loader.png" alt="">
+    </div>
+    <div class="loader__text">
+        Завантаження....
+    </div>
+</div>
+
+<script>
+    var passwordHideIcon = 'img/mdi_hide-outline.svg';
+    var passwordShowIcon = 'img/show.svg';
+</script>
+<script src="../js/app.js"></script>
+</body>
+</html>
