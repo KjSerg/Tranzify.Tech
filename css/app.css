@@ -6878,6 +6878,120 @@ textarea::placeholder {
   display: flex;
 }
 
+.transaction-details {
+  width: 100%;
+  max-width: 75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+@media (max-width: 560px) {
+  .transaction-details {
+    gap: 2rem;
+  }
+}
+.transaction-details-list__item {
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(30, 30, 30, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.6rem;
+  justify-content: space-between;
+  color: #8A8E94;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.2rem;
+}
+.transaction-details-list__item:first-child {
+  border-top: 1px solid rgba(30, 30, 30, 0.1);
+}
+@media (max-width: 560px) {
+  .transaction-details-list__item {
+    padding: 0.8rem 0;
+    font-size: 1.4rem;
+  }
+}
+.transaction-details-list__item > * {
+  display: block;
+  width: calc(50% - 0.8rem);
+}
+.transaction-details-list__item strong {
+  font-weight: 500;
+  color: #1E1E1E;
+}
+.transaction-details__title {
+  margin-bottom: 1.2rem;
+  color: #1E1E1E;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.2rem;
+}
+@media (max-width: 560px) {
+  .transaction-details__title {
+    margin-bottom: 0.8rem;
+  }
+}
+.transaction-details-head {
+  margin-bottom: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 0.6rem;
+  background: #FFF;
+  overflow: hidden;
+}
+@media (max-width: 1200px) {
+  .transaction-details-head {
+    overflow: auto;
+  }
+}
+@media (max-width: 560px) {
+  .transaction-details-head {
+    margin-right: 1.6rem;
+    margin-left: 1.6rem;
+    width: calc(100% - 3.2rem);
+  }
+}
+.transaction-details-head__item {
+  width: 14.2%;
+  border-radius: 0.6rem;
+  padding: 1.2rem;
+  color: #1E1E1E;
+  text-align: center;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.8rem;
+  transition: 0.4s ease-in-out;
+}
+@media (max-width: 1200px) {
+  .transaction-details-head__item {
+    width: 20rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+}
+@media (max-width: 560px) {
+  .transaction-details-head__item {
+    width: 16rem;
+    padding: 1.2rem 0.8rem;
+  }
+}
+.transaction-details-head__item:hover {
+  background: rgba(30, 30, 30, 0.2);
+}
+.transaction-details-head__item.active {
+  background: #1E1E1E;
+  color: #fff;
+}
+
 .merchant-settings-head {
   margin-bottom: 2rem;
   display: -webkit-inline-box;
