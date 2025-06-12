@@ -26,11 +26,12 @@
         padding: 0.8rem 0;
         font-size: 1.4rem;
       }
-      & > *{
+      span {
         display: block;
-        width: calc(50% - 0.8rem);
+        width: calc(60% - 0.8rem);
       }
       strong{
+        width: calc(40% - 0.8rem);
         font-weight: 500;
         color: #1E1E1E;
       }

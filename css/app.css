@@ -6915,11 +6915,12 @@ textarea::placeholder {
     font-size: 1.4rem;
   }
 }
-.transaction-details-list__item > * {
+.transaction-details-list__item span {
   display: block;
-  width: calc(50% - 0.8rem);
+  width: calc(60% - 0.8rem);
 }
 .transaction-details-list__item strong {
+  width: calc(40% - 0.8rem);
   font-weight: 500;
   color: #1E1E1E;
 }

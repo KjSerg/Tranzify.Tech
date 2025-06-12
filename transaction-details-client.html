@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="UA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="msapplication-TileColor" content="#1E1E1E">
+    <meta name="theme-color" content="#1E1E1E">
+    <title>Tranzify.Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+    <style>
+        .chart-js:after {
+            background-image: url(img/loading.gif);
+        }
+    </style>
+</head>
+<body>
+<main class="content flex-column">
+    <section class="section main-section">
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-container">
+                <div class="sidebar-head">
+                    <div class="sidebar__logo">
+                        <img src="img/logo-main.svg" alt="">
+                    </div>
+                    <a href="#sidebar" class="sidebar-hide hide-element">
+                        <img src="img/arrow-left.svg" alt="">
+                    </a>
+                </div>
+                <form class="sidebar-form">
+                    <select title="" class="dark" name="type">
+                        <option>Облік</option>
+                        <option>еквайринг</option>
+                    </select>
+                </form>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="#" class="">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    viewBox="0 0 20 20" fill="none">
+  <path d="M17.1672 7.15357V2.94099H13.6835V4.47357L9.99996 1.63989L0 9.33275L2.09508 12.0561L3.1209 11.267V18.3601H9.03961V13.163H11.1939V18.3601H16.8792V11.267L17.905 12.0561L20 9.33278L17.1672 7.15357ZM15.7059 17.1868H12.3671V11.9897H7.86633V17.1868H4.2941V10.3644L10 5.97517L15.7059 10.3644L15.7059 17.1868ZM17.6904 10.4108L10 4.49466L2.30957 10.4108L1.64527 9.54732L10 3.12013L14.8568 6.85638V4.11423H15.994V7.73126L18.3547 9.54732L17.6904 10.4108Z"
+        fill="white"/>
+</svg></span>
+                                Головна
+                            </a>
+                        </li>
+                        <li class="sub-menu open">
+                            <a href="#" class="active">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                    viewBox="0 0 18 18" fill="none">
+  <g clip-path="url(#clip0_894_26168)">
+    <path d="M4.25391 7.41797H3.19922V6.89062C3.19922 3.67267 5.80145 1.05469 9 1.05469C12.1986 1.05469 14.8008 3.67267 14.8008 6.89062V7.41797H13.7461V13.7461H14.8008V15.3633C14.8008 15.6541 14.5642 15.8906 14.2734 15.8906H10.4913C10.2736 15.2769 9.68748 14.8359 9 14.8359C8.12767 14.8359 7.41797 15.5456 7.41797 16.418C7.41797 17.2903 8.12767 18 9 18C9.68748 18 10.2736 17.5591 10.4913 16.9453H14.2734C15.1458 16.9453 15.8555 16.2356 15.8555 15.3633V13.7461H18V7.41797H15.8555V6.89062C15.8555 3.09111 12.7801 0 9 0C5.21989 0 2.14453 3.09111 2.14453 6.89062V7.41797H0V12.6914H4.25391V7.41797ZM9 16.9453C8.70922 16.9453 8.47266 16.7087 8.47266 16.418C8.47266 16.1272 8.70922 15.8906 9 15.8906C9.29078 15.8906 9.52734 16.1272 9.52734 16.418C9.52734 16.7087 9.29078 16.9453 9 16.9453ZM16.9453 12.6914H14.8008V8.47266H16.9453V12.6914ZM3.19922 11.6367H1.05469V8.47266H3.19922V11.6367Z"
+          fill="#A7A9AC"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_894_26168">
+      <rect width="18" height="18" fill="white"/>
+    </clipPath>
+  </defs>
+</svg></span>
+                                Клієнти
+                                <span class="arrow"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                         viewBox="0 0 14 14" fill="none">
+  <path d="M7.46824 9.80994L12.8083 4.50758C12.9319 4.38495 13 4.22124 13 4.04668C13 3.87212 12.9319 3.70841 12.8083 3.58577L12.4151 3.19529C12.1589 2.9412 11.7425 2.9412 11.4867 3.19529L7.00249 7.64781L2.51326 3.19035C2.38965 3.06771 2.22487 3 2.04916 3C1.87326 3 1.70848 3.06771 1.58477 3.19035L1.19171 3.58083C1.0681 3.70356 1 3.86718 1 4.04174C1 4.2163 1.0681 4.38001 1.19171 4.50264L6.53664 9.80994C6.66064 9.93287 6.8262 10.0004 7.00219 10C7.17888 10.0004 7.34434 9.93287 7.46824 9.80994Z"
+        fill="#A7A9AC"/>
+</svg></span>
+                            </a>
+                            <ul class="sub-list" style="display:block;">
+                                <li>
+                                    <a href="#">Всі клієнти</a>
+                                </li>
+                                <li>
+                                    <a href="#">Рахунки</a>
+                                </li>
+                                <li>
+                                    <a href="#">Заявки на оплату</a>
+                                </li>
+                                <li>
+                                    <a class="active" href="#">Транзакції</a>
+                                </li>
+                                <li>
+                                    <a href="#">Статистика</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="#">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                    viewBox="0 0 18 18" fill="none">
+  <g clip-path="url(#clip0_894_26168)">
+    <path d="M4.25391 7.41797H3.19922V6.89062C3.19922 3.67267 5.80145 1.05469 9 1.05469C12.1986 1.05469 14.8008 3.67267 14.8008 6.89062V7.41797H13.7461V13.7461H14.8008V15.3633C14.8008 15.6541 14.5642 15.8906 14.2734 15.8906H10.4913C10.2736 15.2769 9.68748 14.8359 9 14.8359C8.12767 14.8359 7.41797 15.5456 7.41797 16.418C7.41797 17.2903 8.12767 18 9 18C9.68748 18 10.2736 17.5591 10.4913 16.9453H14.2734C15.1458 16.9453 15.8555 16.2356 15.8555 15.3633V13.7461H18V7.41797H15.8555V6.89062C15.8555 3.09111 12.7801 0 9 0C5.21989 0 2.14453 3.09111 2.14453 6.89062V7.41797H0V12.6914H4.25391V7.41797ZM9 16.9453C8.70922 16.9453 8.47266 16.7087 8.47266 16.418C8.47266 16.1272 8.70922 15.8906 9 15.8906C9.29078 15.8906 9.52734 16.1272 9.52734 16.418C9.52734 16.7087 9.29078 16.9453 9 16.9453ZM16.9453 12.6914H14.8008V8.47266H16.9453V12.6914ZM3.19922 11.6367H1.05469V8.47266H3.19922V11.6367Z"
+          fill="#A7A9AC"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_894_26168">
+      <rect width="18" height="18" fill="white"/>
+    </clipPath>
+  </defs>
+</svg></span>
+                                Підтримка
+                                <span class="arrow"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                         viewBox="0 0 14 14" fill="none">
+  <path d="M7.46824 9.80994L12.8083 4.50758C12.9319 4.38495 13 4.22124 13 4.04668C13 3.87212 12.9319 3.70841 12.8083 3.58577L12.4151 3.19529C12.1589 2.9412 11.7425 2.9412 11.4867 3.19529L7.00249 7.64781L2.51326 3.19035C2.38965 3.06771 2.22487 3 2.04916 3C1.87326 3 1.70848 3.06771 1.58477 3.19035L1.19171 3.58083C1.0681 3.70356 1 3.86718 1 4.04174C1 4.2163 1.0681 4.38001 1.19171 4.50264L6.53664 9.80994C6.66064 9.93287 6.8262 10.0004 7.00219 10C7.17888 10.0004 7.34434 9.93287 7.46824 9.80994Z"
+        fill="#A7A9AC"/>
+</svg></span>
+                            </a>
+                            <ul class="sub-list">
+                                <li>
+                                    <a href="#">Контакти</a>
+                                </li>
+                                <li>
+                                    <a href="#">Чат онлайн</a>
+                                </li>
+                                <li>
+                                    <a href="#">Запити</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu">
+                            <a href="#">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    viewBox="0 0 20 20" fill="none">
+  <g clip-path="url(#clip0_894_28380)">
+    <path d="M20 12.3976V7.60238L18.155 7.32C18.0208 6.91176 17.8556 6.51336 17.6611 6.12914L18.7664 4.6243L15.3757 1.23355L13.8708 2.33887C13.4866 2.14438 13.0882 1.97918 12.68 1.84496L12.3976 0H7.60238L7.32 1.845C6.91176 1.97918 6.51336 2.14441 6.12914 2.33891L4.6243 1.23359L1.23355 4.62434L2.33887 6.12918C2.14438 6.5134 1.97918 6.9118 1.84496 7.32004L0 7.60238V12.3976L1.845 12.68C1.97918 13.0882 2.14441 13.4866 2.33891 13.8709L1.23359 15.3757L4.62434 18.7664L6.12918 17.6611C6.5134 17.8556 6.9118 18.0208 7.32004 18.155L7.60238 20H12.3976L12.68 18.155C13.0882 18.0208 13.4866 17.8556 13.8709 17.6611L15.3757 18.7664L18.7664 15.3757L17.6611 13.8708C17.8556 13.4866 18.0208 13.0882 18.155 12.68L20 12.3976ZM17.2393 11.6346L17.1375 11.9989C16.9788 12.5671 16.7508 13.1168 16.46 13.6327L16.2742 13.9623L17.2263 15.2586L15.2585 17.2264L13.9622 16.2743L13.6326 16.46C13.1167 16.7508 12.567 16.9788 11.9989 17.1376L11.6346 17.2394L11.3914 18.8281H8.60855L8.36535 17.2393L8.00109 17.1375C7.43293 16.9788 6.88324 16.7508 6.36734 16.46L6.03773 16.2742L4.74145 17.2263L2.77363 15.2585L3.72574 13.9622L3.53996 13.6326C3.24918 13.1167 3.02121 12.567 2.86242 11.9989L2.76062 11.6346L1.17188 11.3914V8.60855L2.76066 8.36535L2.86246 8.00109C3.02125 7.43293 3.24918 6.88324 3.54 6.36734L3.72578 6.03773L2.77367 4.74145L4.74148 2.77363L6.03777 3.72574L6.36738 3.53996C6.88328 3.24918 7.43297 3.02121 8.00113 2.86242L8.36539 2.76062L8.60855 1.17188H11.3914L11.6346 2.76066L11.9989 2.86246C12.5671 3.02125 13.1168 3.24918 13.6327 3.54L13.9623 3.72578L15.2586 2.77367L17.2264 4.74148L16.2743 6.03777L16.46 6.36738C16.7508 6.88328 16.9788 7.43297 17.1376 8.00113L17.2394 8.36539L18.8281 8.60855V11.3914L17.2393 11.6346Z"
+          fill="#A7A9AC"/>
+    <path d="M9.99965 5.16052C7.33113 5.16052 5.16016 7.3315 5.16016 10C5.16016 12.6685 7.33113 14.8395 9.99965 14.8395C12.6682 14.8395 14.8391 12.6685 14.8391 10C14.8391 7.3315 12.6682 5.16052 9.99965 5.16052ZM9.99965 13.6676C7.97734 13.6676 6.33203 12.0224 6.33203 10C6.33203 7.97767 7.9773 6.3324 9.99965 6.3324C12.022 6.3324 13.6673 7.97767 13.6673 10C13.6673 12.0224 12.022 13.6676 9.99965 13.6676Z"
+          fill="#A7A9AC"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_894_28380">
+      <rect width="20" height="20" fill="white"/>
+    </clipPath>
+  </defs>
+</svg></span>
+                                Налаштування
+                                <span class="arrow"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                         viewBox="0 0 14 14" fill="none">
+  <path d="M7.46824 9.80994L12.8083 4.50758C12.9319 4.38495 13 4.22124 13 4.04668C13 3.87212 12.9319 3.70841 12.8083 3.58577L12.4151 3.19529C12.1589 2.9412 11.7425 2.9412 11.4867 3.19529L7.00249 7.64781L2.51326 3.19035C2.38965 3.06771 2.22487 3 2.04916 3C1.87326 3 1.70848 3.06771 1.58477 3.19035L1.19171 3.58083C1.0681 3.70356 1 3.86718 1 4.04174C1 4.2163 1.0681 4.38001 1.19171 4.50264L6.53664 9.80994C6.66064 9.93287 6.8262 10.0004 7.00219 10C7.17888 10.0004 7.34434 9.93287 7.46824 9.80994Z"
+        fill="#A7A9AC"/>
+</svg></span>
+                            </a>
+                            <ul class="sub-list">
+                                <li>
+                                    <a href="#">Налаштування</a>
+                                </li>
+                                <li>
+                                    <a href="#">Налаштування</a>
+                                </li>
+                                <li>
+                                    <a href="#">Налаштування</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="sidebar-user">
+                    <div class="sidebar-user__avatar">
+                        <img class="cover" src="img/user-avatar.png" alt="">
+                    </div>
+                    <div class="sidebar-user-description">
+                        <a href="#" class="sidebar-user__name">
+                            Максим Коваленко
+                        </a>
+                        <div class="sidebar-user__role">
+                            Користувач
+                        </div>
+                    </div>
+                    <a href="#" class="sidebar-user-arrow">
+                        <img src="img/arrow-right.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="main-header">
+                <a href="#sidebar" class="sidebar-show show-element">
+                    <img src="img/arrow-left.svg" alt="">
+                </a>
+                <a href="#sidebar" class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <div class="main-header__title hidden-on-mobile">
+                    Деталі транзакції
+                </div>
+                <div class="main-header-menu">
+                    <a href="#" class="chat-link main-header-menu__link">
+                        <img src="img/chat.svg" alt="">
+                    </a>
+                    <a href="#" class="notifications-link main-header-menu__link">
+                        <img src="img/fi_bell.svg" alt="">
+                    </a>
+                    <div class="custom-select">
+                        <div class="custom-select-value">
+                            <div class="custom-select__image"><img src="img/ukraine.png" alt=""></div>
+                            <div class="custom-select-value__text">UA</div>
+                            <div class="custom-select-value__icon">
+                                <img src="img/arrow-down.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="custom-select-list">
+                            <a href="#" class="custom-select-list__item current">
+                                <div class="custom-select__image"><img src="img/ukraine.png" alt=""></div>
+                                <div class="custom-select-value__text">UA</div>
+                            </a>
+                            <a href="#" class="custom-select-list__item">
+                                <div class="custom-select__image"><img src="img/ukraine.png" alt=""></div>
+                                <div class="custom-select-value__text">EN</div>
+                            </a>
+                            <a href="#" class="custom-select-list__item">
+                                <div class="custom-select__image"><img src="img/ukraine.png" alt=""></div>
+                                <div class="custom-select-value__text">IT</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-row">
+                <div class="main-row-container">
+                    <div class="hidden-on-desktop main-title">
+                        Деталі транзакції
+                    </div>
+                    <div class="transaction-details-head">
+                        <a href="#" class="transaction-details-head__item ">Основна інформація</a>
+                        <a href="#" class="transaction-details-head__item active">Клієнт</a>
+                        <a href="#" class="transaction-details-head__item ">Платіжні дані</a>
+                        <a href="#" class="transaction-details-head__item ">Комісії</a>
+                        <a href="#" class="transaction-details-head__item ">Історія</a>
+                        <a href="#" class="transaction-details-head__item ">Маршрутизація</a>
+                        <a href="#" class="transaction-details-head__item ">Колбеки</a>
+
+                    </div>
+                    <div class="wrap">
+                        <div class="transaction-details">
+                            <div class=" title-head">
+                                Клієнт
+                            </div>
+                            <div class="transaction-details-content">
+                                <div class="transaction-details__title">Ідентифікатори</div>
+                                <ul class="transaction-details-list">
+                                    <li class="transaction-details-list__item">
+                                        <span>ID клієнта</span><strong>TXN-239847198</strong>
+                                    </li>
+                                    <li class="transaction-details-list__item">
+                                        <span>Референс клієнта</span><strong>REF-87456123</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="transaction-details-content">
+                                <div class="transaction-details__title">Персональні дані</div>
+                                <ul class="transaction-details-list">
+                                    <li class="transaction-details-list__item">
+                                        <span>Імʼя клієнта</span><strong>Олена</strong>
+                                    </li>
+                                    <li class="transaction-details-list__item">
+                                        <span>Прізвище клієнта</span><strong>Іваненко</strong>
+                                    </li>
+                                    <li class="transaction-details-list__item">
+                                        <span>Дата народження</span><strong>1993-07-14</strong>
+                                    </li>
+                                    <li class="transaction-details-list__item">
+                                        <span>Громадянство</span><strong>Україна</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="transaction-details-content">
+                                <div class="transaction-details__title">Контактна інформація</div>
+                                <ul class="transaction-details-list">
+                                    <li class="transaction-details-list__item">
+                                        <span> Email</span><strong>olena@example.com</strong>
+                                    </li>
+                                    <li class="transaction-details-list__item">
+                                        <span>Телефон</span><strong>+380501234567</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="main-footer">
+                <div class="copyright">
+                    © 2024 Tranzify Всі права захищені
+                </div>
+                <a href="#" class="main-footer__link">
+                    Користувацька угода
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div class="modal modal-message modal-window" id="message">
+    <div class="modal__title"></div>
+</div>
+
+<script>
+    var passwordHideIcon = 'img/mdi_hide-outline.svg';
+    var passwordShowIcon = 'img/show.svg';
+    var loaderIcon = 'img/loading.gif';
+    var attachFile = 'img/attach-file.svg';
+    var addAvatarIcon = 'img/upload.svg';
+    var editAvatarIcon = 'img/edit-avatar.svg';
+    var copyText = 'Скопійовано!';
+</script>
+
+<script>
+    setTimeout(function () {
+        // openModal(document.querySelector('#account-added'));
+    }, 3000);
+</script>
+
+<script src="js/app.js"></script>
+</body>
+</html>
